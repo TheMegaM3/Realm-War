@@ -1,4 +1,4 @@
-package org.example.realmwar.structures;
+package realmwar.models.structures;
 
 public class TownHall extends Structure {
 }

@@ -1,4 +1,4 @@
-package org.example.realmwar.blocks;
+package realmwar.models.blocks;
 
 public class EmptyBlock extends Block {
 }
