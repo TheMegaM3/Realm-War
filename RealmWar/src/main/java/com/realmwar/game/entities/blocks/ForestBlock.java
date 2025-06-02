@@ -1,8 +1,8 @@
 package realmwar.models.blocks;
 
-import entities.units.Unit;
 import main.java.com.realmwar.game.entities.blocks.Block;
 import main.java.com.realmwar.game.util.GameLogger;
+import main.java.com.realmwar.game.entities.units.Unit;
 
 public class ForestBlock extends Block {
     public ForestBlock(int row, int col) {

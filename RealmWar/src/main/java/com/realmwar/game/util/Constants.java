@@ -72,6 +72,7 @@ public class Constants {
     public static final int PEASANT_GOLD_COST = 30;
     public static final int PEASANT_FOOD_COST = 10;
     public static final int PEASANT_UNIT_SPACE_COST = 1;
+    public static final int PEASANT_GATHER_AMOUNT = 5;
     public static final int PEASANT_HIERARCHY_LEVEL = 1; // Unit hierarchy level
 
     // Spearman
@@ -83,6 +84,7 @@ public class Constants {
     public static final int SPEARMAN_FOOD_COST = 30;
     public static final int SPEARMAN_UNIT_SPACE_COST = 2;
     public static final int SPEARMAN_HIERARCHY_LEVEL = 2;
+    public static final int SPEARMAN_FORTIFY_BONUS = 3;
 
     // Swordsman
     public static final int SWORDSMAN_HEALTH = 60;

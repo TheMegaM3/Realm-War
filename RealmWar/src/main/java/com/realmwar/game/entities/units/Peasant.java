@@ -1,4 +1,4 @@
-package realmwar.models.units;
+package java.com.realmwar.game.entities.units;
 
 import main.java.com.realmwar.game.entities.Player;
 import main.java.com.realmwar.game.util.Constants;
@@ -10,8 +10,9 @@ import realmwar.models.blocks.ForestBlock;
 import main.java.com.realmwar.game.entities.structures.Structure;
 import realmwar.models.units.Spearman;
 import main.java.com.realmwar.game.entities.blocks.EmptyBlock;
+import main.java.com.realmwar.game.entities.units.Unit;
 
-public class Peasant extends Units {
+public class Peasant extends Unit {
     public Peasant(Player owner , int row, int col) {
         super(owner, Constants.PEASANT_HEALTH ,Constants.PEASANT_HEALTH, Constants.PEASANT_MOVEMENT_RANGE , Constants.PEASANT_ATTACK_POWER, Constants.PEASANT_ATTACK_RANGE , Constants.PEASANT_GOLD_COST, Constants.PEASANT_FOOD_COST, Constants.PEASANT_UNIT_SPACE_COST, row , col);
         GameLogger.log("Peasant created for " + owner.getName());
@@ -41,12 +42,12 @@ public class Peasant extends Units {
         gameManager.getBlockAt(this.row , this.col).setUnit(null);
         this.setPosition(targetRow,targetCol);
         targetBlock.setUnit(this);
-        GameLogger.log("Peasant moved to (" + this.row + "," + this.col + ") to (" + targetRow + ", " + targetCol + ")");
+        GameLogger.log("Peasant moved from (" + this.row + "," + this.col + ") to (" + targetRow + ", " + targetCol + ")");
         //UI
     }
 
     @Override
-    public void attck(Unit target) {
+    public void attack(Unit target) {
         if(this.owner == target.getOwner()){
             GameLogger.logWarning("Can't attack own unit.");
             return;

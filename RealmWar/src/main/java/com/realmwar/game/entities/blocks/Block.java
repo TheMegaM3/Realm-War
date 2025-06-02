@@ -2,7 +2,7 @@ package main.java.com.realmwar.game.entities.blocks;
 
 import main.java.com.realmwar.game.entities.structures.Structure;
 import main.java.com.realmwar.game.entities.units.Unit;
-
+import main.java.com.realmwar.game.util.GameLogger;
 public abstract class Block {
     protected int row;
     protected int col;

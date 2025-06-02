@@ -1,10 +1,10 @@
 package main.java.com.realmwar.game.entities.structures;
 
-import entities.units.*;
 import main.java.com.realmwar.game.entities.structures.Structure;
 import main.java.com.realmwar.game.entities.Player;
 import  main.java.com.realmwar.game.util.Constants;
 import main.java.com.realmwar.game.util.GameLogger;
+import main.java.com.realmwar.game.entities.units.Unit;
 import java.util.List;
 
 public class Tower extends Structure {

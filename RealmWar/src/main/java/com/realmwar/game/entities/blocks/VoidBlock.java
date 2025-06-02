@@ -1,6 +1,6 @@
 package realmwar.models.blocks;
 
-import entities.units.Unit;
+import main.java.com.realmwar.game.entities.units.Unit;
 import main.java.com.realmwar.game.entities.blocks.Block;
 import main.java.com.realmwar.game.util.GameLogger;
 

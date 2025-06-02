@@ -29,7 +29,7 @@ public abstract class Unit {
         this.foodCost = foodCost;
         this.unitSpaceCost = unitSpaceCost;
         this.row = row;
-        this.col = this.col;
+        this.col = col;
 
         GameLogger.log("Unit " + this.getClass().getSimpleName() + " created for " + owner.getName() + " at (" + row + ", " + this.col + " )");
     }
@@ -92,7 +92,6 @@ public abstract class Unit {
     }
 
     public abstract void move(int targetRow, int targetCol);
-    public abstract void attck(Unit target);
 
     public abstract void attack(Unit target);
 

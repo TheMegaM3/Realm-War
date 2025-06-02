@@ -1,4 +1,4 @@
-package realmwar.models.units;
+package java.com.realmwar.game.entities.units;
 
 import main.java.com.realmwar.game.entities.Player;
 import main.java.com.realmwar.game.util.Constants;
@@ -10,25 +10,26 @@ import realmwar.models.blocks.ForestBlock;
 import main.java.com.realmwar.game.entities.structures.Structure;
 import main.java.com.realmwar.game.entities.structures.Tower;
 import realmwar.models.units.Knight;
+import main.java.com.realmwar.game.entities.units.Unit;
 import java.util.List;
 
-public class Swordsman extends Units {
+public class Swordsman extends Unit {
     public Swordsman(Player owner , int row , int col) {
         super(owner , Constants.SWORDSMAN_HEALTH,Constants.SPEARMAN_HEALTH, Constants.SWORDSMAN_MOVEMENT_RANGE,Constants.SPEARMAN_ATTACK_POWER,Constants.SWORDSMAN_ATTACK_RANGE, Constants.SWORDSMAN_GOLD_COST,Constants.SWORDSMAN_FOOD_COST, Constants.SWORDSMAN_UNIT_SPACE_COST,row,col);
         GameLogger.log("Swordsman created for " + owner.getName());
     }
 
     @Override
-    public void move(int targetrow , int targetcol) {
+    public void move(int targetRow , int targetCol) {
         GameManager gameManager = GameManager.getInstance();
-        int distance = Math.abs(this.row - targetrow) + Math.abs(this.col - targetcol);
+        int distance = Math.abs(this.row - targetRow) + Math.abs(this.col - targetCol);
         if (distance > this.movementRange) {
-            GameLogger.logError("Swordsman can't  move to (" + targetrow + "," + targetcol + "): Out of range.");
+            GameLogger.logError("Swordsman can't  move to (" + targetRow + "," + targetCol + "): Out of range.");
             return;
         }
-        Block targetBlock = gameManager.getBlockAt(targetrow, targetcol);
+        Block targetBlock = gameManager.getBlockAt(targetRow, targetCol);
         if (targetBlock == null || targetBlock instanceof VoidBlock) {
-            GameLogger.logError("Swordsman can't move to (" + targetrow + "," + targetcol + "): Block occupied by another unit.");
+            GameLogger.logError("Swordsman can't move to (" + targetRow + "," + targetCol + "): Block occupied by another unit.");
             return;
         }
         if (targetBlock.getStructure() != null && targetBlock.getStructure().getOwner() != this.owner) {
@@ -36,9 +37,9 @@ public class Swordsman extends Units {
             return;
         }
         gameManager.getBlockAt(this.row, this.col).setUnit(null);
-        this.setPosition(targetrow, targetcol);
+        this.setPosition(targetRow, targetCol);
         targetBlock.setUnit(this);
-        GameLogger.log("Swordsman moved from ( " + this.row + "," + this.col + ") to (" + targetrow + "," + targetcol + ").");
+        GameLogger.log("Swordsman moved from ( " + this.row + "," + this.col + ") to (" + targetRow + "," + targetCol + ").");
     }
 
     @Override
@@ -47,7 +48,7 @@ public class Swordsman extends Units {
             GameLogger.logWarning("Can't attack own unit.");
             return;
         }
-        int distance = Math.abs(this.row - target.row) + Math.abs(this.col - target.col);
+        int distance = Math.abs(this.row - target.getRow()) + Math.abs(this.col - target.getCol());
         if (distance > this.attackRange){
             GameLogger.logError("Target unit out of range.");
             return;
@@ -93,7 +94,7 @@ public class Swordsman extends Units {
     }
     public Unit mergeWith(Swordsman other) {
         if (this.owner != other.owner) {
-            GameLogger.logWarning("Can't merge units from diffrent players.");
+            GameLogger.logWarning("Can't merge units from different players.");
             return null;
         }
         if (Math.abs(this.row - other.row) > 1 ||  Math.abs(this.col - other.col) > 1) {

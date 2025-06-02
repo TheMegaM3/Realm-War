@@ -1,4 +1,4 @@
-package realmwar.models.units;
+package java.com.realmwar.game.entities.units;
 
 import main.java.com.realmwar.game.entities.Player;
 import main.java.com.realmwar.game.util.Constants;
@@ -9,11 +9,12 @@ import main.java.com.realmwar.game.entities.blocks.EmptyBlock;
 import realmwar.models.blocks.VoidBlock;
 import realmwar.models.blocks.ForestBlock;
 import main.java.com.realmwar.game.entities.structures.Structure;
+import main.java.com.realmwar.game.entities.units.Unit;
 import java.util.List;
 
-public class Knight extends Units {
+public class Knight extends Unit {
     public Knight(Player owner, int row, int col) {
-        super(owner,Constants.KNIGHT_HEALTH,Constants.KNIGHT_HEALTH, Constants.KNIGHT_MOVEMENT_RANGE, Constants.KNIGHT_ATTACK_POWER, Constants.KNIGHT_ATTACK_RANGE,Constants.KNIGHT_GOLD_COST,Constants.FARM_FOOD_COST,Constants.KNIGHT_UNIT_SPACE_COST,row , col);
+        super(owner,Constants.KNIGHT_HEALTH,Constants.KNIGHT_HEALTH, Constants.KNIGHT_MOVEMENT_RANGE, Constants.KNIGHT_ATTACK_POWER, Constants.KNIGHT_ATTACK_RANGE,Constants.KNIGHT_GOLD_COST,Constants.KNIGHT_FOOD_COST,Constants.KNIGHT_UNIT_SPACE_COST,row , col);
         GameLogger.log("Knight created for " + owner.getName());
     }
 

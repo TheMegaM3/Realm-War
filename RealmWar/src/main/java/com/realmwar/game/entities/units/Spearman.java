@@ -1,4 +1,4 @@
-package realmwar.models.units;
+package java.com.realmwar.game.entities.units;
 
 import main.java.com.realmwar.game.entities.Player;
 import main.java.com.realmwar.game.util.Constants;
@@ -10,10 +10,11 @@ import realmwar.models.units.Knight;
 import realmwar.models.blocks.ForestBlock;
 import main.java.com.realmwar.game.entities.structures.Structure;
 import realmwar.models.units.Swordsman;
+import main.java.com.realmwar.game.entities.units.Unit;
 
-public class Spearman extends Units {
+public class Spearman extends Unit {
     public Spearman(Player owner, int row , int col) {
-        super(Constants.SPEARMAN_HEALTH , Constants.SPEARMAN_HEALTH,Constants.SPEARMAN_MOVEMENT_RANGE, Constants.SPEARMAN_ATTACK_POWER,Constants.PEASANT_MOVEMENT_RANGE, Constants.SPEARMAN_GOLD_COST ,Constants.SPEARMAN_FOOD_COST , Constants.SPEARMAN_UNIT_SPACE_COST,row,col);
+        super(owner ,Constants.SPEARMAN_HEALTH , Constants.SPEARMAN_HEALTH,Constants.SPEARMAN_MOVEMENT_RANGE, Constants.SPEARMAN_ATTACK_POWER,Constants.PEASANT_MOVEMENT_RANGE, Constants.SPEARMAN_GOLD_COST ,Constants.SPEARMAN_FOOD_COST , Constants.SPEARMAN_UNIT_SPACE_COST,row,col);
         GameLogger.log("Spearman created for " + owner.getName());
     }
 
@@ -77,8 +78,8 @@ public class Spearman extends Units {
             return;
         }
         int finalAttackPower = this.attackPower;
-        Block cuurentBlock = GameManager.getInstance().getBlockAt(this.row, this.col);
-        if (cuurentBlock instanceof ForestBlock){
+        Block curentBlock = GameManager.getInstance().getBlockAt(this.row, this.col);
+        if (curentBlock instanceof ForestBlock){
             finalAttackPower += Constants.FOREST_ATTACK_ADVANTAGE;
             GameLogger.log("Spearman gains forest advantage (+ " + Constants.FOREST_ATTACK_ADVANTAGE + " attack)");
         }
@@ -96,7 +97,7 @@ public class Spearman extends Units {
         }
         this.owner.removeUnit(this);
         this.owner.removeUnit(other);
-        GameLogger.log("Tow Spearman merged into a Swordman at (" + this.row + "," + this.col + ").");
+        GameLogger.log("Two Spearman merged into a Swordsman at (" + this.row + "," + this.col + ").");
         return new Swordsman(this.owner , this.row , this.col);
     }
     public void fortify(){
