@@ -9,6 +9,21 @@ public abstract class Block {
     protected Structure structure;
     protected Unit unit;
 
+    public Block(int row, int col) {
+        this.row = row;
+        this.col = col;
+        this.structure = null;
+        this.unit = null;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
     public Structure getStructure() {
         return structure;
     }
