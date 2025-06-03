@@ -1,4 +1,4 @@
-package realmwar.models.blocks;
+package main.java.com.realmwar.game.entities.blocks;
 
 import main.java.com.realmwar.game.entities.blocks.Block;
 import main.java.com.realmwar.game.util.GameLogger;

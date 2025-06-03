@@ -1,15 +1,15 @@
-package java.com.realmwar.game.entities.units;
+package main.java.com.realmwar.game.entities.units;
 
 import main.java.com.realmwar.game.entities.Player;
 import main.java.com.realmwar.game.util.Constants;
 import main.java.com.realmwar.game.util.GameLogger;
 import main.java.com.realmwar.game.core.GameManager;
 import main.java.com.realmwar.game.entities.blocks.Block;
-import realmwar.models.blocks.VoidBlock;
-import realmwar.models.units.Knight;
-import realmwar.models.blocks.ForestBlock;
+import main.java.com.realmwar.game.entities.blocks.VoidBlock;
+import main.java.com.realmwar.game.entities.units.Knight;
+import main.java.com.realmwar.game.entities.blocks.ForestBlock;
 import main.java.com.realmwar.game.entities.structures.Structure;
-import realmwar.models.units.Swordsman;
+import main.java.com.realmwar.game.entities.units.Swordsman;
 import main.java.com.realmwar.game.entities.units.Unit;
 
 public class Spearman extends Unit {

@@ -2,9 +2,10 @@ package main.java.com.realmwar.game.entities.structures;
 
 import main.java.com.realmwar.game.entities.structures.Structure;
 import main.java.com.realmwar.game.entities.Player;
-import  main.java.com.realmwar.game.util.Constants;
+import main.java.com.realmwar.game.entities.units.*;
+import main.java.com.realmwar.game.util.Constants;
 import main.java.com.realmwar.game.util.GameLogger;
-import main.java.com.realmwar.game.entities.units.Unit;
+
 import java.util.List;
 
 public class Tower extends Structure {
@@ -40,7 +41,7 @@ public class Tower extends Structure {
     }
 
     public boolean blocksUnit(Unit unit){
-        int unitLevel = getUnitHierarchyLevel();
+        int unitLevel = getUnitHierarchyLevel(unit);
         return unitLevel < this.blockUnitBelowLevel;
     }
 
@@ -75,7 +76,7 @@ public class Tower extends Structure {
         }
     }
 
-    private Unit findClosestTarget(List <Unit> units){
+    private Unit findClosestTarget(List<Unit> units){
         Unit closest = null;
         double minDistance = Double.MAX_VALUE;
         for (Unit unit : units){

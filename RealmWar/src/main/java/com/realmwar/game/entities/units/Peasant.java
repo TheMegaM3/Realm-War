@@ -1,14 +1,14 @@
-package java.com.realmwar.game.entities.units;
+package main.java.com.realmwar.game.entities.units;
 
 import main.java.com.realmwar.game.entities.Player;
 import main.java.com.realmwar.game.util.Constants;
 import main.java.com.realmwar.game.util.GameLogger;
 import main.java.com.realmwar.game.core.GameManager;
 import main.java.com.realmwar.game.entities.blocks.Block;
-import realmwar.models.blocks.VoidBlock;
-import realmwar.models.blocks.ForestBlock;
+import main.java.com.realmwar.game.entities.blocks.VoidBlock;
+import main.java.com.realmwar.game.entities.blocks.ForestBlock;
 import main.java.com.realmwar.game.entities.structures.Structure;
-import realmwar.models.units.Spearman;
+import main.java.com.realmwar.game.entities.units.Spearman;
 import main.java.com.realmwar.game.entities.blocks.EmptyBlock;
 import main.java.com.realmwar.game.entities.units.Unit;
 
