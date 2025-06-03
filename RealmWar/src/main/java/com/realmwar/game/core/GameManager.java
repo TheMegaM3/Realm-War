@@ -6,6 +6,7 @@ import main.java.com.realmwar.game.entities.blocks.EmptyBlock;
 import main.java.com.realmwar.game.entities.blocks.ForestBlock;
 import main.java.com.realmwar.game.entities.blocks.VoidBlock;
 import main.java.com.realmwar.game.entities.structures.Structure;
+import main.java.com.realmwar.game.entities.structures.Tower;
 import main.java.com.realmwar.game.entities.structures.TownHall;
 import main.java.com.realmwar.game.entities.units.Unit;
 import main.java.com.realmwar.game.util.CustomExceptions;
@@ -103,8 +104,8 @@ public class GameManager {
         GameLogger.log("Player " + turnManager.getCurrentPlayer().getName() + " ended turn.");
 
         for (Structure structure : getCurrentPlayer().getStructures()) {
-            if (structure instanceof com.realmwar.game.entities.structures.Tower) {
-                ((com.realmwar.game.entities.structures.Tower) structure).defend();
+            if (structure instanceof Tower) {
+                ((Tower) structure).defend();
             }
         }
 

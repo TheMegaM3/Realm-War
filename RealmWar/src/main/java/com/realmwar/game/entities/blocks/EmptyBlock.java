@@ -1,13 +1,11 @@
 package main.java.com.realmwar.game.entities.blocks;
 
-import  main.java.com.realmwar.game.entities.blocks.Block;
-import main.java.com.realmwar.game.util.GameLogger;
 import main.java.com.realmwar.game.entities.units.Unit;
+import main.java.com.realmwar.game.util.GameLogger;
 
 public class EmptyBlock extends Block {
     public EmptyBlock(int row, int col) {
         super(row, col);
-        GameLogger.log("EmptyBlock created at (" + row + "," + col + ")");
     }
 
     @Override
@@ -22,6 +20,7 @@ public class EmptyBlock extends Block {
 
     @Override
     public void onUnitEnter(Unit unit) {
-        GameLogger.log(unit.getClass().getSimpleName() + " entered EmptyBlock at (" +  row + "," + col + ")");
+        GameLogger.log(unit.getClass().getSimpleName() + " entered EmptyBlock at (" +
+                row + "," + col + ").");
     }
 }
