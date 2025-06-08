@@ -1,0 +1,37 @@
+2025/06/08 03:02:25 - Database initialized successfully.
+2025/06/08 03:02:25 - GameManager created. Player 1's turn begins.
+2025/06/08 03:08:52 - Database initialized successfully.
+2025/06/08 03:08:52 - GameManager created. Player 1's turn begins.
+2025/06/08 03:18:37 - Database initialized successfully.
+2025/06/08 03:18:37 - GameManager created. Player 1's turn begins.
+2025/06/08 03:20:41 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:20:48 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:20:49 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:20:49 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:20:49 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:20:50 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:20:50 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:20:50 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:20:50 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:20:51 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:20:51 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:50:01 - Database initialized successfully.
+2025/06/08 03:50:01 - GameManager created. Player 1's turn begins.
+2025/06/08 03:50:38 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:50:38 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:50:38 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:50:38 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:50:38 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:50:38 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:50:39 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:50:39 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:50:39 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:50:39 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:50:39 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:50:39 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:50:39 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:50:39 - Turn ended. It is now Player 1's turn.
+2025/06/08 03:56:44 - Database initialized successfully.
+2025/06/08 03:56:44 - GameManager created. Player 1's turn begins.
+2025/06/08 03:56:59 - Turn ended. It is now Player 2's turn.
+2025/06/08 03:57:06 - Turn ended. It is now Player 1's turn.
