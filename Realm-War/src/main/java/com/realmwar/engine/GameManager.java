@@ -23,6 +23,8 @@ public class GameManager {
     private final TurnManager turnManager;
     private final List<Player> players;
     private GameState currentState; // The polymorphic state object
+    private Player currentPlayer;
+    private ResourceScheduler resourceScheduler;
     public Player winner;
 
     public GameManager(List<String> playerNames, int width, int height) {
@@ -30,10 +32,22 @@ public class GameManager {
                 .map(name -> new Player(name, Constants.STARTING_GOLD, Constants.STARTING_FOOD))
                 .collect(Collectors.toList());
         this.gameBoard = new GameBoard(width, height);
-        this.turnManager = new TurnManager(this.players);
+        this.turnManager = new TurnManager(this.players, this);
         this.currentState = new RunningState(this); // Set the initial state
+        this.resourceScheduler = new ResourceScheduler();
+        startAllTimers();
         setupInitialState();
+        turnManager.startTurn();
         GameLogger.log("GameManager created. " + getCurrentPlayer().getName() + "'s turn begins.");
+    }
+
+    private void startAllTimers() {
+        resourceScheduler.start(players, gameBoard);
+    }
+
+    public void stopAllTimers() {
+        resourceScheduler.stop();
+        turnManager.getTurnTimer().stop();
     }
 
     private void setupInitialState() {
@@ -154,6 +168,7 @@ public class GameManager {
             boolean hasTownHall = gameBoard.getStructuresForPlayer(p).stream().anyMatch(s -> s instanceof TownHall);
             if (!hasTownHall) {
                 this.winner = players.stream().filter(player -> player != p).findFirst().orElse(null);
+                startAllTimers();
                 this.currentState = new GameOverState(this, this.winner); // Transition to the Game Over state
                 GameLogger.log("GAME OVER! Winner is " + winner.getName());
                 return;
@@ -171,6 +186,9 @@ public class GameManager {
     public Player getCurrentPlayer() { return turnManager.getCurrentPlayer(); }
     public GameState getCurrentState() { return currentState; }
     public int getCurrentPlayerIndex() { return turnManager.getCurrentPlayerIndex(); }
+    public void setCurrentPlayer(Player player) {
+        this.currentPlayer = player;
+    }
     public void setCurrentPlayerIndex(int index) { turnManager.setCurrentPlayerIndex(index); }
     public List<Player> getPlayers() { return players; }
 }

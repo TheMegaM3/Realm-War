@@ -13,6 +13,8 @@ public final class Constants {
 
     // --- STRUCTURES ---
     public static final int TOWNHALL_DURABILITY = 1000;
+    public static final int TOWNHALL_FOOD_PRODUCTION = 5;
+    public static final int TOWNHALL_GOLD_PRODUCTION = 5;
     public static final int BARRACK_DURABILITY = 300;
     public static final int BARRACK_MAINTENANCE = 2;
     public static final int FARM_DURABILITY = 100;

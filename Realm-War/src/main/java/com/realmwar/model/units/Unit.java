@@ -16,7 +16,8 @@ public abstract class Unit extends GameEntity {
         this.health=h;
         this.attackPower=a;
         this.attackRange=ar;
-        this.movementRange=mr; }
+        this.movementRange=mr;
+    }
     public int getHealth() {
         return health; }
 
