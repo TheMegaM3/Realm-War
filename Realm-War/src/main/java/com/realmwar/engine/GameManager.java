@@ -5,12 +5,8 @@ import com.realmwar.engine.gamestate.GameOverState;
 import com.realmwar.engine.gamestate.GameState;
 import com.realmwar.engine.gamestate.RunningState;
 import com.realmwar.model.*;
-import com.realmwar.model.structures.Farm;
-import com.realmwar.model.structures.Market;
-import com.realmwar.model.structures.Structure;
-import com.realmwar.model.structures.TownHall;
-import com.realmwar.model.units.Swordsman;
-import com.realmwar.model.units.Unit;
+import com.realmwar.model.structures.*;
+import com.realmwar.model.units.*;
 import com.realmwar.util.Constants;
 import com.realmwar.util.CustomExceptions.GameRuleException;
 
@@ -18,48 +14,33 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GameManager {
-
     private final GameBoard gameBoard;
     private final TurnManager turnManager;
     private final List<Player> players;
-    private GameState currentState; // The polymorphic state object
-    private Player currentPlayer;
-    private ResourceScheduler resourceScheduler;
+    private GameState currentState;
     public Player winner;
+    private int selectedX, selectedY;
 
     public GameManager(List<String> playerNames, int width, int height) {
         this.players = playerNames.stream()
                 .map(name -> new Player(name, Constants.STARTING_GOLD, Constants.STARTING_FOOD))
                 .collect(Collectors.toList());
         this.gameBoard = new GameBoard(width, height);
-        this.turnManager = new TurnManager(this.players, this);
-        this.currentState = new RunningState(this); // Set the initial state
-        this.resourceScheduler = new ResourceScheduler();
-        startAllTimers();
+        this.turnManager = new TurnManager(this.players);
+        this.currentState = new RunningState(this);
         setupInitialState();
-        turnManager.startTurn();
         GameLogger.log("GameManager created. " + getCurrentPlayer().getName() + "'s turn begins.");
-    }
-
-    private void startAllTimers() {
-        resourceScheduler.start(players, gameBoard);
-    }
-
-    public void stopAllTimers() {
-        resourceScheduler.stop();
-        turnManager.getTurnTimer().stop();
     }
 
     private void setupInitialState() {
         placeEntity(new TownHall(players.get(0), 1, 1), 1, 1);
         if (players.size() > 1) {
-            placeEntity(new TownHall(players.get(1), gameBoard.width - 2, gameBoard.height - 2), gameBoard.width - 2, gameBoard.height - 2);
+            placeEntity(new TownHall(players.get(1), gameBoard.width - 2, gameBoard.height - 2),
+                    gameBoard.width - 2, gameBoard.height - 2);
         }
     }
 
-    // --- PUBLIC API FOR THE CONTROLLER ---
-    // These methods delegate behavior to the current state object.
-
+    // Public API methods
     public void moveUnit(Unit unit, int toX, int toY) throws GameRuleException {
         currentState.moveUnit(unit, toX, toY);
     }
@@ -72,37 +53,38 @@ public class GameManager {
         currentState.nextTurn();
     }
 
-    // --- INTERNAL LOGIC (CALLED BY STATE OBJECTS) ---
-
-
+    // Internal logic methods
     public void advanceTurn() {
         turnManager.nextTurn();
         Player currentPlayer = getCurrentPlayer();
 
-        // Reset all of the new player's units so they can act.
+        // بازنشانی وضعیت واحدها از طریق GameBoard
         gameBoard.getUnitsForPlayer(currentPlayer).forEach(u -> u.setHasActedThisTurn(false));
 
-        // Calculate resource generation and maintenance for the new player.
+        // محاسبه منابع
+        calculateResources(currentPlayer);
+
+        GameLogger.log("Turn ended. It is now " + currentPlayer.getName() + "'s turn.");
+    }
+
+    private void calculateResources(Player player) {
         int goldIncome = 0;
         int foodIncome = 0;
         int maintenanceCost = 0;
-        for (Structure s : gameBoard.getStructuresForPlayer(currentPlayer)) {
+
+        for (Structure s : gameBoard.getStructuresForPlayer(player)) {
             if (s instanceof Market) goldIncome += Constants.MARKET_GOLD_PRODUCTION;
             if (s instanceof Farm) foodIncome += Constants.FARM_FOOD_PRODUCTION;
             maintenanceCost += s.getMaintenanceCost();
         }
 
-        currentPlayer.getResourceHandler().addResources(goldIncome, foodIncome);
+        player.getResourceHandler().addResources(goldIncome, foodIncome);
         try {
-            currentPlayer.getResourceHandler().spendResources(maintenanceCost, 0);
+            player.getResourceHandler().spendResources(maintenanceCost, 0);
         } catch (GameRuleException e) {
-            GameLogger.log(currentPlayer.getName() + " could not pay maintenance costs! (Deficit: " + (maintenanceCost - currentPlayer.getResourceHandler().getGold()) + " Gold)");
-            // In a more complex game, you might add penalties here, like structures taking damage.
+            GameLogger.log(player.getName() + " could not pay maintenance costs!");
         }
-
-        GameLogger.log("Turn ended. It is now " + currentPlayer.getName() + "'s turn.");
     }
-
 
     public void executeMove(Unit unit, int toX, int toY) throws GameRuleException {
         validateAction(unit);
@@ -110,14 +92,16 @@ public class GameManager {
         if (distance > unit.getMovementRange()) throw new GameRuleException("Target is out of movement range.");
 
         GameTile targetTile = gameBoard.getTile(toX, toY);
-        if (targetTile == null || targetTile.isOccupied()) throw new GameRuleException("Cannot move to an occupied or invalid tile.");
+        if (targetTile == null || targetTile.isOccupied())
+            throw new GameRuleException("Cannot move to an occupied or invalid tile.");
 
-        placeEntity(null, unit.getX(), unit.getY()); // Remove from old tile
+        placeEntity(null, unit.getX(), unit.getY());
         placeEntity(unit, toX, toY);
         unit.setHasActedThisTurn(true);
         GameLogger.log(unit.getClass().getSimpleName() + " moved to (" + toX + "," + toY + ").");
-    }
 
+        checkAndEndTurn();
+    }
 
     public void executeAttack(Unit attacker, GameEntity target) throws GameRuleException {
         validateAction(attacker);
@@ -125,70 +109,107 @@ public class GameManager {
         if (distance > attacker.getAttackRange()) throw new GameRuleException("Target is out of attack range.");
         if (target.getOwner() == attacker.getOwner()) throw new GameRuleException("Cannot attack a friendly entity.");
 
-        int baseDamage = attacker.getAttackPower();
-
-        // --- Handle Special Abilities ---
-        // Swordsman Cleave Attack
-        if (attacker instanceof Swordsman) {
-            List<Unit> adjacentTargets = gameBoard.getAdjacentUnits(target.getX(), target.getY());
-            for (Unit secondaryTarget : adjacentTargets) {
-                if (secondaryTarget != target && secondaryTarget.getOwner() != attacker.getOwner()) {
-                    int cleaveDamage = baseDamage / Constants.SWORDSMAN_CLEAVE_DIVISOR;
-                    secondaryTarget.takeDamage(cleaveDamage);
-                    GameLogger.log("Cleave damage dealt to " + secondaryTarget.getClass().getSimpleName() + " for " + cleaveDamage + " damage!");
-                    if (secondaryTarget.isDestroyed()) {
-                        placeEntity(null, secondaryTarget.getX(), secondaryTarget.getY());
-                        GameLogger.log(secondaryTarget.getClass().getSimpleName() + " was destroyed by cleave!");
-                    }
-                }
-            }
-        }
-
-        // Apply primary damage
-        target.takeDamage(baseDamage);
-        GameLogger.log(attacker.getClass().getSimpleName() + " attacked " + target.getClass().getSimpleName() + " for " + baseDamage + " damage.");
+        // Apply damage
+        target.takeDamage(attacker.getAttackPower());
+        GameLogger.log(attacker.getClass().getSimpleName() + " attacked " +
+                target.getClass().getSimpleName() + " for " +
+                attacker.getAttackPower() + " damage.");
 
         if (target.isDestroyed()) {
             placeEntity(null, target.getX(), target.getY());
             GameLogger.log(target.getClass().getSimpleName() + " was destroyed!");
             checkWinCondition();
         }
+
         attacker.setHasActedThisTurn(true);
+        checkAndEndTurn();
     }
 
+    private void checkAndEndTurn() {
+        boolean allUnitsActed = gameBoard.getUnitsForPlayer(getCurrentPlayer())
+                .stream()
+                .allMatch(Unit::hasActedThisTurn);
+
+        if (allUnitsActed) {
+            nextTurn();
+        }
+    }
 
     private void validateAction(Unit unit) throws GameRuleException {
-        if (unit.getOwner() != getCurrentPlayer()) throw new GameRuleException("It is not your turn.");
-        if (unit.hasActedThisTurn()) throw new GameRuleException("This unit has already acted this turn.");
+        if (unit.getOwner() != getCurrentPlayer())
+            throw new GameRuleException("It is not your turn.");
+        if (unit.hasActedThisTurn())
+            throw new GameRuleException("This unit has already acted this turn.");
     }
-
 
     private void checkWinCondition() {
         for (Player p : players) {
-            boolean hasTownHall = gameBoard.getStructuresForPlayer(p).stream().anyMatch(s -> s instanceof TownHall);
+            boolean hasTownHall = gameBoard.getStructuresForPlayer(p).stream()
+                    .anyMatch(s -> s instanceof TownHall);
             if (!hasTownHall) {
-                this.winner = players.stream().filter(player -> player != p).findFirst().orElse(null);
-                startAllTimers();
-                this.currentState = new GameOverState(this, this.winner); // Transition to the Game Over state
+                this.winner = players.stream()
+                        .filter(player -> player != p)
+                        .findFirst()
+                        .orElse(null);
+                this.currentState = new GameOverState(this, this.winner);
                 GameLogger.log("GAME OVER! Winner is " + winner.getName());
                 return;
             }
         }
     }
 
+    public void buildStructure(String structureType, int x, int y) throws GameRuleException {
+        Player currentPlayer = getCurrentPlayer();
+        GameTile tile = gameBoard.getTile(x, y);
 
-    private void placeEntity(GameEntity entity, int x, int y) {
-        gameBoard.placeEntity(entity, x, y);
+        if (tile == null || tile.isOccupied() || tile.getEntity() != null) {
+            throw new GameRuleException("This tile is not buildable!");
+        }
+
+        Structure structure = switch (structureType) {
+            case "Farm" -> new Farm(currentPlayer, x, y);
+            case "Barrack" -> new Barrack(currentPlayer, x, y);
+            case "Market" -> new Market(currentPlayer, x, y);
+            case "Tower" -> new Tower(currentPlayer, x, y);
+            default -> throw new GameRuleException("Invalid structure type!");
+        };
+
+        currentPlayer.getResourceHandler().spendResources(structure.getBuildCost(), 0);
+        gameBoard.placeEntity(structure, x, y);
+        checkAndEndTurn();
     }
 
-    // --- GETTERS (for Controller and View to read the model's state) ---
+    public void trainUnit(String unitType, int x, int y) throws GameRuleException {
+        Player currentPlayer = getCurrentPlayer();
+        GameTile tile = gameBoard.getTile(x, y);
+
+        if (tile == null || tile.isOccupied()) {
+            throw new GameRuleException("Tile is invalid or already occupied!");
+        }
+
+        Unit newUnit = switch (unitType) {
+            case "Peasant" -> new Peasant(currentPlayer, x, y);
+            case "Spearman" -> new Spearman(currentPlayer, x, y);
+            case "Swordsman" -> new Swordsman(currentPlayer, x, y);
+            case "Knight" -> new Knight(currentPlayer, x, y);
+            default -> throw new GameRuleException("Invalid unit type!");
+        };
+
+        currentPlayer.getResourceHandler().spendResources(newUnit.getGoldCost(), newUnit.getFoodCost());
+        gameBoard.placeEntity(newUnit, x, y);
+        checkAndEndTurn();
+    }
+
+    // Getters and Setters
     public GameBoard getGameBoard() { return gameBoard; }
     public Player getCurrentPlayer() { return turnManager.getCurrentPlayer(); }
     public GameState getCurrentState() { return currentState; }
     public int getCurrentPlayerIndex() { return turnManager.getCurrentPlayerIndex(); }
-    public void setCurrentPlayer(Player player) {
-        this.currentPlayer = player;
-    }
     public void setCurrentPlayerIndex(int index) { turnManager.setCurrentPlayerIndex(index); }
     public List<Player> getPlayers() { return players; }
+    public void setSelectedTile(int x, int y) { this.selectedX = x; this.selectedY = y; }
+    public int[] getSelectedTile() { return new int[]{selectedX, selectedY}; }
+    private void placeEntity(GameEntity entity, int x, int y) {
+        gameBoard.placeEntity(entity, x, y);
+    }
 }

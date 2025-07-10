@@ -17,27 +17,20 @@ import com.realmwar.model.units.*;
 import java.sql.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
-/**
- * Manages all database operations for saving and loading game states using SQLite.
- * This version is updated to handle polymorphic Block types for terrain.
- */
 public final class DatabaseManager {
 
     private static final String DB_URL = "jdbc:sqlite:realmwar.db";
 
     private DatabaseManager() {}
 
-    /**
-     * Initializes the database by creating the necessary tables if they don't already exist.
-     * This version includes a table to store the terrain of each tile.
-     */
     public static void initializeDatabase() {
         String createSavesTable = "CREATE TABLE IF NOT EXISTS game_saves (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "save_name TEXT NOT NULL UNIQUE," +
                 "current_player_index INTEGER NOT NULL," +
-                "winner_name TEXT," + // Can be NULL if game is not over
+                "winner_name TEXT," +
                 "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP" +
                 ");";
 
@@ -72,70 +65,76 @@ public final class DatabaseManager {
         }
     }
 
-    /**
-     * Saves the current state of the game to the database.
-     * @param gameManager The GameManager instance containing the state to save.
-     * @param saveName The unique name for this save file.
-     * @return true if the save was successful, false otherwise.
-     */
     public static boolean saveGame(GameManager gameManager, String saveName) {
-        deleteSave(saveName); // Clear any old save with the same name
+        try {
+            // 1. ذخیره وضعیت اصلی بازی
+            String saveGameSQL = "INSERT INTO game_saves(save_name, current_player_index, winner_name) VALUES(?, ?, ?)";
 
-        String insertSaveSQL = "INSERT INTO game_saves(save_name, current_player_index, winner_name) VALUES(?, ?, ?)";
-        String insertTileSQL = "INSERT INTO game_board_tiles(save_id, x_coord, y_coord, block_class_name) VALUES(?, ?, ?, ?)";
-        String insertEntitySQL = "INSERT INTO game_entities(save_id, entity_class_name, owner_name, x_coord, y_coord, health) VALUES(?, ?, ?, ?, ?, ?)";
+            // 2. ذخیره زمین بازی
+            String saveTilesSQL = "INSERT INTO game_board_tiles(save_id, x_coord, y_coord, block_class_name) VALUES(?, ?, ?, ?)";
 
-        try (Connection conn = DriverManager.getConnection(DB_URL)) {
-            conn.setAutoCommit(false); // Use transaction for atomicity
+            // 3. ذخیره موجودیت‌ها
+            String saveEntitiesSQL = "INSERT INTO game_entities(save_id, entity_class_name, owner_name, x_coord, y_coord, health) VALUES(?, ?, ?, ?, ?, ?)";
 
-            // 1. Insert into game_saves and get the new save_id
-            long saveId = insertSaveState(conn, insertSaveSQL, saveName, gameManager);
+            try (Connection conn = DriverManager.getConnection(DB_URL)) {
+                conn.setAutoCommit(false);
 
-            // 2. Insert all board tiles
-            GameBoard board = gameManager.getGameBoard();
-            try (PreparedStatement ps = conn.prepareStatement(insertTileSQL)) {
+                // ذخیره وضعیت اصلی
+                PreparedStatement ps = conn.prepareStatement(saveGameSQL, Statement.RETURN_GENERATED_KEYS);
+                ps.setString(1, saveName);
+                ps.setInt(2, gameManager.getCurrentPlayerIndex());
+                ps.setString(3, gameManager.winner != null ? gameManager.winner.getName() : null);
+                ps.executeUpdate();
+
+                ResultSet rs = ps.getGeneratedKeys();
+                int saveId = rs.next() ? rs.getInt(1) : -1;
+
+                // ذخیره زمین بازی
+                ps = conn.prepareStatement(saveTilesSQL);
+                GameBoard board = gameManager.getGameBoard();
                 for (int x = 0; x < board.width; x++) {
                     for (int y = 0; y < board.height; y++) {
-                        ps.setLong(1, saveId);
+                        ps.setInt(1, saveId);
                         ps.setInt(2, x);
                         ps.setInt(3, y);
-                        ps.setString(4, board.getTile(x,y).block.getClass().getSimpleName());
+                        ps.setString(4, board.getTile(x, y).block.getClass().getSimpleName());
                         ps.addBatch();
                     }
                 }
                 ps.executeBatch();
-            }
 
-            // 3. Insert all entities
-            try (PreparedStatement ps = conn.prepareStatement(insertEntitySQL)) {
+                // ذخیره موجودیت‌ها
+                ps = conn.prepareStatement(saveEntitiesSQL);
                 for (int x = 0; x < board.width; x++) {
                     for (int y = 0; y < board.height; y++) {
-                        GameEntity entity = board.getTile(x,y).getEntity();
+                        GameEntity entity = board.getTile(x, y).getEntity();
                         if (entity != null) {
-                            ps.setLong(1, saveId);
+                            ps.setInt(1, saveId);
                             ps.setString(2, entity.getClass().getSimpleName());
                             ps.setString(3, entity.getOwner().getName());
                             ps.setInt(4, entity.getX());
                             ps.setInt(5, entity.getY());
 
-                            // Store current health for both Units and Structures
-                            if (entity instanceof Unit) ps.setInt(6, ((Unit) entity).getHealth());
-                            else if (entity instanceof Structure) ps.setInt(6, ((Structure) entity).getDurability());
-                            else ps.setNull(6, Types.INTEGER);
+                            if (entity instanceof Unit) {
+                                ps.setInt(6, ((Unit) entity).getHealth());
+                            } else if (entity instanceof Structure) {
+                                ps.setInt(6, ((Structure) entity).getDurability());
+                            } else {
+                                ps.setNull(6, Types.INTEGER);
+                            }
 
                             ps.addBatch();
                         }
                     }
                 }
                 ps.executeBatch();
-            }
 
-            conn.commit(); // Finalize transaction
-            GameLogger.log("Game state '" + saveName + "' saved successfully.");
-            return true;
+                conn.commit();
+                GameLogger.log("Game saved successfully: " + saveName);
+                return true;
+            }
         } catch (SQLException e) {
-            GameLogger.log("Error saving game state: " + e.getMessage());
-            e.printStackTrace();
+            GameLogger.log("Error saving game: " + e.getMessage());
             return false;
         }
     }
@@ -154,12 +153,6 @@ public final class DatabaseManager {
         }
     }
 
-    /**
-     * Loads a game state from the database. This method is complex as it must
-     * fully reconstruct the entire game state from database records.
-     * @param saveName The name of the save to load.
-     * @return A new GameManager instance with the loaded state, or null if loading fails.
-     */
     public static GameManager loadGame(String saveName) {
         List<String> playerNames = Arrays.asList("Player 1", "Player 2");
         GameManager gm = new GameManager(playerNames, 16, 16);
@@ -180,7 +173,6 @@ public final class DatabaseManager {
                 }
             }
 
-
             loadAndSetTiles(conn, saveId, gm.getGameBoard());
             loadAndSetEntities(conn, saveId, gm);
 
@@ -191,8 +183,6 @@ public final class DatabaseManager {
             e.printStackTrace();
             return null;
         }
-
-
     }
 
     private static void loadAndSetTiles(Connection conn, long saveId, GameBoard board) throws SQLException {
@@ -234,8 +224,6 @@ public final class DatabaseManager {
         }
     }
 
-    // --- Factory Helper Methods for Loading ---
-
     private static Block createBlockFromString(String className) {
         switch (className) {
             case "ForestBlock": return new ForestBlock();
@@ -256,6 +244,23 @@ public final class DatabaseManager {
             case "Market": return new Market(owner, x, y);
             case "Tower": return new Tower(owner, x, y);
             default: return null;
+        }
+    }
+
+    public static String[] getSaveGames() {
+        String sql = "SELECT save_name FROM game_saves ORDER BY timestamp DESC";
+        try (Connection conn = DriverManager.getConnection(DB_URL);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            List<String> saves = new ArrayList<>();
+            while (rs.next()) {
+                saves.add(rs.getString("save_name"));
+            }
+            return saves.toArray(new String[0]);
+        } catch (SQLException e) {
+            GameLogger.log("Error fetching save games: " + e.getMessage());
+            return new String[0];
         }
     }
 

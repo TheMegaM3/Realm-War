@@ -3,7 +3,7 @@ package com.realmwar;
 import com.realmwar.data.DatabaseManager;
 import com.realmwar.engine.GameManager;
 import com.realmwar.view.GameFrame;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.util.Arrays;
 
 public class Main {
@@ -11,16 +11,14 @@ public class Main {
         DatabaseManager.initializeDatabase();
 
         SwingUtilities.invokeLater(() -> {
-
-            GameManager gameManager = new GameManager(Arrays.asList("Player 1", "Player 2"), 16, 16);
-
+            GameManager gameManager = new GameManager(
+                    Arrays.asList("Player 1", "Player 2"),
+                    10, 10
+            );
 
             GameFrame gameFrame = new GameFrame(gameManager);
-
-
-
-
             gameFrame.setVisible(true);
+            gameFrame.updateView(); // به روزرسانی اولیه UI
         });
     }
 }

@@ -2,6 +2,7 @@ package com.realmwar.model.units;
 
 import com.realmwar.model.GameEntity;
 import com.realmwar.model.Player;
+import com.realmwar.util.Constants;
 
 public abstract class Unit extends GameEntity {
     public int health;
@@ -16,8 +17,7 @@ public abstract class Unit extends GameEntity {
         this.health=h;
         this.attackPower=a;
         this.attackRange=ar;
-        this.movementRange=mr;
-    }
+        this.movementRange=mr; }
     public int getHealth() {
         return health; }
 
@@ -44,4 +44,24 @@ public abstract class Unit extends GameEntity {
 
     @Override public boolean isDestroyed() {
         return this.health<=0; }
+
+    public int getGoldCost() {
+        return switch (this.getClass().getSimpleName()) {
+            case "Peasant" -> Constants.PEASANT_GOLD_COST;
+            case "Spearman" -> Constants.SPEARMAN_GOLD_COST;
+            case "Swordsman" -> Constants.SWORDSMAN_GOLD_COST;
+            case "Knight" -> Constants.KNIGHT_GOLD_COST;
+            default -> 0;
+        };
+    }
+
+    public int getFoodCost() {
+        return switch (this.getClass().getSimpleName()) {
+            case "Peasant" -> Constants.PEASANT_FOOD_COST;
+            case "Spearman" -> Constants.SPEARMAN_FOOD_COST;
+            case "Swordsman" -> Constants.SWORDSMAN_FOOD_COST;
+            case "Knight" -> Constants.KNIGHT_FOOD_COST;
+            default -> 0;
+        };
+    }
 }

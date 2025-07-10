@@ -35,4 +35,8 @@ public abstract class Structure extends GameEntity {
     }
 
     public boolean isDestroyed() { return this.durability <= 0; }
+
+    public int getBuildCost() {
+        return 0;
+    }
 }

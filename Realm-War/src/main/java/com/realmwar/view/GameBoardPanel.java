@@ -1,185 +1,180 @@
 package com.realmwar.view;
 
 import com.realmwar.engine.GameBoard;
+import com.realmwar.engine.GameManager;
 import com.realmwar.model.GameEntity;
-import com.realmwar.model.Player;
-import com.realmwar.model.structures.Structure;
-import com.realmwar.model.units.Unit;
-
+import com.realmwar.model.structures.*;
+import com.realmwar.model.units.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.util.HashMap;
-import java.util.Map;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-/**
- * The panel that visually renders the entire game board.
- * This is a pure "View" component. It holds no game logic and only paints
- * the state of the model that the GameController provides to it.
- */
 public class GameBoardPanel extends JPanel {
-
     private GameBoard gameBoard;
     private GameEntity selectedEntity;
-    private final Map<String, BufferedImage> spriteCache = new HashMap<>();
+    private final GameManager gameManager;
+    private int selectedX = -1;
+    private int selectedY = -1;
+    private Unit attackingUnit;
 
-    public GameBoardPanel() {
-        // Pre-load all the sprites for our units and structures into memory.
-        loadSprites();
+    private static final Color PLAYER1_COLOR = new Color(30, 80, 150);
+    private static final Color PLAYER2_COLOR = new Color(180, 40, 40);
+    private static final Color SHADOW_COLOR = new Color(0, 0, 0, 100);
+
+    public GameBoardPanel(GameManager gameManager) {
+        this.gameManager = gameManager;
+        setBackground(new Color(101, 67, 33));
+        setBorder(BorderFactory.createEmptyBorder(15, 5, 5, 5));
+
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int tileWidth = getWidth() / gameBoard.width;
+                int tileHeight = getHeight() / gameBoard.height;
+                selectedX = e.getX() / tileWidth;
+                selectedY = e.getY() / tileHeight;
+                gameManager.setSelectedTile(selectedX, selectedY);
+                selectedEntity = gameBoard.getTile(selectedX, selectedY).getEntity();
+
+                if (attackingUnit != null) {
+                    try {
+                        gameManager.attackUnit(attackingUnit, selectedEntity);
+                        attackingUnit = null;
+                        updatePanel(gameManager.getGameBoard(), null);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(GameBoardPanel.this,
+                                ex.getMessage(), "Attack error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+                repaint();
+            }
+        });
     }
 
-    /**
-     * This public method is called by the GameController to pass the latest model
-     * data to this panel for rendering.
-     * @param board The current game board from the model.
-     * @param selected The currently selected entity, for highlighting.
-     */
-    public void updatePanel(GameBoard board, GameEntity selected) {
-        this.gameBoard = board;
-        this.selectedEntity = selected;
-        // The repaint() call schedules this component to be redrawn.
-        repaint();
-    }
-
-    /**
-     * The core rendering method of the panel. It is called automatically
-     * by Swing whenever the component needs to be redrawn (e.g., after repaint()).
-     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (gameBoard == null) return; // Don't draw if there's no board data yet.
+        if (gameBoard == null) return;
 
         Graphics2D g2d = (Graphics2D) g;
-        // Make the drawing smoother
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        // Calculate tile size based on current window size, making the board responsive.
         int tileWidth = getWidth() / gameBoard.width;
         int tileHeight = getHeight() / gameBoard.height;
 
-        // Loop through every tile of the board model and draw it.
         for (int x = 0; x < gameBoard.width; x++) {
             for (int y = 0; y < gameBoard.height; y++) {
                 drawTile(g2d, x, y, tileWidth, tileHeight);
             }
         }
+
+        if (selectedX >= 0 && selectedY >= 0) {
+            g2d.setColor(Color.YELLOW);
+            g2d.setStroke(new BasicStroke(3));
+            g2d.drawRect(selectedX * tileWidth, selectedY * tileHeight, tileWidth, tileHeight);
+        }
+
+        if (attackingUnit != null) {
+            g2d.setColor(Color.RED);
+            g2d.setStroke(new BasicStroke(3));
+            g2d.drawRect(attackingUnit.getX() * tileWidth,
+                    attackingUnit.getY() * tileHeight,
+                    tileWidth, tileHeight);
+        }
     }
 
-    /**
-     * A helper method to draw a single tile and everything on it.
-     * This keeps the main paintComponent method clean.
-     */
     private void drawTile(Graphics2D g2d, int x, int y, int tileWidth, int tileHeight) {
-        int tileX = x * tileWidth;
-        int tileY = y * tileHeight;
+        Color baseColor = gameBoard.getTile(x, y).block.getColor();
+        GradientPaint gp = new GradientPaint(
+                x * tileWidth, y * tileHeight, baseColor.brighter(),
+                x * tileWidth + tileWidth, y * tileHeight + tileHeight, baseColor.darker()
+        );
+        g2d.setPaint(gp);
+        g2d.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
 
-        // 1. Draw the terrain using the polymorphic Block's getColor method.
-        g2d.setColor(gameBoard.getTile(x, y).block.getColor());
-        g2d.fillRect(tileX, tileY, tileWidth, tileHeight);
+        g2d.setColor(new Color(70, 50, 30).darker());
+        g2d.drawRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
 
-        // 2. Draw the entity (if any) on the tile.
         GameEntity entity = gameBoard.getTile(x, y).getEntity();
         if (entity != null) {
-            drawEntity(g2d, entity, tileX, tileY, tileWidth, tileHeight);
-        }
-
-        // 3. Draw a highlight if this tile's entity is selected.
-        if (selectedEntity != null && selectedEntity.getX() == x && selectedEntity.getY() == y) {
-            drawSelectionHighlight(g2d, tileX, tileY, tileWidth, tileHeight);
-        }
-
-        // 4. Draw the grid lines over everything.
-        g2d.setColor(new Color(0, 0, 0, 50)); // Semi-transparent black for a softer grid
-        g2d.setStroke(new BasicStroke(1));
-        g2d.drawRect(tileX, tileY, tileWidth, tileHeight);
-    }
-
-    /**
-     * Draws the visual representation of a unit or structure.
-     */
-    private void drawEntity(Graphics2D g2d, GameEntity entity, int x, int y, int w, int h) {
-        // Get the pre-rendered sprite from our cache.
-        BufferedImage sprite = spriteCache.get(entity.getClass().getSimpleName());
-        if (sprite != null) {
-            g2d.drawImage(sprite, x, y, w, h, null);
-        }
-
-        // Draw a small colored bar to indicate the owner.
-        drawOwnerIndicator(g2d, entity.getOwner(), x, y, w);
-
-        // If the entity is a Unit or Structure, draw its health bar.
-        if (entity instanceof Unit) {
-            drawHealthBar(g2d, ((Unit) entity).getHealth(), ((Unit) entity).getMaxHealth(), x, y, w, h);
-        } else if (entity instanceof Structure) {
-            drawHealthBar(g2d, ((Structure) entity).getDurability(), ((Structure) entity).getMaxDurability(), x, y, w, h);
+            if (entity instanceof Unit) {
+                drawUnit(g2d, x, y, tileWidth, tileHeight, entity);
+            } else if (entity instanceof Structure) {
+                drawStructure(g2d, x, y, tileWidth, tileHeight, entity);
+            }
         }
     }
 
-    private void drawOwnerIndicator(Graphics2D g, Player owner, int x, int y, int w) {
-        // Player 1 gets a blue bar, Player 2 gets a red bar.
-        g.setColor(owner.getName().equals("Player 1") ? new Color(50, 100, 255) : new Color(255, 50, 50));
-        g.fillRect(x + 3, y + 3, w / 4, 6);
-    }
+    private void drawStructure(Graphics2D g2d, int x, int y, int tileWidth, int tileHeight, GameEntity entity) {
+        Color baseColor = entity.getOwner().getName().equals("Player 1")
+                ? new Color(70, 130, 180) : new Color(220, 60, 60);
 
-    private void drawHealthBar(Graphics2D g, int currentHealth, int maxHealth, int x, int y, int w, int h) {
-        double healthPercent = (double) currentHealth / maxHealth;
+        g2d.setColor(SHADOW_COLOR);
+        g2d.fillRoundRect(x * tileWidth + 5, y * tileHeight + 5, tileWidth - 10, tileHeight - 10, 15, 15);
 
-        // Health bar background
-        g.setColor(new Color(0, 0, 0, 150));
-        g.fill(new Rectangle2D.Double(x + 4, y + h - 12, w - 8, 8));
+        GradientPaint gp = new GradientPaint(
+                x * tileWidth, y * tileHeight, baseColor.brighter(),
+                x * tileWidth + tileWidth, y * tileHeight + tileHeight, baseColor.darker()
+        );
+        g2d.setPaint(gp);
+        g2d.fillRoundRect(x * tileWidth + 3, y * tileHeight + 3, tileWidth - 10, tileHeight - 10, 15, 15);
 
-        // Health bar foreground (changes color based on health)
-        g.setColor(healthPercent > 0.5 ? Color.GREEN : (healthPercent > 0.25 ? Color.ORANGE : Color.RED));
-        g.fill(new Rectangle2D.Double(x + 4, y + h - 12, (w - 8) * healthPercent, 8));
-    }
+        String symbol = "";
+        if (entity instanceof Farm) symbol = "🌾";
+        else if (entity instanceof Barrack) symbol = "🛡️";
+        else if (entity instanceof Market) symbol = "🏪";
+        else if (entity instanceof Tower) symbol = "🏰";
 
-    private void drawSelectionHighlight(Graphics2D g, int x, int y, int w, int h) {
-        g.setColor(Color.YELLOW);
-        g.setStroke(new BasicStroke(3)); // A thick stroke to make it stand out
-        g.drawRect(x + 1, y + 1, w - 3, h - 3); // Draw slightly inside the tile
-    }
-
-    /**
-     * Creates and caches all the sprites for our game entities.
-     * This uses dynamic drawing, so no image files are needed.
-     */
-    private void loadSprites() {
-        spriteCache.put("Peasant", createPlaceholderSprite("P", new Color(220, 220, 220)));
-        spriteCache.put("Spearman", createPlaceholderSprite("Sp", new Color(180, 180, 255)));
-        spriteCache.put("Swordsman", createPlaceholderSprite("Sw", new Color(255, 180, 180)));
-        spriteCache.put("Knight", createPlaceholderSprite("K", new Color(255, 215, 0)));
-        spriteCache.put("TownHall", createPlaceholderSprite("TH", new Color(218, 165, 32)));
-        spriteCache.put("Barrack", createPlaceholderSprite("B", new Color(139, 69, 19)));
-        spriteCache.put("Farm", createPlaceholderSprite("F", new Color(152, 251, 152)));
-        spriteCache.put("Market", createPlaceholderSprite("M", new Color(175, 238, 238)));
-        spriteCache.put("Tower", createPlaceholderSprite("T", new Color(160, 160, 160)));
-    }
-
-    private BufferedImage createPlaceholderSprite(String text, Color color) {
-        // Create a 64x64 pixel image in memory with transparency
-        BufferedImage img = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2d = img.createGraphics();
-
-        // Make the drawing look nice
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        // Draw the main colored circle
-        g2d.setColor(color);
-        g2d.fillOval(2, 2, 60, 60);
-
-        // Draw a black border around it
-        g2d.setColor(Color.BLACK);
-        g2d.setStroke(new BasicStroke(2));
-        g2d.drawOval(2, 2, 60, 60);
-
-        // Draw the text in the center
-        g2d.setFont(new Font("Arial", Font.BOLD, 28));
+        g2d.setColor(Color.WHITE);
+        g2d.setFont(new Font("Segoe UI Emoji", Font.BOLD, 16));
         FontMetrics fm = g2d.getFontMetrics();
-        g2d.drawString(text, (64 - fm.stringWidth(text)) / 2, (64 - fm.getHeight()) / 2 + fm.getAscent());
-
-        g2d.dispose(); // Free up graphics resources
-        return img;
+        int textX = x * tileWidth + (tileWidth - fm.stringWidth(symbol)) / 2;
+        int textY = y * tileHeight + ((tileHeight - fm.getHeight()) / 2) + fm.getAscent();
+        g2d.drawString(symbol, textX, textY);
     }
+
+    private void drawUnit(Graphics2D g2d, int x, int y, int tileWidth, int tileHeight, GameEntity entity) {
+        Color unitColor = entity.getOwner().getName().equals("Player 1")
+                ? PLAYER1_COLOR : PLAYER2_COLOR;
+
+        g2d.setColor(SHADOW_COLOR);
+        g2d.fillOval(x * tileWidth + 5, y * tileHeight + 5, tileWidth - 10, tileHeight - 10);
+
+        GradientPaint gp = new GradientPaint(
+                x * tileWidth, y * tileHeight, unitColor.brighter(),
+                x * tileWidth + tileWidth, y * tileHeight + tileHeight, unitColor.darker()
+        );
+        g2d.setPaint(gp);
+        g2d.fillOval(x * tileWidth + 3, y * tileHeight + 3, tileWidth - 10, tileHeight - 10);
+
+        String swordSymbol = "";
+        if (entity instanceof Peasant) swordSymbol = "⚔ 1";
+        else if (entity instanceof Spearman) swordSymbol = "⚔ 2";
+        else if (entity instanceof Swordsman) swordSymbol = "⚔ 3";
+        else if (entity instanceof Knight) swordSymbol = "⚔ 4";
+
+        g2d.setColor(Color.WHITE);
+        g2d.setFont(new Font("Segoe UI Emoji", Font.BOLD, 14));
+        FontMetrics fm = g2d.getFontMetrics();
+        int textX = x * tileWidth + (tileWidth - fm.stringWidth(swordSymbol)) / 2;
+        int textY = y * tileHeight + ((tileHeight - fm.getHeight()) / 2) + fm.getAscent();
+        g2d.drawString(swordSymbol, textX, textY);
+    }
+
+    public void updatePanel(GameBoard board, GameEntity selected) {
+        this.gameBoard = board;
+        this.selectedEntity = selected;
+        this.attackingUnit = null;
+        this.selectedX = -1;
+        this.selectedY = -1;
+        repaint();
+    }
+
+    public void setAttackingUnit(Unit unit) {
+        this.attackingUnit = unit;
+        repaint();
+    }
+
+
 }
