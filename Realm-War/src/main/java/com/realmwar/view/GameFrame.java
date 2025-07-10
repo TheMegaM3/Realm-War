@@ -8,7 +8,9 @@ import com.realmwar.model.units.Unit;
 import com.realmwar.util.Constants;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class GameFrame extends JFrame {
     private static final Color BUTTON_RIGHT_COLOR = new Color(65, 105, 225);
@@ -21,10 +23,8 @@ public class GameFrame extends JFrame {
     private static final int BUTTON_PANEL_WIDTH = 160;
     private static final int HORIZONTAL_PADDING = 20;
     private static final int VERTICAL_PADDING = 15;
-    private static final int TURN_DURATION_SECONDS = 30;
-    private static final int RESOURCE_TICK_MILLISECONDS = 3000; // هر 3 ثانیه
-    private static final int GOLD_PER_TICK = 5;
-    private static final int FOOD_PER_TICK = 2;
+    // private static final int GOLD_PER_TICK = 5;
+    // private static final int FOOD_PER_TICK = 2;
 
     private GameManager gameManager;
     private final GameBoardPanel gameBoardPanel;
@@ -43,30 +43,30 @@ public class GameFrame extends JFrame {
         setMinimumSize(new Dimension(900, 700));
         setLocationRelativeTo(null);
 
-        // پنل اصلی
+        // Main Panel
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(BACKGROUND_COLOR);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
 
 
-        // پنل اطلاعات
+        // Info Panel
         infoPanel = new InfoPanel();
         mainPanel.add(infoPanel, BorderLayout.NORTH);
 
-        // پنل مرکزی
+        // Center Panel
         JPanel centerPanel = new JPanel(new BorderLayout());
         centerPanel.setBackground(BACKGROUND_COLOR);
 
-        // دکمه‌های سمت چپ
+        // Left Buttons
         JPanel leftButtons = createButtonPanel(new String[]{"Build", "Train", "Attack", "Upgrade", "Merge", "End Turn"}, BUTTON_LEFT_COLOR);
         setupLeftButtons(leftButtons);
         centerPanel.add(leftButtons, BorderLayout.WEST);
 
-        // صفحه بازی
+        // Game Board
         gameBoardPanel = new GameBoardPanel(gameManager, this);
         centerPanel.add(gameBoardPanel, BorderLayout.CENTER);
 
-        // دکمه‌های سمت راست
+        // Right Buttons
         JPanel rightButtons = createButtonPanel(new String[]{"New Game", "Load Game", "Save Game", "Exit"}, BUTTON_RIGHT_COLOR);
         setupRightButtons(rightButtons);
         centerPanel.add(rightButtons, BorderLayout.EAST);
@@ -78,7 +78,6 @@ public class GameFrame extends JFrame {
         pack();
     }
 
-    // --- متدهای اختصاصی برای اتصال دکمه‌ها ---
     private void setupLeftButtons(JPanel panel) {
         for (Component comp : panel.getComponents()) {
             if (comp instanceof JButton) {
@@ -133,33 +132,45 @@ public class GameFrame extends JFrame {
         }
     }
 
-    // متدهای مربوط به هر دکمه:
     private void handleNewGame() {
-        int confirm = JOptionPane.showConfirmDialog(
+        Object[] options = {2, 3, 4};
+        Integer numPlayers = (Integer) JOptionPane.showInputDialog(
                 this,
-                "Start a new game? Current progress will be lost.",
-                "New Game",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.WARNING_MESSAGE
+                "Select number of players:",
+                "New Game Setup",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                options,
+                2);
+
+        // If the user cancels the dialog, do nothing.
+        if (numPlayers == null) {
+            return;
+        }
+
+        // Create the list of player names dynamically based on user selection
+        List<String> playerNames = new ArrayList<>();
+        for (int i = 1; i <= numPlayers; i++) {
+            playerNames.add("Player " + i);
+        }
+
+        // Start the game with the dynamic list of players
+        GameManager newGame = new GameManager(
+                playerNames,
+                Constants.DEFAULT_BOARD_WIDTH,
+                Constants.DEFAULT_BOARD_HEIGHT
         );
 
-        if (confirm == JOptionPane.YES_OPTION) {
-            GameManager newGame = new GameManager(
-                    Arrays.asList("Player 1", "Player 2"),
-                    Constants.DEFAULT_BOARD_WIDTH,
-                    Constants.DEFAULT_BOARD_HEIGHT
-            );
-            this.gameManager = newGame;
-            this.gameBoardPanel.updatePanel(newGame.getGameBoard(), null);
-            this.gameBoardPanel.setAttackingUnit(null); // Resets the attack state
-            updateView();
-            JOptionPane.showMessageDialog(this, "New game started!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            resetAndStartTurnTimer();
-        }
+        this.gameManager = newGame;
+        this.gameBoardPanel.updatePanel(newGame.getGameBoard(), null);
+        this.gameBoardPanel.setAttackingUnit(null);
+        updateView();
+        JOptionPane.showMessageDialog(this, numPlayers + "-player game started!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        resetAndStartTurnTimer();
     }
 
     private void handleLoadGame() {
-        String[] saveFiles = DatabaseManager.getSaveGames(); // فرض کنید این متد در DatabaseManager وجود دارد
+        String[] saveFiles = DatabaseManager.getSaveGames();
         if (saveFiles.length == 0) {
             JOptionPane.showMessageDialog(this, "No saved games found!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -180,7 +191,7 @@ public class GameFrame extends JFrame {
             if (loadedGame != null) {
                 this.gameManager = loadedGame;
                 this.gameBoardPanel.updatePanel(loadedGame.getGameBoard(), null);
-                this.gameBoardPanel.setAttackingUnit(null); // Resets the attack state
+                this.gameBoardPanel.setAttackingUnit(null);
                 updateView();
                 JOptionPane.showMessageDialog(this, "Game loaded successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 resetAndStartTurnTimer();
@@ -189,7 +200,6 @@ public class GameFrame extends JFrame {
     }
 
     private void handleSaveGame() {
-        // ایجاد دیالوگ برای دریافت نام ذخیره
         String saveName = (String) JOptionPane.showInputDialog(
                 this,
                 "Enter save name:",
@@ -201,22 +211,15 @@ public class GameFrame extends JFrame {
         );
 
         if (saveName != null && !saveName.trim().isEmpty()) {
-            try {
-                boolean success = DatabaseManager.saveGame(gameManager, saveName);
-                if (success) {
-                    JOptionPane.showMessageDialog(this,
-                            "Game saved successfully as: " + saveName,
-                            "Success",
-                            JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this,
-                            "Failed to save game!",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (Exception e) {
+            boolean success = DatabaseManager.saveGame(gameManager, saveName);
+            if (success) {
                 JOptionPane.showMessageDialog(this,
-                        "Error saving game: " + e.getMessage(),
+                        "Game saved successfully as: " + saveName,
+                        "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Failed to save game!",
                         "Error",
                         JOptionPane.ERROR_MESSAGE);
             }
@@ -257,7 +260,6 @@ public class GameFrame extends JFrame {
         JOptionPane.showMessageDialog(this, "Merge mode activated. Select the first unit.", "Merge", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    // --- متدهای کمکی برای عملیات دکمه‌ها ---
     private void showBuildDialog() {
         int[] selectedTile = gameManager.getSelectedTile();
         if (selectedTile[0] < 0 || selectedTile[1] < 0) {
@@ -300,7 +302,6 @@ public class GameFrame extends JFrame {
             return;
         }
 
-        // ترتیب از قوی‌ترین به ضعیف‌ترین
         String[] options = {
                 "Knight (⚔ 4) - " + Constants.KNIGHT_GOLD_COST + " Gold, " + Constants.KNIGHT_FOOD_COST + " Food",
                 "Swordsman (⚔ 3) - " + Constants.SWORDSMAN_GOLD_COST + " Gold, " + Constants.SWORDSMAN_FOOD_COST + " Food",
@@ -363,38 +364,9 @@ public class GameFrame extends JFrame {
                 JOptionPane.showMessageDialog(this, "Merge successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this, ex.getMessage(), "Merge Error", JOptionPane.ERROR_MESSAGE);
-                isMergeMode = false; // لغو حالت ادغام در صورت خطا
+                isMergeMode = false;
                 unitToMerge = null;
             }
-        }
-    }
-
-    private void resetGame() {
-        int confirm = JOptionPane.showConfirmDialog(
-                this,
-                "Start a new game?",
-                "New Game",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (confirm == JOptionPane.YES_OPTION) {
-            // ریست بازی (باید در GameManager پیاده‌سازی شود)
-            JOptionPane.showMessageDialog(this, "New game started.");
-        }
-    }
-
-    private void loadGame() {
-        String saveName = JOptionPane.showInputDialog(this, "Enter save name:");
-        if (saveName != null && !saveName.trim().isEmpty()) {
-            // منطق بارگذاری بازی (باید در DatabaseManager پیاده‌سازی شود)
-            JOptionPane.showMessageDialog(this, "Loaded: " + saveName);
-        }
-    }
-
-    private void saveGame() {
-        String saveName = JOptionPane.showInputDialog(this, "Enter save name:");
-        if (saveName != null && !saveName.trim().isEmpty()) {
-            // منطق ذخیره بازی (باید در DatabaseManager پیاده‌سازی شود)
-            JOptionPane.showMessageDialog(this, "Saved as: " + saveName);
         }
     }
 
@@ -403,8 +375,6 @@ public class GameFrame extends JFrame {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setBackground(BACKGROUND_COLOR);
         panel.setBorder(BorderFactory.createEmptyBorder(0, HORIZONTAL_PADDING, 0, HORIZONTAL_PADDING));
-
-        // اضافه کردن فضای خالی برای تراز وسط
         panel.add(Box.createVerticalGlue());
 
         for (String text : buttonTexts) {
@@ -414,12 +384,8 @@ public class GameFrame extends JFrame {
             panel.add(Box.createVerticalStrut(VERTICAL_PADDING));
         }
 
-        // حذف فاصله اضافی بعد از آخرین دکمه
         panel.remove(panel.getComponentCount() - 1);
-
-        // اضافه کردن فضای خالی برای تراز وسط
         panel.add(Box.createVerticalGlue());
-
         return panel;
     }
 
@@ -445,14 +411,11 @@ public class GameFrame extends JFrame {
                 gameManager.getCurrentPlayer().getResourceHandler().getFood()
         );
         gameBoardPanel.updatePanel(gameManager.getGameBoard(), null);
-
-
-
     }
 
     private void initializeTimers() {
-        //  تایمر نوبت که هر ثانیه اجرا می‌شود
-        turnTimeLeft = TURN_DURATION_SECONDS;
+        //  Turn timer, executes every second
+        turnTimeLeft = Constants.TURN_DURATION_SECONDS;
         turnTimer = new Timer(1000, e -> {
             turnTimeLeft--;
             infoPanel.updateTimer(turnTimeLeft);
@@ -461,23 +424,19 @@ public class GameFrame extends JFrame {
             }
         });
 
-        //  تایمر منابع که هر چند ثانیه اجرا می‌شود
-        resourceTimer = new Timer(RESOURCE_TICK_MILLISECONDS, e -> {
+        // Resource timer, executes every few seconds
+        resourceTimer = new Timer(Constants.RESOURCE_TICK_MILLISECONDS, e -> {
             if (gameManager != null && gameManager.getCurrentState() instanceof RunningState) {
+                // MODIFIED: The ONLY call here should be to the GameManager.
                 gameManager.applyPeriodicResourceChanges();
-                gameManager.getCurrentPlayer().getResourceHandler().addResources(GOLD_PER_TICK, FOOD_PER_TICK);
-                // آپدیت نمایش منابع در UI
-                infoPanel.updateInfo(
-                        gameManager.getCurrentPlayer().getName(),
-                        gameManager.getCurrentPlayer().getResourceHandler().getGold(),
-                        gameManager.getCurrentPlayer().getResourceHandler().getFood()
-                );
+                // Update the UI after the model has changed.
+                updateView();
             }
         });
     }
 
     public void resetAndStartTurnTimer() {
-        turnTimeLeft = TURN_DURATION_SECONDS;
+        turnTimeLeft = Constants.TURN_DURATION_SECONDS;
         infoPanel.updateTimer(turnTimeLeft);
         turnTimer.restart();
     }
@@ -487,7 +446,6 @@ public class GameFrame extends JFrame {
         JOptionPane.showMessageDialog(this, "Time's up! Moving to the next player.", "Turn Ended", JOptionPane.INFORMATION_MESSAGE);
         gameManager.nextTurn();
         updateView();
-        resetAndStartTurnTimer(); // آماده‌سازی تایمر برای بازیکن بعدی
+        resetAndStartTurnTimer();
     }
-
 }

@@ -28,11 +28,13 @@ public final class DatabaseManager {
     private DatabaseManager() {}
 
     public static void initializeDatabase() {
-        // <<< استفاده از SERIAL PRIMARY KEY >>>
+        // Using SERIAL PRIMARY KEY for auto-incrementing IDs
         String createSavesTable = "CREATE TABLE IF NOT EXISTS game_saves (" +
                 "id SERIAL PRIMARY KEY," +
                 "save_name TEXT NOT NULL UNIQUE," +
                 "current_player_index INTEGER NOT NULL," +
+                "board_width INTEGER NOT NULL," +
+                "board_height INTEGER NOT NULL," +
                 "winner_name TEXT," +
                 "timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ");";
@@ -57,7 +59,7 @@ public final class DatabaseManager {
                 "FOREIGN KEY (save_id) REFERENCES game_saves(id) ON DELETE CASCADE" +
                 ");";
 
-        // < استفاده از اطلاعات اتصال >
+        // Using database connection information
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
              Statement stmt = conn.createStatement()) {
             stmt.execute(createSavesTable);
@@ -66,12 +68,13 @@ public final class DatabaseManager {
             GameLogger.log("Database initialized successfully.");
         } catch (SQLException e) {
             GameLogger.log("Error initializing database: " + e.getMessage());
-            e.printStackTrace(); // چاپ خطا برای دیباگ کردن بهتر
+            e.printStackTrace(); // Print error for better debugging
         }
     }
 
     public static boolean saveGame(GameManager gameManager, String saveName) {
-        String saveGameSQL = "INSERT INTO game_saves(save_name, current_player_index, winner_name) VALUES(?, ?, ?)";
+
+        String saveGameSQL = "INSERT INTO game_saves(save_name, current_player_index, board_width, board_height, winner_name) VALUES(?, ?, ?, ?, ?)";
         String saveTilesSQL = "INSERT INTO game_board_tiles(save_id, x_coord, y_coord, block_class_name) VALUES(?, ?, ?, ?)";
         String saveEntitiesSQL = "INSERT INTO game_entities(save_id, entity_class_name, owner_name, x_coord, y_coord, health) VALUES(?, ?, ?, ?, ?, ?)";
 
@@ -81,7 +84,9 @@ public final class DatabaseManager {
             try (PreparedStatement ps = conn.prepareStatement(saveGameSQL, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setString(1, saveName);
                 ps.setInt(2, gameManager.getCurrentPlayerIndex());
-                ps.setString(3, gameManager.winner != null ? gameManager.winner.getName() : null);
+                ps.setInt(3, gameManager.getGameBoard().width);     //  Save board width
+                ps.setInt(4, gameManager.getGameBoard().height);    //  Save board height
+                ps.setString(5, gameManager.winner != null ? gameManager.winner.getName() : null); // MODIFIED: Index is now 5
                 ps.executeUpdate();
 
                 ResultSet rs = ps.getGeneratedKeys();
@@ -92,7 +97,7 @@ public final class DatabaseManager {
                     throw new SQLException("Failed to retrieve save_id.");
                 }
 
-                // ذخیره کاشی‌های بازی
+                // Save game tiles
                 try (PreparedStatement tilesPs = conn.prepareStatement(saveTilesSQL)) {
                     GameBoard board = gameManager.getGameBoard();
                     for (int x = 0; x < board.width; x++) {
@@ -107,7 +112,7 @@ public final class DatabaseManager {
                     tilesPs.executeBatch();
                 }
 
-                // ذخیره موجودیت‌های بازی
+                // Save game entities
                 try (PreparedStatement entitiesPs = conn.prepareStatement(saveEntitiesSQL)) {
                     GameBoard board = gameManager.getGameBoard();
                     for (int x = 0; x < board.width; x++) {
@@ -135,11 +140,11 @@ public final class DatabaseManager {
                 }
 
                 conn.commit();
-                GameLogger.log("Game saved successfully: " + saveName); // مطابق نیازمندی فایل لاگ
+                GameLogger.log("Game saved successfully: " + saveName);
                 return true;
 
             } catch (SQLException e) {
-                conn.rollback(); // در صورت بروز خطا، تمام تغییرات را لغو کن
+                conn.rollback(); // If an error occurs, undo all changes.
                 GameLogger.log("Error saving game, transaction rolled back: " + e.getMessage());
                 e.printStackTrace();
                 return false;
@@ -153,16 +158,23 @@ public final class DatabaseManager {
 
     public static GameManager loadGame(String saveName) {
         List<String> playerNames = Arrays.asList("Player 1", "Player 2");
-        GameManager gm = new GameManager(playerNames, 10, 10); // اندازه برد باید از جایی دیگر بیاید یا ثابت باشد
-        String selectSaveSQL = "SELECT id, current_player_index, winner_name FROM game_saves WHERE save_name = ?";
+        // MODIFIED: Select new board dimension columns
+        String selectSaveSQL = "SELECT id, current_player_index, winner_name, board_width, board_height FROM game_saves WHERE save_name = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             long saveId;
+            GameManager gm;
+
             try (PreparedStatement ps = conn.prepareStatement(selectSaveSQL)) {
                 ps.setString(1, saveName);
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     saveId = rs.getLong("id");
+                    int boardWidth = rs.getInt("board_width");      // MODIFIED: Read board width
+                    int boardHeight = rs.getInt("board_height");    // MODIFIED: Read board height
+
+                    // MODIFIED: Create GameManager with the loaded dimensions
+                    gm = new GameManager(playerNames, boardWidth, boardHeight);
                     gm.setCurrentPlayerIndex(rs.getInt("current_player_index"));
                 } else {
                     throw new SQLException("Save file not found: " + saveName);
