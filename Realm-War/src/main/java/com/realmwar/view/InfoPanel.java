@@ -7,6 +7,7 @@ public class InfoPanel extends JPanel {
     private JLabel playerLabel;
     private JLabel goldLabel;
     private JLabel foodLabel;
+    private JLabel timerLabel;
 
     public InfoPanel() {
         // تنظیمات لایه‌بندی و ظاهر
@@ -22,17 +23,20 @@ public class InfoPanel extends JPanel {
         playerLabel = new JLabel("Player: Player1");
         goldLabel = new JLabel("Gold: 500");
         foodLabel = new JLabel("Food: 200");
+        timerLabel = new JLabel("Time: 30");
 
         // تنظیم فونت
         Font boldFont = new Font("Arial", Font.BOLD, 14);
         playerLabel.setFont(boldFont);
         goldLabel.setFont(boldFont);
         foodLabel.setFont(boldFont);
+        timerLabel.setFont(boldFont);
 
         // تنظیم رنگ متن
         playerLabel.setForeground(new Color(0, 255, 255));
         goldLabel.setForeground(new Color(255, 215, 0)); // طلایی روشن
         foodLabel.setForeground(new Color(255, 174, 201)); // صورتی روشن
+        timerLabel.setForeground(Color.WHITE);
 
         // تنظیم سایه برای متن‌ها
         playerLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 1, 0));
@@ -45,6 +49,8 @@ public class InfoPanel extends JPanel {
         add(goldLabel);
         add(Box.createHorizontalStrut(10));
         add(foodLabel);
+        add(Box.createHorizontalStrut(10));
+        add(timerLabel);
     }
 
     public void updateInfo(String playerName, int gold, int food) {
@@ -67,5 +73,8 @@ public class InfoPanel extends JPanel {
         GradientPaint gp = new GradientPaint(0, 0, startColor, 0, getHeight(), endColor);
         g2d.setPaint(gp);
         g2d.fillRect(0, 0, getWidth(), getHeight());
+    }
+    public void updateTimer(int seconds) {
+        timerLabel.setText("Time: " + seconds);
     }
 }

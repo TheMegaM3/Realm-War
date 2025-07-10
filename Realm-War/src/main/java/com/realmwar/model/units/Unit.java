@@ -64,4 +64,14 @@ public abstract class Unit extends GameEntity {
             default -> 0;
         };
     }
+
+    public int getMaintenanceCost() {
+        return switch (this.getClass().getSimpleName()) {
+            case "Spearman" -> Constants.SPEARMAN_MAINTENANCE_COST;
+            case "Swordsman" -> Constants.SWORDSMAN_MAINTENANCE_COST;
+            case "Knight" -> Constants.KNIGHT_MAINTENANCE_COST;
+            default -> 0; // Peasant و دیگر موارد هزینه‌ای ندارند
+        };
+    }
+
 }

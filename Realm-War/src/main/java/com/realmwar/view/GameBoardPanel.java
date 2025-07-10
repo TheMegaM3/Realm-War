@@ -14,6 +14,7 @@ public class GameBoardPanel extends JPanel {
     private GameBoard gameBoard;
     private GameEntity selectedEntity;
     private final GameManager gameManager;
+    private final GameFrame gameFrame;
     private int selectedX = -1;
     private int selectedY = -1;
     private Unit attackingUnit;
@@ -22,8 +23,9 @@ public class GameBoardPanel extends JPanel {
     private static final Color PLAYER2_COLOR = new Color(180, 40, 40);
     private static final Color SHADOW_COLOR = new Color(0, 0, 0, 100);
 
-    public GameBoardPanel(GameManager gameManager) {
+    public GameBoardPanel(GameManager gameManager, GameFrame frame) {
         this.gameManager = gameManager;
+        this.gameFrame = frame;
         setBackground(new Color(101, 67, 33));
         setBorder(BorderFactory.createEmptyBorder(15, 5, 5, 5));
 
@@ -36,6 +38,16 @@ public class GameBoardPanel extends JPanel {
                 selectedY = e.getY() / tileHeight;
                 gameManager.setSelectedTile(selectedX, selectedY);
                 selectedEntity = gameBoard.getTile(selectedX, selectedY).getEntity();
+
+                if (gameFrame.isMergeModeActive()) {
+                    if (selectedEntity instanceof Unit && selectedEntity.getOwner() == gameManager.getCurrentPlayer()) {
+                        gameFrame.handleMergeClick((Unit) selectedEntity);
+                    } else {
+                        JOptionPane.showMessageDialog(GameBoardPanel.this, "Please select one of your units.", "Merge Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    repaint();
+                    return;
+                }
 
                 if (attackingUnit != null) {
                     try {
@@ -127,7 +139,7 @@ public class GameBoardPanel extends JPanel {
         else if (entity instanceof Tower) symbol = "🏰";
 
         g2d.setColor(Color.WHITE);
-        g2d.setFont(new Font("Segoe UI Emoji", Font.BOLD, 16));
+        g2d.setFont(new Font("Segue UI Emoji", Font.BOLD, 16));
         FontMetrics fm = g2d.getFontMetrics();
         int textX = x * tileWidth + (tileWidth - fm.stringWidth(symbol)) / 2;
         int textY = y * tileHeight + ((tileHeight - fm.getHeight()) / 2) + fm.getAscent();
@@ -155,7 +167,7 @@ public class GameBoardPanel extends JPanel {
         else if (entity instanceof Knight) swordSymbol = "⚔ 4";
 
         g2d.setColor(Color.WHITE);
-        g2d.setFont(new Font("Segoe UI Emoji", Font.BOLD, 14));
+        g2d.setFont(new Font("Segue UI Emoji", Font.BOLD, 14));
         FontMetrics fm = g2d.getFontMetrics();
         int textX = x * tileWidth + (tileWidth - fm.stringWidth(swordSymbol)) / 2;
         int textY = y * tileHeight + ((tileHeight - fm.getHeight()) / 2) + fm.getAscent();

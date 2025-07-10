@@ -19,6 +19,7 @@ public class Main {
             GameFrame gameFrame = new GameFrame(gameManager);
             gameFrame.setVisible(true);
             gameFrame.updateView(); // به روزرسانی اولیه UI
+            gameFrame.resetAndStartTurnTimer();
         });
     }
 }
