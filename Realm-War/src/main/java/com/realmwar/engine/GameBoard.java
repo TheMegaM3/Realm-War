@@ -98,6 +98,21 @@ public class GameBoard {
         return adjacent;
     }
 
+    public boolean isAdjacentToFriendlyStructure(int x, int y, Player player, Class<? extends Structure> structureType) {
+        int[] dx = {-1, 1, 0, 0}; // Check 4 cardinal directions
+        int[] dy = {0, 0, -1, 1};
+        for (int i = 0; i < 4; i++) {
+            GameTile tile = getTile(x + dx[i], y + dy[i]);
+            if (tile != null && tile.getEntity() != null &&
+                    structureType.isInstance(tile.getEntity()) &&
+                    tile.getEntity().getOwner() == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public void setTile(int x, int y, GameTile tile) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             this.tiles[x][y] = tile;

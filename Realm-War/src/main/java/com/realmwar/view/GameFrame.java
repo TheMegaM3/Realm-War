@@ -21,11 +21,20 @@ public class GameFrame extends JFrame {
     private static final int BUTTON_PANEL_WIDTH = 160;
     private static final int HORIZONTAL_PADDING = 20;
     private static final int VERTICAL_PADDING = 15;
+    private static final int TURN_DURATION_SECONDS = 30;
+    private static final int RESOURCE_TICK_MILLISECONDS = 3000; // هر 3 ثانیه
+    private static final int GOLD_PER_TICK = 5;
+    private static final int FOOD_PER_TICK = 2;
 
     private GameManager gameManager;
     private final GameBoardPanel gameBoardPanel;
     private final InfoPanel infoPanel;
+    private Timer turnTimer;
+    private Timer resourceTimer;
+    private int turnTimeLeft;
 
+    private boolean isMergeMode = false;
+    private Unit unitToMerge = null;
 
     public GameFrame(GameManager gameManager) {
         this.gameManager = gameManager;
@@ -39,6 +48,7 @@ public class GameFrame extends JFrame {
         mainPanel.setBackground(BACKGROUND_COLOR);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
 
+
         // پنل اطلاعات
         infoPanel = new InfoPanel();
         mainPanel.add(infoPanel, BorderLayout.NORTH);
@@ -48,12 +58,12 @@ public class GameFrame extends JFrame {
         centerPanel.setBackground(BACKGROUND_COLOR);
 
         // دکمه‌های سمت چپ
-        JPanel leftButtons = createButtonPanel(new String[]{"Build", "Train", "Attack", "End Turn"}, BUTTON_LEFT_COLOR);
+        JPanel leftButtons = createButtonPanel(new String[]{"Build", "Train", "Attack", "Upgrade", "Merge", "End Turn"}, BUTTON_LEFT_COLOR);
         setupLeftButtons(leftButtons);
         centerPanel.add(leftButtons, BorderLayout.WEST);
 
         // صفحه بازی
-        gameBoardPanel = new GameBoardPanel(gameManager);
+        gameBoardPanel = new GameBoardPanel(gameManager, this);
         centerPanel.add(gameBoardPanel, BorderLayout.CENTER);
 
         // دکمه‌های سمت راست
@@ -63,6 +73,8 @@ public class GameFrame extends JFrame {
 
         mainPanel.add(centerPanel, BorderLayout.CENTER);
         add(mainPanel);
+        initializeTimers();
+        resourceTimer.start();
         pack();
     }
 
@@ -81,10 +93,17 @@ public class GameFrame extends JFrame {
                     case "Attack":
                         btn.addActionListener(e -> handleAttack());
                         break;
+                    case "Upgrade":
+                        btn.addActionListener(e -> handleUpgrade());
+                        break;
+                    case "Merge":
+                        btn.addActionListener(e -> handleMerge());
+                        break;
                     case "End Turn":
                         btn.addActionListener(e -> {
                             gameManager.nextTurn();
                             updateView();
+                            resetAndStartTurnTimer();
                         });
                         break;
                 }
@@ -132,8 +151,10 @@ public class GameFrame extends JFrame {
             );
             this.gameManager = newGame;
             this.gameBoardPanel.updatePanel(newGame.getGameBoard(), null);
+            this.gameBoardPanel.setAttackingUnit(null); // Resets the attack state
             updateView();
             JOptionPane.showMessageDialog(this, "New game started!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            resetAndStartTurnTimer();
         }
     }
 
@@ -159,8 +180,10 @@ public class GameFrame extends JFrame {
             if (loadedGame != null) {
                 this.gameManager = loadedGame;
                 this.gameBoardPanel.updatePanel(loadedGame.getGameBoard(), null);
+                this.gameBoardPanel.setAttackingUnit(null); // Resets the attack state
                 updateView();
                 JOptionPane.showMessageDialog(this, "Game loaded successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                resetAndStartTurnTimer();
             }
         }
     }
@@ -212,6 +235,26 @@ public class GameFrame extends JFrame {
         if (confirm == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
+    }
+    private void handleUpgrade() {
+        int[] selectedTile = gameManager.getSelectedTile();
+        if (selectedTile[0] < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a structure to upgrade.", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        try {
+            gameManager.upgradeStructure(selectedTile[0], selectedTile[1]);
+            updateView();
+            JOptionPane.showMessageDialog(this, "Structure upgraded successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Upgrade Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void handleMerge() {
+        isMergeMode = true;
+        unitToMerge = null;
+        JOptionPane.showMessageDialog(this, "Merge mode activated. Select the first unit.", "Merge", JOptionPane.INFORMATION_MESSAGE);
     }
 
     // --- متدهای کمکی برای عملیات دکمه‌ها ---
@@ -303,6 +346,29 @@ public class GameFrame extends JFrame {
         }
     }
 
+    public boolean isMergeModeActive() {
+        return isMergeMode;
+    }
+
+    public void handleMergeClick(Unit clickedUnit) {
+        if (unitToMerge == null) {
+            unitToMerge = clickedUnit;
+            JOptionPane.showMessageDialog(this, "First unit selected. Now select an adjacent, identical unit to merge with.", "Merge", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            try {
+                gameManager.mergeUnits(unitToMerge, clickedUnit);
+                isMergeMode = false;
+                unitToMerge = null;
+                updateView();
+                JOptionPane.showMessageDialog(this, "Merge successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, ex.getMessage(), "Merge Error", JOptionPane.ERROR_MESSAGE);
+                isMergeMode = false; // لغو حالت ادغام در صورت خطا
+                unitToMerge = null;
+            }
+        }
+    }
+
     private void resetGame() {
         int confirm = JOptionPane.showConfirmDialog(
                 this,
@@ -380,5 +446,48 @@ public class GameFrame extends JFrame {
         );
         gameBoardPanel.updatePanel(gameManager.getGameBoard(), null);
 
+
+
     }
+
+    private void initializeTimers() {
+        //  تایمر نوبت که هر ثانیه اجرا می‌شود
+        turnTimeLeft = TURN_DURATION_SECONDS;
+        turnTimer = new Timer(1000, e -> {
+            turnTimeLeft--;
+            infoPanel.updateTimer(turnTimeLeft);
+            if (turnTimeLeft <= 0) {
+                forceEndTurn();
+            }
+        });
+
+        //  تایمر منابع که هر چند ثانیه اجرا می‌شود
+        resourceTimer = new Timer(RESOURCE_TICK_MILLISECONDS, e -> {
+            if (gameManager != null && gameManager.getCurrentState() instanceof RunningState) {
+                gameManager.applyPeriodicResourceChanges();
+                gameManager.getCurrentPlayer().getResourceHandler().addResources(GOLD_PER_TICK, FOOD_PER_TICK);
+                // آپدیت نمایش منابع در UI
+                infoPanel.updateInfo(
+                        gameManager.getCurrentPlayer().getName(),
+                        gameManager.getCurrentPlayer().getResourceHandler().getGold(),
+                        gameManager.getCurrentPlayer().getResourceHandler().getFood()
+                );
+            }
+        });
+    }
+
+    public void resetAndStartTurnTimer() {
+        turnTimeLeft = TURN_DURATION_SECONDS;
+        infoPanel.updateTimer(turnTimeLeft);
+        turnTimer.restart();
+    }
+
+    private void forceEndTurn() {
+        turnTimer.stop();
+        JOptionPane.showMessageDialog(this, "Time's up! Moving to the next player.", "Turn Ended", JOptionPane.INFORMATION_MESSAGE);
+        gameManager.nextTurn();
+        updateView();
+        resetAndStartTurnTimer(); // آماده‌سازی تایمر برای بازیکن بعدی
+    }
+
 }
