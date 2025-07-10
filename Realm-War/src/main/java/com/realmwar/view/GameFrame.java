@@ -1,5 +1,6 @@
 package com.realmwar.view;
 
+import com.realmwar.Main;
 import com.realmwar.data.DatabaseManager;
 import com.realmwar.engine.GameManager;
 import com.realmwar.engine.gamestate.RunningState;
@@ -13,10 +14,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GameFrame extends JFrame {
-    private static final Color BUTTON_RIGHT_COLOR = new Color(65, 105, 225);
-    private static final Color BUTTON_LEFT_COLOR = new Color(147, 112, 219);
-    private static final Color BUTTON_TEXT_COLOR = Color.WHITE;
-    private static final Color BACKGROUND_COLOR = new Color(101, 67, 33);
+    private static final Color BUTTON_RIGHT_COLOR = new Color(255, 183, 164);
+    private static final Color BUTTON_LEFT_COLOR = new Color(125, 188, 182);
+    private static final Color BUTTON_TEXT_COLOR = new Color(54, 54, 54);
+    private static final Color BACKGROUND_COLOR = new Color(250, 240, 230);
     private static final int BUTTON_WIDTH = 120;
     private static final int BUTTON_HEIGHT = 40;
     private static final int BOARD_SIZE = 600;
@@ -50,7 +51,7 @@ public class GameFrame extends JFrame {
 
 
         // Info Panel
-        infoPanel = new InfoPanel();
+        infoPanel = new InfoPanel(gameManager);
         mainPanel.add(infoPanel, BorderLayout.NORTH);
 
         // Center Panel
@@ -133,40 +134,8 @@ public class GameFrame extends JFrame {
     }
 
     private void handleNewGame() {
-        Object[] options = {2, 3, 4};
-        Integer numPlayers = (Integer) JOptionPane.showInputDialog(
-                this,
-                "Select number of players:",
-                "New Game Setup",
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                options,
-                2);
-
-        // If the user cancels the dialog, do nothing.
-        if (numPlayers == null) {
-            return;
-        }
-
-        // Create the list of player names dynamically based on user selection
-        List<String> playerNames = new ArrayList<>();
-        for (int i = 1; i <= numPlayers; i++) {
-            playerNames.add("Player " + i);
-        }
-
-        // Start the game with the dynamic list of players
-        GameManager newGame = new GameManager(
-                playerNames,
-                Constants.DEFAULT_BOARD_WIDTH,
-                Constants.DEFAULT_BOARD_HEIGHT
-        );
-
-        this.gameManager = newGame;
-        this.gameBoardPanel.updatePanel(newGame.getGameBoard(), null);
-        this.gameBoardPanel.setAttackingUnit(null);
-        updateView();
-        JOptionPane.showMessageDialog(this, numPlayers + "-player game started!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        resetAndStartTurnTimer();
+        this.dispose();
+        Main.main(null);
     }
 
     private void handleLoadGame() {
