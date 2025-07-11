@@ -7,44 +7,54 @@ import com.realmwar.engine.gamestate.RunningState;
 import com.realmwar.model.GameEntity;
 import com.realmwar.model.units.Unit;
 import com.realmwar.util.Constants;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.IOException;
+import java.util.Objects;
 
+/**
+ * The main window (JFrame) of the application.
+ * It holds all the UI panels (InfoPanel, GameBoardPanel, button panels)
+ * and manages the game timers.
+ */
 public class GameFrame extends JFrame {
+    // --- UI Styling Constants ---
     private static final Color BUTTON_RIGHT_COLOR = new Color(255, 183, 164);
     private static final Color BUTTON_LEFT_COLOR = new Color(125, 188, 182);
     private static final Color BUTTON_TEXT_COLOR = new Color(54, 54, 54);
     private static final Color BACKGROUND_COLOR = new Color(250, 240, 230);
     private static final int BUTTON_WIDTH = 120;
     private static final int BUTTON_HEIGHT = 40;
-    private static final int BOARD_SIZE = 600;
-    private static final int BUTTON_PANEL_WIDTH = 160;
     private static final int HORIZONTAL_PADDING = 20;
     private static final int VERTICAL_PADDING = 15;
-    // private static final int GOLD_PER_TICK = 5;
-    // private static final int FOOD_PER_TICK = 2;
 
+    // --- Game State References ---
     private GameManager gameManager;
     private final GameBoardPanel gameBoardPanel;
     private final InfoPanel infoPanel;
+
+    // --- Timers and Turn Management ---
     private Timer turnTimer;
     private Timer resourceTimer;
     private int turnTimeLeft;
 
+    // --- UI State Flags ---
     private boolean isMergeMode = false;
     private Unit unitToMerge = null;
 
     public GameFrame(GameManager gameManager) {
         this.gameManager = gameManager;
+
+        // --- Frame Setup ---
         setTitle("Realm War");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(900, 700));
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null); // Center the window on screen.
+        loadAndSetIcon(); // Set the application icon.
 
-        // Main Panel
+        // --- Panel Assembly ---
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(BACKGROUND_COLOR);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
@@ -76,133 +86,134 @@ public class GameFrame extends JFrame {
         add(mainPanel);
         initializeTimers();
         resourceTimer.start();
-        pack();
+        pack(); // Adjust window size to fit all components.
     }
 
+    /**
+     * Loads the application icon from the assets folder and sets it for the JFrame.
+     */
+    private void loadAndSetIcon() {
+        try {
+
+            Image icon = ImageIO.read(Objects.requireNonNull(getClass().getResource("/assets/game_icon.png")));
+            setIconImage(icon);
+        } catch (IOException | NullPointerException e) {
+            System.err.println("Could not load game icon. Make sure game_icon.png is in src/assets.");
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Attaches action listeners to the left-side (game action) buttons.
+     */
     private void setupLeftButtons(JPanel panel) {
         for (Component comp : panel.getComponents()) {
-            if (comp instanceof JButton) {
-                JButton btn = (JButton) comp;
+            if (comp instanceof JButton btn) {
                 switch (btn.getText()) {
-                    case "Build":
-                        btn.addActionListener(e -> showBuildDialog());
-                        break;
-                    case "Train":
-                        btn.addActionListener(e -> showTrainDialog());
-                        break;
-                    case "Attack":
-                        btn.addActionListener(e -> handleAttack());
-                        break;
-                    case "Upgrade":
-                        btn.addActionListener(e -> handleUpgrade());
-                        break;
-                    case "Merge":
-                        btn.addActionListener(e -> handleMerge());
-                        break;
-                    case "End Turn":
-                        btn.addActionListener(e -> {
-                            gameManager.nextTurn();
-                            updateView();
-                            resetAndStartTurnTimer();
-                        });
-                        break;
+                    case "Build" -> btn.addActionListener(e -> showBuildDialog());
+                    case "Train" -> btn.addActionListener(e -> showTrainDialog());
+                    case "Attack" -> btn.addActionListener(e -> handleAttack());
+                    case "Upgrade" -> btn.addActionListener(e -> handleUpgrade());
+                    case "Merge" -> btn.addActionListener(e -> handleMerge());
+                    case "End Turn" -> btn.addActionListener(e -> {
+                        gameManager.nextTurn();
+                        updateView();
+                        resetAndStartTurnTimer();
+                    });
                 }
             }
         }
     }
 
+    /**
+     * Attaches action listeners to the right-side (system) buttons.
+     */
     private void setupRightButtons(JPanel panel) {
         for (Component comp : panel.getComponents()) {
-            if (comp instanceof JButton) {
-                JButton btn = (JButton) comp;
+            if (comp instanceof JButton btn) {
                 switch (btn.getText()) {
-                    case "New Game":
-                        btn.addActionListener(e -> handleNewGame());
-                        break;
-                    case "Load Game":
-                        btn.addActionListener(e -> handleLoadGame());
-                        break;
-                    case "Save Game":
-                        btn.addActionListener(e -> handleSaveGame());
-                        break;
-                    case "Exit":
-                        btn.addActionListener(e -> handleExit());
-                        break;
+                    case "New Game" -> btn.addActionListener(e -> handleNewGame());
+                    case "Load Game" -> btn.addActionListener(e -> handleLoadGame());
+                    case "Save Game" -> btn.addActionListener(e -> handleSaveGame());
+                    case "Exit" -> btn.addActionListener(e -> handleExit());
                 }
             }
         }
     }
 
+    // --- Button Handler Methods ---
+
+    /**
+     * Handles the "New Game" action by disposing the current window and restarting the application.
+     * This is the most robust way to ensure a clean state.
+     */
     private void handleNewGame() {
         this.dispose();
         Main.main(null);
     }
 
+    /**
+     * Handles the "Load Game" action by closing the current window and creating a new one
+     * with the loaded game state. This prevents stale references and bugs.
+     */
     private void handleLoadGame() {
+        // First, dispose the current frame so it doesn't interfere.
+        this.dispose();
+
         String[] saveFiles = DatabaseManager.getSaveGames();
         if (saveFiles.length == 0) {
-            JOptionPane.showMessageDialog(this, "No saved games found!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No saved games found! Starting a new game.", "Error", JOptionPane.ERROR_MESSAGE);
+            Main.main(null);
             return;
         }
 
         String selectedSave = (String) JOptionPane.showInputDialog(
-                this,
-                "Select a game to load:",
-                "Load Game",
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                saveFiles,
-                saveFiles[0]
-        );
+                null, "Select a game to load:", "Load Game",
+                JOptionPane.PLAIN_MESSAGE, null, saveFiles, saveFiles[0]);
 
         if (selectedSave != null) {
             GameManager loadedGame = DatabaseManager.loadGame(selectedSave);
             if (loadedGame != null) {
-                this.gameManager = loadedGame;
-                this.gameBoardPanel.updatePanel(loadedGame.getGameBoard(), null);
-                this.gameBoardPanel.setAttackingUnit(null);
-                updateView();
-                JOptionPane.showMessageDialog(this, "Game loaded successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                resetAndStartTurnTimer();
+                // Create a completely new GameFrame with the loaded game state
+                GameFrame newFrame = new GameFrame(loadedGame);
+                newFrame.setVisible(true);
+                newFrame.updateView();
+                newFrame.resetAndStartTurnTimer();
+            } else {
+                JOptionPane.showMessageDialog(null, "Failed to load game. Starting a new game.", "Load Error", JOptionPane.ERROR_MESSAGE);
+                Main.main(null);
             }
+        } else {
+            // If user cancels the load dialog, restart the main application flow
+            Main.main(null);
         }
     }
 
+    /**
+     * Handles the "Save Game" action.
+     */
     private void handleSaveGame() {
         String saveName = (String) JOptionPane.showInputDialog(
-                this,
-                "Enter save name:",
-                "Save Game",
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                null,
-                "save_" + System.currentTimeMillis()
-        );
+                this, "Enter save name:", "Save Game",
+                JOptionPane.PLAIN_MESSAGE, null, null, "save_" + System.currentTimeMillis());
 
         if (saveName != null && !saveName.trim().isEmpty()) {
             boolean success = DatabaseManager.saveGame(gameManager, saveName);
             if (success) {
-                JOptionPane.showMessageDialog(this,
-                        "Game saved successfully as: " + saveName,
-                        "Success",
-                        JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Game saved successfully as: " + saveName, "Success", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this,
-                        "Failed to save game!",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Failed to save game!", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
 
+    /**
+     * Handles the "Exit" action.
+     */
     private void handleExit() {
         int confirm = JOptionPane.showConfirmDialog(
-                this,
-                "Are you sure you want to exit?",
-                "Exit Game",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE
-        );
+                this, "Are you sure you want to exit?", "Exit Game",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
         if (confirm == JOptionPane.YES_OPTION) {
             System.exit(0);
@@ -333,6 +344,7 @@ public class GameFrame extends JFrame {
                 JOptionPane.showMessageDialog(this, "Merge successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this, ex.getMessage(), "Merge Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
                 isMergeMode = false;
                 unitToMerge = null;
             }
@@ -373,18 +385,24 @@ public class GameFrame extends JFrame {
         return btn;
     }
 
+    /**
+     * A central method to refresh the entire UI based on the game manager's state.
+     */
     public void updateView() {
+        if (gameManager == null) return;
         infoPanel.updateInfo(
                 gameManager.getCurrentPlayer().getName(),
                 gameManager.getCurrentPlayer().getResourceHandler().getGold(),
                 gameManager.getCurrentPlayer().getResourceHandler().getFood()
         );
-        gameBoardPanel.updatePanel(gameManager.getGameBoard(), null);
+        gameBoardPanel.updatePanel(gameManager.getGameBoard(), null); // Pass a fresh board reference
     }
 
+    /**
+     * Initializes the game timers for turn duration and periodic resource generation.
+     */
     private void initializeTimers() {
-        //  Turn timer, executes every second
-        turnTimeLeft = Constants.TURN_DURATION_SECONDS;
+        // This timer counts down the seconds for the current player's turn.
         turnTimer = new Timer(1000, e -> {
             turnTimeLeft--;
             infoPanel.updateTimer(turnTimeLeft);
@@ -393,23 +411,30 @@ public class GameFrame extends JFrame {
             }
         });
 
-        // Resource timer, executes every few seconds
+        // This timer periodically calls the resource generation logic in GameManager.
         resourceTimer = new Timer(Constants.RESOURCE_TICK_MILLISECONDS, e -> {
             if (gameManager != null && gameManager.getCurrentState() instanceof RunningState) {
-                // MODIFIED: The ONLY call here should be to the GameManager.
+                //  The ONLY call here should be to the GameManager.
                 gameManager.applyPeriodicResourceChanges();
-                // Update the UI after the model has changed.
-                updateView();
+                updateView(); // Update the UI to show new resource totals.
             }
         });
     }
 
+    /**
+     * Resets and restarts the turn timer. Called at the beginning of each new turn.
+     */
     public void resetAndStartTurnTimer() {
         turnTimeLeft = Constants.TURN_DURATION_SECONDS;
         infoPanel.updateTimer(turnTimeLeft);
-        turnTimer.restart();
+        if(turnTimer != null) {
+            turnTimer.restart();
+        }
     }
 
+    /**
+     * Called by the timer when a player's time runs out.
+     */
     private void forceEndTurn() {
         turnTimer.stop();
         JOptionPane.showMessageDialog(this, "Time's up! Moving to the next player.", "Turn Ended", JOptionPane.INFORMATION_MESSAGE);

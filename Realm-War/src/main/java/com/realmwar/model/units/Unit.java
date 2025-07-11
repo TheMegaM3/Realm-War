@@ -4,74 +4,60 @@ import com.realmwar.model.GameEntity;
 import com.realmwar.model.Player;
 import com.realmwar.util.Constants;
 
+/**
+ * Represents the abstract base class for all movable units in the game.
+ * All units have health, attack stats, costs, and can perform actions.
+ */
 public abstract class Unit extends GameEntity {
+
+    // Public for easy access from the DatabaseManager, though getters/setters are often preferred.
     public int health;
-    public final int maxHealth;
-    public final int attackPower;
-    public final int attackRange;
-    public final int movementRange;
-    private boolean hasActedThisTurn=false;
-    public Unit(Player o, int x, int y, int h, int a, int ar, int mr) {
-        super(o,x,y);
-        this.maxHealth=h;
-        this.health=h;
-        this.attackPower=a;
-        this.attackRange=ar;
-        this.movementRange=mr; }
-    public int getHealth() {
-        return health; }
+    protected final int maxHealth;
+    protected final int attackPower;
+    protected final int attackRange;
+    protected final int movementRange;
+    //  Costs are final fields for better design and efficiency.
+    protected final int goldCost;
+    protected final int foodCost;
+    protected final int maintenanceCost;
 
-    public int getMaxHealth() {
-        return maxHealth; }
+    private boolean hasActedThisTurn = false;
 
-    public int getAttackPower() {
-        return attackPower; }
-
-    public int getAttackRange() {
-        return attackRange; }
-
-    public int getMovementRange() {
-        return movementRange; }
-
-    public boolean hasActedThisTurn() {
-        return hasActedThisTurn; }
-
-    public void setHasActedThisTurn(boolean value) {
-        this.hasActedThisTurn=value; }
-
-    @Override public void takeDamage(int amount) {
-        this.health-=amount; if(this.health<0) this.health=0; }
-
-    @Override public boolean isDestroyed() {
-        return this.health<=0; }
-
-    public int getGoldCost() {
-        return switch (this.getClass().getSimpleName()) {
-            case "Peasant" -> Constants.PEASANT_GOLD_COST;
-            case "Spearman" -> Constants.SPEARMAN_GOLD_COST;
-            case "Swordsman" -> Constants.SWORDSMAN_GOLD_COST;
-            case "Knight" -> Constants.KNIGHT_GOLD_COST;
-            default -> 0;
-        };
+    public Unit(Player owner, int x, int y, int maxHealth, int attackPower, int attackRange, int movementRange, int goldCost, int foodCost, int maintenanceCost) {
+        super(owner, x, y);
+        this.maxHealth = maxHealth;
+        this.health = maxHealth; // Units start with full health.
+        this.attackPower = attackPower;
+        this.attackRange = attackRange;
+        this.movementRange = movementRange;
+        this.goldCost = goldCost;
+        this.foodCost = foodCost;
+        this.maintenanceCost = maintenanceCost;
     }
 
-    public int getFoodCost() {
-        return switch (this.getClass().getSimpleName()) {
-            case "Peasant" -> Constants.PEASANT_FOOD_COST;
-            case "Spearman" -> Constants.SPEARMAN_FOOD_COST;
-            case "Swordsman" -> Constants.SWORDSMAN_FOOD_COST;
-            case "Knight" -> Constants.KNIGHT_FOOD_COST;
-            default -> 0;
-        };
+    // --- Getters and Setters ---
+
+    public int getHealth() { return health; }
+    public int getMaxHealth() { return maxHealth; }
+    public int getAttackPower() { return attackPower; }
+    public int getAttackRange() { return attackRange; }
+    public int getMovementRange() { return movementRange; }
+    public int getGoldCost() { return goldCost; }
+    public int getFoodCost() { return foodCost; }
+    public int getMaintenanceCost() { return maintenanceCost; }
+
+    public boolean hasActedThisTurn() { return hasActedThisTurn; }
+    public void setHasActedThisTurn(boolean value) { this.hasActedThisTurn = value; }
+
+    @Override
+    public void takeDamage(int amount) {
+        this.health -= amount;
+        if (this.health < 0) this.health = 0;
     }
 
-    public int getMaintenanceCost() {
-        return switch (this.getClass().getSimpleName()) {
-            case "Spearman" -> Constants.SPEARMAN_MAINTENANCE_COST;
-            case "Swordsman" -> Constants.SWORDSMAN_MAINTENANCE_COST;
-            case "Knight" -> Constants.KNIGHT_MAINTENANCE_COST;
-            default -> 0; // Peasant و دیگر موارد هزینه‌ای ندارند
-        };
+    @Override
+    public boolean isDestroyed() {
+        return this.health <= 0;
     }
 
 }
