@@ -1,6 +1,8 @@
 package com.realmwar.engine;
 
 import com.realmwar.data.GameLogger;
+import com.realmwar.engine.blocks.EmptyBlock;
+import com.realmwar.engine.blocks.ForestBlock;
 import com.realmwar.engine.gamestate.GameOverState;
 import com.realmwar.engine.gamestate.GameState;
 import com.realmwar.engine.gamestate.RunningState;
@@ -10,11 +12,9 @@ import com.realmwar.model.units.*;
 import com.realmwar.util.Constants;
 import com.realmwar.util.CustomExceptions.GameRuleException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static com.realmwar.util.Constants.RESOURCE_TICK_MILLISECONDS;
-import static com.realmwar.util.Constants.TURN_DURATION_SECONDS;
 
 public class GameManager {
     private final GameBoard gameBoard;
@@ -36,14 +36,30 @@ public class GameManager {
     }
 
     private void setupInitialState() {
+        if (players.isEmpty()) return;
+
+        // Player 1 starts at top-left
         placeEntity(new TownHall(players.get(0), 1, 1), 1, 1);
+
+        // Player 2 starts at bottom-right
         if (players.size() > 1) {
             placeEntity(new TownHall(players.get(1), gameBoard.width - 2, gameBoard.height - 2),
                     gameBoard.width - 2, gameBoard.height - 2);
         }
+
+        // Player 3 starts at top-right
+        if (players.size() > 2) {
+            placeEntity(new TownHall(players.get(2), gameBoard.width - 2, 1),
+                    gameBoard.width - 2, 1);
+        }
+
+        // Player 4 starts at bottom-left
+        if (players.size() > 3) {
+            placeEntity(new TownHall(players.get(3), 1, gameBoard.height - 2),
+                    1, gameBoard.height - 2);
+        }
     }
 
-    // Public API methods
     public void moveUnit(Unit unit, int toX, int toY) throws GameRuleException {
         currentState.moveUnit(unit, toX, toY);
     }
@@ -56,34 +72,17 @@ public class GameManager {
         currentState.nextTurn();
     }
 
-    // Internal logic methods
     public void advanceTurn() {
+        Player previousPlayer = getCurrentPlayer();
+        // defensive structures attack at the end of the turn.
+        executeTowerAttacks(previousPlayer);
+
         turnManager.nextTurn();
         Player currentPlayer = getCurrentPlayer();
 
-        // بازنشانی وضعیت واحدها از طریق GameBoard
+        // Reset unit action flags for the new player.
         gameBoard.getUnitsForPlayer(currentPlayer).forEach(u -> u.setHasActedThisTurn(false));
-
         GameLogger.log("Turn ended. It is now " + currentPlayer.getName() + "'s turn.");
-    }
-
-    private void calculateResources(Player player) {
-        int goldIncome = 0;
-        int foodIncome = 0;
-        int maintenanceCost = 0;
-
-        for (Structure s : gameBoard.getStructuresForPlayer(player)) {
-            if (s instanceof Market) goldIncome += Constants.MARKET_GOLD_PRODUCTION;
-            if (s instanceof Farm) foodIncome += Constants.FARM_FOOD_PRODUCTION;
-            maintenanceCost += s.getMaintenanceCost();
-        }
-
-        player.getResourceHandler().addResources(goldIncome, foodIncome);
-        try {
-            player.getResourceHandler().spendResources(maintenanceCost, 0);
-        } catch (GameRuleException e) {
-            GameLogger.log(player.getName() + " could not pay maintenance costs!");
-        }
     }
 
     public void executeMove(Unit unit, int toX, int toY) throws GameRuleException {
@@ -95,15 +94,14 @@ public class GameManager {
         if (targetTile == null || targetTile.isOccupied())
             throw new GameRuleException("Cannot move to an occupied or invalid tile.");
 
-        placeEntity(null, unit.getX(), unit.getY()); //doobdoob
-        placeEntity(unit, toX, toY);
+        placeEntity(null, unit.getX(), unit.getY()); // Clear the old tile
+        placeEntity(unit, toX, toY); // Place the unit on the new tile
         if (targetTile.getOwner() == null) {
             targetTile.setOwner(unit.getOwner());
             GameLogger.log(unit.getOwner().getName() + " captured tile at (" + toX + "," + toY + ")");
         }
         unit.setHasActedThisTurn(true);
         GameLogger.log(unit.getClass().getSimpleName() + " moved to (" + toX + "," + toY + ").");
-
     }
 
     public void executeAttack(Unit attacker, GameEntity target) throws GameRuleException {
@@ -113,36 +111,54 @@ public class GameManager {
         if (target.getOwner() == attacker.getOwner()) throw new GameRuleException("Cannot attack a friendly entity.");
 
         float attackMultiplier = 1.0f;
-        if (gameBoard.getTile(attacker.getX(), attacker.getY()).block instanceof com.realmwar.engine.blocks.ForestBlock) {
-            attackMultiplier += 0.25f; // 25% قدرت بیشتر برای حمله از جنگل
+        if (gameBoard.getTile(attacker.getX(), attacker.getY()).block instanceof ForestBlock) {
+            attackMultiplier += 0.25f; // 25% bonus for attacking from a forest
         }
         int finalDamage = (int)(attacker.getAttackPower() * attackMultiplier);
 
         float defenseMultiplier = 1.0f;
-        if (gameBoard.getTile(target.getX(), target.getY()).block instanceof com.realmwar.engine.blocks.ForestBlock) {
-            defenseMultiplier -= 0.25f; // 25% آسیب کمتر هنگام دفاع در جنگل
+        if (gameBoard.getTile(target.getX(), target.getY()).block instanceof ForestBlock) {
+            defenseMultiplier -= 0.25f; // 25% less damage when defending in a forest
         }
         int finalDamageToTake = Math.max(0, (int)(finalDamage * defenseMultiplier));
 
-        // Apply damage
         target.takeDamage(finalDamageToTake);
-        GameLogger.log(attacker.getClass().getSimpleName() + " attacked " + target.getClass().getSimpleName() + " for " + finalDamageToTake + " damage.");
+        GameLogger.log(attacker.getClass().getSimpleName() + " attacked " + target.getClass().getSimpleName() + " at ("+target.getX()+","+target.getY()+") for " + finalDamageToTake + " damage.");
 
         if (target.isDestroyed()) {
             placeEntity(null, target.getX(), target.getY());
-            GameLogger.log(target.getClass().getSimpleName() + " was destroyed!");
+            GameLogger.log(target.getClass().getSimpleName() + " at ("+target.getX()+","+target.getY()+") was destroyed!");
             checkWinCondition();
         }
         attacker.setHasActedThisTurn(true);
     }
 
-    private void checkAndEndTurn() {
-        boolean allUnitsActed = gameBoard.getUnitsForPlayer(getCurrentPlayer())
-                .stream()
-                .allMatch(Unit::hasActedThisTurn);
-
-        if (allUnitsActed) {
-            nextTurn();
+    // method for automatic tower attacks.
+    private void executeTowerAttacks(Player player) {
+        List<Structure> towers = gameBoard.getStructuresForPlayer(player);
+        for (Structure s : towers) {
+            if (s instanceof Tower) {
+                Tower tower = (Tower) s;
+                List<Unit> adjacentUnits = gameBoard.getAdjacentUnits(tower.getX(), tower.getY());
+                for (Unit enemyUnit : adjacentUnits) {
+                    // Attack the first enemy unit in range
+                    if (enemyUnit.getOwner() != player) {
+                        int distance = Math.abs(tower.getX() - enemyUnit.getX()) + Math.abs(tower.getY() - enemyUnit.getY());
+                        if (distance <= tower.getAttackRange()) {
+                            enemyUnit.takeDamage(tower.getAttackPower());
+                            GameLogger.log("Tower at (" + tower.getX() + "," + tower.getY() + ") attacked " +
+                                    enemyUnit.getClass().getSimpleName() + " for " + tower.getAttackPower() + " damage.");
+                            if (enemyUnit.isDestroyed()) {
+                                placeEntity(null, enemyUnit.getX(), enemyUnit.getY());
+                                GameLogger.log(enemyUnit.getClass().getSimpleName() + " was destroyed by a tower!");
+                                checkWinCondition();
+                            }
+                            // Tower attacks one unit per turn for simplicity.
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -153,19 +169,22 @@ public class GameManager {
             throw new GameRuleException("This unit has already acted this turn.");
     }
 
+    //  Robust win condition for more than 2 players.
     private void checkWinCondition() {
+        List<Player> playersWithTownHalls = new ArrayList<>();
         for (Player p : players) {
             boolean hasTownHall = gameBoard.getStructuresForPlayer(p).stream()
                     .anyMatch(s -> s instanceof TownHall);
-            if (!hasTownHall) {
-                this.winner = players.stream()
-                        .filter(player -> player != p)
-                        .findFirst()
-                        .orElse(null);
-                this.currentState = new GameOverState(this, this.winner);
-                GameLogger.log("GAME OVER! Winner is " + winner.getName());
-                return;
+            if (hasTownHall) {
+                playersWithTownHalls.add(p);
             }
+        }
+
+        if (playersWithTownHalls.size() <= 1 && players.size() > 1) {
+            this.winner = playersWithTownHalls.isEmpty() ? null : playersWithTownHalls.get(0);
+            this.currentState = new GameOverState(this, this.winner);
+            String winnerName = this.winner != null ? this.winner.getName() : "No one";
+            GameLogger.log("GAME OVER! Winner is " + winnerName);
         }
     }
 
@@ -177,7 +196,6 @@ public class GameManager {
             throw new GameRuleException("Cannot build on this tile!");
         }
 
-        // منطق هزینه ساخت پلکانی
         long existingCount = gameBoard.getStructuresForPlayer(currentPlayer).stream()
                 .filter(s -> s.getClass().getSimpleName().equals(structureType))
                 .count();
@@ -201,6 +219,7 @@ public class GameManager {
 
         currentPlayer.getResourceHandler().spendResources(buildCost, 0);
         gameBoard.placeEntity(structure, x, y);
+        GameLogger.log(currentPlayer.getName() + " built a " + structureType + " at (" + x + "," + y + ") for " + buildCost + " gold.");
     }
 
     public void upgradeStructure(int x, int y) throws GameRuleException {
@@ -220,7 +239,7 @@ public class GameManager {
         int upgradeCost = Constants.BASE_UPGRADE_COST * structure.getLevel();
         currentPlayer.getResourceHandler().spendResources(upgradeCost, 0);
         structure.levelUp();
-        GameLogger.log(structure.getClass().getSimpleName() + " upgraded to level " + structure.getLevel());
+        GameLogger.log(structure.getClass().getSimpleName() + " at ("+x+","+y+") upgraded to level " + structure.getLevel() + " for " + upgradeCost + " gold.");
     }
 
     public void mergeUnits(Unit unit1, Unit unit2) throws GameRuleException {
@@ -246,7 +265,7 @@ public class GameManager {
         placeEntity(null, unit1.getX(), unit1.getY());
         placeEntity(null, unit2.getX(), unit2.getY());
         placeEntity(newUnit, newX, newY);
-        GameLogger.log("Merged two units into a " + newUnit.getClass().getSimpleName());
+        GameLogger.log("Merged two " + unit1.getClass().getSimpleName() + "s into a " + newUnit.getClass().getSimpleName() + " at ("+newX+","+newY+").");
     }
 
 
@@ -254,26 +273,24 @@ public class GameManager {
         Player currentPlayer = getCurrentPlayer();
         GameTile tile = gameBoard.getTile(x, y);
 
-            if (tile == null || tile.isOccupied()) {
-                throw new GameRuleException("Target tile for training must be empty!");
-            }
+        if (tile == null || tile.isOccupied()) {
+            throw new GameRuleException("Target tile for training must be empty!");
+        }
 
-            boolean canTrain = false;
-            if (unitType.equals("Peasant")) { // Peasants can be trained next to TownHalls
-                if (gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, TownHall.class)) {
-                    canTrain = true;
-                }
+        boolean canTrain = false;
+        if (unitType.equals("Peasant")) {
+            if (gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, TownHall.class)) {
+                canTrain = true;
             }
+        } else {
+            if (gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, Barrack.class)) {
+                canTrain = true;
+            }
+        }
 
-            if (!unitType.equals("Peasant")) { // Other units are trained at Barracks
-                if (gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, Barrack.class)) {
-                    canTrain = true;
-                }
-            }
-
-            if (!canTrain) {
-                throw new GameRuleException("Units must be trained on a tile adjacent to the correct building (Barrack or TownHall for Peasants).");
-            }
+        if (!canTrain) {
+            throw new GameRuleException("Units must be trained on a tile adjacent to the correct building (Barrack, or TownHall for Peasants).");
+        }
 
         Unit newUnit = switch (unitType) {
             case "Peasant" -> new Peasant(currentPlayer, x, y);
@@ -285,61 +302,57 @@ public class GameManager {
 
         currentPlayer.getResourceHandler().spendResources(newUnit.getGoldCost(), newUnit.getFoodCost());
         gameBoard.placeEntity(newUnit, x, y);
-
+        GameLogger.log(currentPlayer.getName() + " trained a " + unitType + " at (" + x + "," + y + ").");
     }
 
-    /**
-     * درآمدها و هزینه‌های نگهداری دوره‌ای را برای بازیکن فعلی محاسبه و اعمال می‌کند.
-     * این متد به صورت بهینه تمام محاسبات را در یک حلقه انجام می‌دهد.
-     */
+    // method for resource changes.
     public void applyPeriodicResourceChanges() {
         Player currentPlayer = getCurrentPlayer();
         if (currentPlayer == null) return;
 
+        int ticksPerTurn = Constants.TURN_DURATION_SECONDS / (Constants.RESOURCE_TICK_MILLISECONDS / 1000);
+        if (ticksPerTurn == 0) ticksPerTurn = 1; // Prevent division by zero
+
         int goldIncome = 0;
         int foodIncome = 0;
-        int maintenanceCost = 0; // هزینه نگهداری کل (از جنس طلا)
+        int goldMaintenance = 0;
 
-        // محاسبه درآمد و هزینه نگهداری ساختمان‌ها
+        // Income and maintenance from structures
         for (Structure s : gameBoard.getStructuresForPlayer(currentPlayer)) {
             if (s instanceof Market) {
-                goldIncome += Constants.MARKET_GOLD_PRODUCTION;
+                goldIncome += Constants.MARKET_GOLD_PRODUCTION / ticksPerTurn;
             } else if (s instanceof Farm) {
-                foodIncome += Constants.FARM_FOOD_PRODUCTION;
+                foodIncome += Constants.FARM_FOOD_PRODUCTION / ticksPerTurn;
             }
-            maintenanceCost += s.getMaintenanceCost();
+            goldMaintenance += s.getMaintenanceCost() / ticksPerTurn;
         }
 
+        // Maintenance for units
+        for (Unit u : gameBoard.getUnitsForPlayer(currentPlayer)) {
+            goldMaintenance += u.getMaintenanceCost() / ticksPerTurn;
+        }
+
+        // Income from controlled tiles
         for (int x = 0; x < gameBoard.width; x++) {
             for (int y = 0; y < gameBoard.height; y++) {
                 GameTile tile = gameBoard.getTile(x, y);
                 if (tile.getOwner() == currentPlayer) {
-                    if (tile.block instanceof com.realmwar.engine.blocks.EmptyBlock) {
+                    if (tile.block instanceof EmptyBlock) {
                         goldIncome += Constants.EMPTY_BLOCK_GOLD_GENERATION;
-                    } else if (tile.block instanceof com.realmwar.engine.blocks.ForestBlock) {
+                    } else if (tile.block instanceof ForestBlock) {
                         foodIncome += Constants.FOREST_BLOCK_FOOD_GENERATION;
                     }
                 }
             }
         }
 
-
-
-
-        // محاسبه هزینه نگهداری سربازها
-        for (Unit u : gameBoard.getUnitsForPlayer(currentPlayer)) {
-            maintenanceCost += u.getMaintenanceCost();
+        // Apply net changes
+        currentPlayer.getResourceHandler().addResources(goldIncome, foodIncome);
+        try {
+            currentPlayer.getResourceHandler().spendResources(goldMaintenance, 0);
+        } catch (GameRuleException e) {
+            GameLogger.log(currentPlayer.getName() + " could not pay maintenance costs: " + goldMaintenance + " gold.");
         }
-
-        // محاسبه درآمد و هزینه خالص برای اعمال در این تیک
-        int ticksPerTurn = Constants.TURN_DURATION_SECONDS / (Constants.RESOURCE_TICK_MILLISECONDS / 1000);
-        if (ticksPerTurn == 0) ticksPerTurn = 1; // جلوگیری از تقسیم بر صفر
-
-        int netGold = (goldIncome - maintenanceCost) / ticksPerTurn;
-        int netFood = foodIncome / ticksPerTurn;
-
-        // اعمال منابع به بازیکن
-        currentPlayer.getResourceHandler().addResources(netGold, netFood);
     }
 
 
@@ -352,7 +365,8 @@ public class GameManager {
     public List<Player> getPlayers() { return players; }
     public void setSelectedTile(int x, int y) { this.selectedX = x; this.selectedY = y; }
     public int[] getSelectedTile() { return new int[]{selectedX, selectedY}; }
-    private void placeEntity(GameEntity entity, int x, int y) {
+
+    void placeEntity(GameEntity entity, int x, int y) {
         gameBoard.placeEntity(entity, x, y);
     }
 }
