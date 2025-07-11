@@ -2,6 +2,7 @@ package com.realmwar;
 
 import com.realmwar.data.DatabaseManager;
 import com.realmwar.engine.GameManager;
+import com.realmwar.util.Constants;
 import com.realmwar.view.GameFrame;
 import javax.swing.*;
 import java.util.ArrayList;
@@ -9,11 +10,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Initialize the database first
+        // Initialize the database
         DatabaseManager.initializeDatabase();
 
         // Use invokeLater to ensure all Swing components are created on the Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
+            // --- Player Setup ---
+
             Object[] options = {2, 3, 4};
             Integer numPlayers = (Integer) JOptionPane.showInputDialog(
                     null, // parent component
@@ -36,19 +39,18 @@ public class Main {
                 playerNames.add("Player " + i);
             }
 
-
-            // Create the GameManager with the selected number of players
+            // --- Game Initialization ---
             GameManager gameManager = new GameManager(
                     playerNames,
-                    10,
-                    10
+                    Constants.DEFAULT_BOARD_WIDTH,
+                    Constants.DEFAULT_BOARD_HEIGHT
             );
 
             // Create and display the game window
             GameFrame gameFrame = new GameFrame(gameManager);
-            gameFrame.setVisible(true);
-            gameFrame.updateView(); // Initial UI update
-            gameFrame.resetAndStartTurnTimer();
+            gameFrame.setVisible(true); // Make the window visible.
+            gameFrame.updateView();     // Perform an initial paint of the UI.
+            gameFrame.resetAndStartTurnTimer(); // Start the first turn's timer.
         });
     }
 }
