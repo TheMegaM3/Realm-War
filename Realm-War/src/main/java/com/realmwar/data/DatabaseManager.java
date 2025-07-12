@@ -242,7 +242,8 @@ public final class DatabaseManager {
                 int x = rs.getInt("x_coord");
                 int y = rs.getInt("y_coord");
                 String className = rs.getString("block_class_name");
-                board.setTile(x, y, new GameTile(createBlockFromString(className)));
+                board.setTile(x, y, new GameTile(createBlockFromString(className), x, y));
+
             }
         }
     }

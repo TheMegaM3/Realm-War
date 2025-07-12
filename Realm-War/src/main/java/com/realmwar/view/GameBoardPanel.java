@@ -15,6 +15,10 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Objects;
 
+import java.util.List;
+import java.util.ArrayList;
+
+
 public class GameBoardPanel extends JPanel {
     private GameBoard gameBoard;
     private GameEntity selectedEntity;
@@ -38,6 +42,11 @@ public class GameBoardPanel extends JPanel {
     private static final Color PLAYER3_COLOR = new Color(255, 209, 220);
     private static final Color PLAYER4_COLOR = new Color(204, 153, 204);
     private static final Color SHADOW_COLOR = new Color(0, 0, 0, 50);
+
+    private Unit selectedUnit = null;
+
+    private List<Point> movableTiles = new ArrayList<>(); // tiles that should be highlighted
+
 
     public GameBoardPanel(GameManager gameManager, GameFrame frame) {
         this.gameManager = gameManager;
@@ -92,17 +101,43 @@ public class GameBoardPanel extends JPanel {
         });
     }
 
-    //  Helper method to keep mouseClicked clean
+    // Highlights all valid tiles the selected unit can move to
     private void handleGameActions(GameEntity clickedEntity) {
+        GameTile clickedTile = gameBoard.getTile(selectedX, selectedY);
+        if (clickedTile == null) return;
+
+        // Merge Mode Handling
         if (gameFrame.isMergeModeActive()) {
             if (clickedEntity instanceof Unit && clickedEntity.getOwner() == gameManager.getCurrentPlayer()) {
                 gameFrame.handleMergeClick((Unit) clickedEntity);
             } else {
                 JOptionPane.showMessageDialog(GameBoardPanel.this, "Please select one of your units.", "Merge Error", JOptionPane.ERROR_MESSAGE);
             }
-            return; // Exit after handling merge
+            return;
+        }
+        // Unit selection and movement logic
+        if (selectedUnit == null) {
+            if (clickedEntity instanceof Unit unit
+                    && unit.getOwner() == gameManager.getCurrentPlayer()
+                    && !unit.hasActedThisTurn()) {
+
+                selectedUnit = unit;
+                highlightMovableTiles(unit);
+            }
+        } else {
+            if (!selectedUnit.hasActedThisTurn() && selectedUnit.moveTo(clickedTile)) {
+                selectedUnit.setHasActedThisTurn(true); // جلوگیری از حرکت دوم
+                clearHighlights();
+                selectedUnit = null;
+                gameFrame.updateView();
+            } else {
+                clearHighlights();
+                selectedUnit = null;
+            }
         }
 
+
+        // Attack handling
         if (attackingUnit != null) {
             try {
                 gameManager.attackUnit(attackingUnit, clickedEntity);
@@ -110,12 +145,37 @@ public class GameBoardPanel extends JPanel {
                 JOptionPane.showMessageDialog(GameBoardPanel.this,
                         ex.getMessage(), "Attack error", JOptionPane.ERROR_MESSAGE);
             } finally {
-                attackingUnit = null; // Always reset attack state
+                attackingUnit = null;
                 gameFrame.updateView();
             }
         }
-        selectedEntity = clickedEntity; // Update selected entity after any action
+
+        // Entity selection update
+        selectedEntity = clickedEntity;
     }
+
+
+
+    // Highlights all valid tiles the selected unit can move to
+    private void highlightMovableTiles(Unit unit) {
+        movableTiles.clear();
+        for (int x = 0; x < gameBoard.width; x++) {
+            for (int y = 0; y < gameBoard.height; y++) {
+                GameTile tile = gameBoard.getTile(x, y);
+                if (unit.canMoveTo(tile)) {
+                    movableTiles.add(new Point(x, y));
+                }
+            }
+        }
+        repaint();
+    }
+
+    // Clears all movement highlights
+    private void clearHighlights() {
+        movableTiles.clear();
+        repaint();
+    }
+
 
     //  Method to load ALL asset images.
     private void loadAssetImages() {
@@ -176,15 +236,23 @@ public class GameBoardPanel extends JPanel {
         }
 
         if (attackingUnit != null) {
-
             g2d.setColor(new Color(255, 105, 97));
             g2d.setStroke(new BasicStroke(3));
             g2d.drawRect(attackingUnit.getX() * tileWidth, attackingUnit.getY() * tileHeight, tileWidth, tileHeight);
         }
 
+        // ✅ اضافه کردن هایلایت برای مسیرهای قابل حرکت
+        g2d.setColor(new Color(144, 238, 144, 128)); // Light green semi-transparent
+        for (Point p : movableTiles) {
+            int drawX = p.x * tileWidth;
+            int drawY = p.y * tileHeight;
+            g2d.fillRect(drawX, drawY, tileWidth, tileHeight);
+        }
+
         // Translate back to original position to not affect other components
         g.translate(-insets.left, -insets.top);
     }
+
 
     // Helper method to get a player's color based on their name.
     private Color getPlayerColor(String playerName) {
@@ -331,4 +399,5 @@ public class GameBoardPanel extends JPanel {
         this.attackingUnit = unit;
         repaint();
     }
+
 }

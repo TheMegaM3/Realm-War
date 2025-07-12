@@ -3,6 +3,8 @@ package com.realmwar.model.units;
 import com.realmwar.model.GameEntity;
 import com.realmwar.model.Player;
 import com.realmwar.util.Constants;
+import com.realmwar.engine.GameTile;
+import com.realmwar.engine.blocks.VoidBlock;
 
 /**
  * Represents the abstract base class for all movable units in the game.
@@ -22,6 +24,8 @@ public abstract class Unit extends GameEntity {
     protected final int maintenanceCost;
 
     private boolean hasActedThisTurn = false;
+
+    private GameTile currentTile; // track current tile without needing GameManager
 
     public Unit(Player owner, int x, int y, int maxHealth, int attackPower, int attackRange, int movementRange, int goldCost, int foodCost, int maintenanceCost) {
         super(owner, x, y);
@@ -49,6 +53,14 @@ public abstract class Unit extends GameEntity {
     public boolean hasActedThisTurn() { return hasActedThisTurn; }
     public void setHasActedThisTurn(boolean value) { this.hasActedThisTurn = value; }
 
+    public GameTile getCurrentTile() {
+        return this.currentTile;
+    }
+
+    public void setCurrentTile(GameTile tile) {
+        this.currentTile = tile;
+    }
+
     @Override
     public void takeDamage(int amount) {
         this.health -= amount;
@@ -60,4 +72,32 @@ public abstract class Unit extends GameEntity {
         return this.health <= 0;
     }
 
+    // --- Movement Logic ---
+
+    public boolean canMoveTo(GameTile targetTile) {
+        if (currentTile == null) return false;
+
+        int dx = Math.abs(currentTile.getX() - targetTile.getX());
+        int dy = Math.abs(currentTile.getY() - targetTile.getY());
+        int distance = dx + dy;
+
+        boolean inRange = distance <= movementRange;
+        boolean notVoid = !(targetTile.getBlock() instanceof VoidBlock);
+        boolean notOccupied = targetTile.getEntity() == null;
+
+        return inRange && notVoid && notOccupied;
+    }
+
+    public boolean moveTo(GameTile targetTile) {
+        if (canMoveTo(targetTile)) {
+            if (currentTile != null) {
+                currentTile.setEntity(null); // حذف از tile قبلی
+            }
+
+            targetTile.setEntity(this);     // قرار گرفتن روی tile جدید
+            setPosition(targetTile.getX(), targetTile.getY()); // آپدیت مختصات
+            return true;
+        }
+        return false;
+    }
 }

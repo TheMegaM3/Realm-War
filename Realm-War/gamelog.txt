@@ -35,3 +35,519 @@
 2025/06/08 03:56:44 - GameManager created. Player 1's turn begins.
 2025/06/08 03:56:59 - Turn ended. It is now Player 2's turn.
 2025/06/08 03:57:06 - Turn ended. It is now Player 1's turn.
+2025/07/12 17:49:23 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 17:49:27 - GameManager created. Player 1's turn begins.
+2025/07/12 17:49:44 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/12 17:49:48 - Player 1 trained a Knight at (2,2).
+2025/07/12 17:50:01 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/12 17:50:01 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 17:50:02 - Failed to connect to the database for saving: FATAL: password authentication failed for user "postgres"
+2025/07/12 17:50:06 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 17:50:08 - GameManager created. Player 1's turn begins.
+2025/07/12 17:50:20 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/12 17:50:35 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 17:50:40 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 17:50:40 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:04:55 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 18:05:00 - GameManager created. Player 1's turn begins.
+2025/07/12 18:08:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:08:49 - Player 2 built a Farm at (8,7) for 100 gold.
+2025/07/12 18:08:56 - Player 2 built a Barrack at (7,8) for 150 gold.
+2025/07/12 18:09:15 - Player 2's turn-end maintenance cost: 3 gold.
+2025/07/12 18:09:15 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:09:19 - Player 1 built a Farm at (2,3) for 100 gold.
+2025/07/12 18:09:24 - Player 1 built a Barrack at (0,3) for 150 gold.
+2025/07/12 18:09:26 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 18:09:27 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:09:58 - Player 2's turn-end maintenance cost: 3 gold.
+2025/07/12 18:09:58 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:10:06 - Player 1 trained a Spearman at (1,3).
+2025/07/12 18:10:18 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:10:18 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:10:30 - Player 2 trained a Spearman at (7,7).
+2025/07/12 18:10:34 - Player 2's turn-end maintenance cost: 5 gold.
+2025/07/12 18:10:34 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:12:31 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:12:31 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:12:37 - Player 2 trained a Peasant at (8,9).
+2025/07/12 18:12:43 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 18:12:43 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:13:01 - Player 1 trained a Spearman at (0,4).
+2025/07/12 18:14:12 - Player 1's turn-end maintenance cost: 7 gold.
+2025/07/12 18:14:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:14:15 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 18:14:15 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:14:29 - Merged two Spearmans into a Swordsman at (1,3).
+2025/07/12 18:14:42 - Player 1's turn-end maintenance cost: 7 gold.
+2025/07/12 18:14:42 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:14:42 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 18:14:42 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:14:53 - Player 1 trained a Swordsman at (0,4).
+2025/07/12 18:15:01 - Merged two Swordsmans into a Knight at (1,3).
+2025/07/12 18:15:14 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/12 18:15:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:15:15 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 18:15:15 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:15:24 - Player 1 trained a Knight at (0,4).
+2025/07/12 18:16:21 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:16:21 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:18:59 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 18:18:59 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:19:53 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:19:53 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:20:08 - Player 2 built a Market at (1,5) for 120 gold.
+2025/07/12 18:20:13 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:20:13 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:20:46 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:20:46 - Player 1 could not pay maintenance costs!
+2025/07/12 18:20:46 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:20:59 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:20:59 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:22:14 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:22:14 - Player 1 could not pay maintenance costs!
+2025/07/12 18:22:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:22:45 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:22:45 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:23:22 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:23:22 - Player 1 could not pay maintenance costs!
+2025/07/12 18:23:22 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:23:22 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:23:22 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:23:54 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:23:54 - Player 1 could not pay maintenance costs!
+2025/07/12 18:23:54 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:23:57 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 18:23:58 - GameManager created. Player 1's turn begins.
+2025/07/12 18:24:10 - Player 1 built a Farm at (1,2) for 100 gold.
+2025/07/12 18:24:15 - Player 1 built a Barrack at (1,3) for 150 gold.
+2025/07/12 18:24:22 - Player 1 trained a Spearman at (2,3).
+2025/07/12 18:24:26 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:24:26 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:24:26 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:24:26 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:26:12 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:26:13 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:26:13 - Player 1 could not pay maintenance costs!
+2025/07/12 18:26:13 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:27:01 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:27:01 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:27:02 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:27:02 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:27:04 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:32:30 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:32:30 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:32:30 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:32:30 - Player 1 could not pay maintenance costs!
+2025/07/12 18:32:30 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:33:35 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:33:35 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:33:36 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:34:36 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:34:36 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:34:37 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:34:37 - Player 1 could not pay maintenance costs!
+2025/07/12 18:34:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:36:05 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:36:05 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:36:07 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:36:12 - Barrack at (1,3) upgraded to level 2 for 75 gold.
+2025/07/12 18:36:32 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:36:32 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:36:33 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:36:37 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:36:37 - Player 1 could not pay maintenance costs!
+2025/07/12 18:36:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:36:46 - Farm at (1,2) upgraded to level 2 for 75 gold.
+2025/07/12 18:37:12 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:37:12 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:37:12 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:37:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:37:14 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:37:38 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:37:38 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:37:43 - Player 1's turn-end maintenance cost: 15 gold.
+2025/07/12 18:37:43 - Player 1 could not pay maintenance costs!
+2025/07/12 18:37:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:37:53 - Player 2 built a Market at (7,7) for 120 gold.
+2025/07/12 18:37:56 - Player 2 built a Farm at (8,7) for 100 gold.
+2025/07/12 18:38:02 - Market at (7,7) upgraded to level 2 for 75 gold.
+2025/07/12 18:38:05 - Market at (7,7) upgraded to level 3 for 150 gold.
+2025/07/12 18:38:09 - Player 2's turn-end maintenance cost: 2 gold.
+2025/07/12 18:38:09 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:38:15 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 18:38:15 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:38:24 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/12 18:38:24 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:38:37 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 18:39:08 - GameManager created. Player 1's turn begins.
+2025/07/12 18:39:14 - Player 1 built a Farm at (1,2) for 100 gold.
+2025/07/12 18:39:21 - Farm at (1,2) upgraded to level 2 for 75 gold.
+2025/07/12 18:40:00 - Player 1's turn-end maintenance cost: 1 gold.
+2025/07/12 18:40:00 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:58:48 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 18:58:50 - GameManager created. Player 1's turn begins.
+2025/07/12 18:59:24 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 18:59:40 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 18:59:44 - Player 1 built a Farm at (1,0) for 100 gold.
+2025/07/12 19:00:12 - Player 1's turn-end maintenance cost: 1 gold.
+2025/07/12 19:00:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:00:18 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:00:24 - Player 1 trained a Peasant at (0,1).
+2025/07/12 19:01:03 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:01:03 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:05:07 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 19:05:15 - GameManager created. Player 1's turn begins.
+2025/07/12 19:06:18 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:06:47 - Player 2 built a Farm at (2,1) for 100 gold.
+2025/07/12 19:06:50 - Player 2's turn-end maintenance cost: 1 gold.
+2025/07/12 19:06:50 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:06:58 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 19:07:01 - GameManager created. Player 1's turn begins.
+2025/07/12 19:07:10 - Player 1 built a Farm at (2,1) for 100 gold.
+2025/07/12 19:07:25 - Player 1 built a Market at (1,2) for 120 gold.
+2025/07/12 19:07:35 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:07:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:07:36 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:08:08 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:08:08 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:08:39 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:08:54 - Player 1 trained a Peasant at (1,0).
+2025/07/12 19:10:51 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:10:51 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:11:32 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:11:35 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:11:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:11:39 - Player 2 built a Barrack at (7,8) for 150 gold.
+2025/07/12 19:11:59 - Player 2 trained a Spearman at (7,7).
+2025/07/12 19:12:08 - Player 2's turn-end maintenance cost: 4 gold.
+2025/07/12 19:12:08 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:12:39 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:12:39 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:12:44 - Player 2 built a Tower at (8,7) for 200 gold.
+2025/07/12 19:13:03 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/12 19:13:03 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:13:06 - Farm at (2,1) upgraded to level 2 for 75 gold.
+2025/07/12 19:13:35 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:13:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:14:03 - Player 2 trained a Spearman at (7,9).
+2025/07/12 19:14:08 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:14:08 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:14:12 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:14:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:14:45 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:14:45 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:15:03 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:15:03 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:15:20 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 19:15:22 - GameManager created. Player 1's turn begins.
+2025/07/12 19:15:35 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:15:35 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:15:48 - Player 1 built a Barrack at (1,3) for 150 gold.
+2025/07/12 19:15:54 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:15:54 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:16:01 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 19:16:03 - GameManager created. Player 1's turn begins.
+2025/07/12 19:16:09 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:16:09 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:16:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:16:22 - Player 2 built a Barrack at (1,3) for 150 gold.
+2025/07/12 19:16:25 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:16:37 - Player 2 trained a Swordsman at (1,2).
+2025/07/12 19:16:43 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:16:43 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:16:45 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:16:45 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:16:57 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:16:57 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:17:00 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:17:04 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:17:18 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:17:18 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:17:29 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:17:32 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:17:32 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:17:36 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:17:42 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:17:50 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:17:50 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:18:01 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:18:01 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:18:09 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:18:09 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:18:21 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:18:21 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:18:28 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:18:34 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:18:36 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:18:52 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:18:52 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:18:59 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:18:59 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:19:02 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:19:06 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:19:06 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:19:09 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:19:18 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 19:19:19 - GameManager created. Player 1's turn begins.
+2025/07/12 19:19:24 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:19:24 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:19:33 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:19:33 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:19:36 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:19:37 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:19:42 - Player 2 built a Barrack at (2,2) for 150 gold.
+2025/07/12 19:19:56 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:19:56 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:20:05 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:20:07 - Player 2's turn-end maintenance cost: 2 gold.
+2025/07/12 19:20:07 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:20:08 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:20:08 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:20:10 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:20:18 - Player 2 trained a Swordsman at (2,1).
+2025/07/12 19:20:22 - Player 2 trained a Swordsman at (1,2).
+2025/07/12 19:20:27 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:20:27 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:20:29 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:20:32 - Player 2's turn-end maintenance cost: 10 gold.
+2025/07/12 19:20:32 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:20:33 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:20:36 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:20:36 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:20:40 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:20:44 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:20:58 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:20:58 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:20:59 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:21:03 - Player 2's turn-end maintenance cost: 10 gold.
+2025/07/12 19:21:03 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:21:03 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:21:07 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:21:11 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:21:11 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:21:12 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:21:17 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:21:19 - Player 2's turn-end maintenance cost: 10 gold.
+2025/07/12 19:21:19 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:21:20 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:21:24 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:21:29 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:21:29 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:21:30 - Swordsman attacked TownHall at (1,1) for 25 damage.
+2025/07/12 19:21:39 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:21:39 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:21:43 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:21:46 - Player 2's turn-end maintenance cost: 10 gold.
+2025/07/12 19:21:46 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:21:46 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:21:52 - Merged two Swordsmans into a Knight at (1,2).
+2025/07/12 19:22:02 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:22:02 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:22:11 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:22:14 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:22:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:22:16 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:22:16 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:22:17 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:22:20 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:22:23 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:22:23 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:22:24 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:22:27 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:22:29 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:22:29 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:22:29 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:22:33 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:22:33 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:22:34 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:22:36 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:22:36 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:22:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:22:40 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:22:42 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:22:42 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:22:46 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:03 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:23:03 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:03 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:06 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:23:06 - Player 2 could not pay maintenance costs!
+2025/07/12 19:23:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:10 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:23:11 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:23:11 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:18 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:23:18 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:23 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:23:28 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:23:28 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:28 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:31 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:23:34 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:23:34 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:34 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:38 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:23:38 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:40 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:23:40 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:40 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:42 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:23:44 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:23:44 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:44 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:23:45 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:23:45 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:50 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:58 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:23:58 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:23:59 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:24:09 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:24:09 - Player 2 could not pay maintenance costs!
+2025/07/12 19:24:09 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:24:10 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:24:10 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:24:15 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:24:17 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:24:22 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:24:22 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:24:33 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:24:33 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:24:41 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:24:41 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:24:48 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:24:48 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:24:49 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:24:54 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:24:57 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:24:59 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:24:59 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:00 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:05 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:25:06 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:25:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:07 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:11 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:25:13 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:25:13 - Player 2 could not pay maintenance costs!
+2025/07/12 19:25:13 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:14 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:25:14 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:17 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:25:20 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:21 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:25:21 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:21 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:25 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:25:25 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:27 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:25:29 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:25:29 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:29 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:34 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:25:36 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:25:36 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:36 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:41 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:25:42 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:25:42 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:44 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:25:44 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:48 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:25:51 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:25:51 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:54 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:25:54 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:54 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:25:56 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:25:59 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:26:08 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:26:08 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:26:09 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:26:16 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:26:16 - Player 2 could not pay maintenance costs!
+2025/07/12 19:26:16 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:26:17 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:26:18 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:26:18 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:26:20 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:26:23 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:26:28 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:26:28 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:26:29 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:26:30 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:26:30 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:26:31 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:26:38 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:26:40 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/12 19:26:40 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:26:41 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:26:45 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/12 19:26:45 - TownHall at (1,1) was destroyed!
+2025/07/12 19:26:45 - GAME OVER! Winner is Player 2
+2025/07/12 19:26:49 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:26:49 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:26:56 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:26:56 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:30:24 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:30:27 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:30:27 - Player 2 could not pay maintenance costs!
+2025/07/12 19:30:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:30:31 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:32:03 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:32:03 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:32:05 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:32:05 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:32:05 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:32:05 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:33:04 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:33:06 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/12 19:33:06 - Player 2 could not pay maintenance costs!
+2025/07/12 19:33:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:33:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 19:47:37 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 19:47:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:47:39 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/12 19:47:39 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 19:47:43 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/12 19:47:43 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 23:22:32 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/12 23:22:39 - GameManager created. Player 1's turn begins.
+2025/07/12 23:23:01 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/12 23:23:02 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/12 23:23:02 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/12 23:23:02 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/12 23:23:07 - Player 1 trained a Spearman at (1,3).
+2025/07/13 00:13:25 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 00:13:25 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 00:13:57 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 00:14:29 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 00:14:29 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 00:20:48 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 00:20:50 - GameManager created. Player 1's turn begins.
+2025/07/13 00:21:08 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 00:21:14 - Player 1 trained a Spearman at (1,3).
+2025/07/13 00:21:25 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 00:21:25 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 00:27:48 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 00:28:56 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 00:28:59 - GameManager created. Player 1's turn begins.
+2025/07/13 00:29:11 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 00:29:16 - Player 1 trained a Spearman at (1,3).
+2025/07/13 00:29:33 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 00:29:33 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 00:29:35 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 00:29:39 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 00:29:39 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 00:29:42 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 00:38:23 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 00:38:26 - GameManager created. Player 1's turn begins.
+2025/07/13 00:38:36 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 00:38:44 - Player 1 trained a Spearman at (1,3).
+2025/07/13 00:42:25 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 00:42:29 - GameManager created. Player 1's turn begins.
+2025/07/13 00:42:44 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 00:42:49 - Player 1 trained a Spearman at (1,3).

@@ -38,7 +38,8 @@ public class GameBoard {
             for (int y = 0; y < height; y++) {
                 // 20% chance for a tile to be a ForestBlock.
                 Block terrain = rand.nextDouble() < 0.20 ? new ForestBlock() : new EmptyBlock();
-                tiles[x][y] = new GameTile(terrain);
+                tiles[x][y] = new GameTile(terrain, x, y);
+                ;
             }
         }
     }
