@@ -4,6 +4,7 @@ import com.realmwar.engine.GameBoard;
 import com.realmwar.engine.GameManager;
 import com.realmwar.engine.GameTile;
 import com.realmwar.model.GameEntity;
+import com.realmwar.model.Player;
 import com.realmwar.model.structures.*;
 import com.realmwar.model.units.*;
 
@@ -204,14 +205,30 @@ public class GameBoardPanel extends JPanel {
             }
         }
 
-        // Draw territory tiles
+        // Draw territory tiles (manual color mapping by player name)
         for (GameBoard.DynamicTerritory territory : gameBoard.getTerritories()) {
-            g2d.setColor(getPlayerColor(territory.getPlayerName()).brighter());
-            g2d.setStroke(new BasicStroke(2)); // Thinner stroke for smaller screens
+            String name = territory.getPlayerName();
+            Color color;
+
+            // 🎨 مشخص‌کردن رنگ دستی برای هر بازیکن
+            switch (name) {
+                case "Player 1" -> color = new Color(173, 216, 230); // Light Blue
+                case "Player 2" -> color = new Color(255, 102, 102); // Light Red
+                case "Player 3" -> color = new Color(255, 182, 193); // Light Pink
+                case "Player 4" -> color = new Color(221, 160, 221); // Light Purple
+                default -> color = Color.GRAY;
+            }
+
+            g2d.setColor(color);
+            g2d.setStroke(new BasicStroke(3));
+
             for (Point tile : territory.getTiles()) {
                 g2d.drawRect(tile.x * tileWidth, tile.y * tileHeight, tileWidth, tileHeight);
             }
         }
+
+
+
 
         if (selectedX >= 0 && selectedY >= 0) {
             g2d.setColor(new Color(255, 223, 100));

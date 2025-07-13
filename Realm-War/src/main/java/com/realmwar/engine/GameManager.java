@@ -269,6 +269,7 @@ public class GameManager {
         currentPlayer.getResourceHandler().spendResources(buildCost, 0);
         gameBoard.placeEntity(structure, x, y);
         gameBoard.addTileToTerritory(currentPlayer, new Point(x, y));
+
         GameLogger.log(currentPlayer.getName() + " built a " + structureType + " at (" + x + "," + y + ") for " + buildCost + " gold.");
     }
 
@@ -368,4 +369,6 @@ public class GameManager {
     }
     public Unit getSelectedUnit() { return selectedUnit; }
     public void setSelectedUnit(Unit unit) { this.selectedUnit = unit; }
+
+
 }

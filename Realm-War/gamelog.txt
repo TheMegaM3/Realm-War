@@ -551,3 +551,249 @@
 2025/07/13 00:42:29 - GameManager created. Player 1's turn begins.
 2025/07/13 00:42:44 - Player 1 built a Barrack at (1,2) for 150 gold.
 2025/07/13 00:42:49 - Player 1 trained a Spearman at (1,3).
+2025/07/13 11:52:32 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 11:52:35 - GameManager created. Player 1's turn begins.
+2025/07/13 11:52:51 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 11:52:54 - Player 1 trained a Knight at (1,3).
+2025/07/13 11:53:09 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:53:09 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 11:53:11 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 11:53:14 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:53:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 11:53:14 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 11:53:21 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:53:21 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 11:53:21 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 11:53:26 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:53:26 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 11:53:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 11:53:32 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:53:32 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 11:53:33 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 11:54:12 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:54:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 11:54:14 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 11:54:18 - Knight attacked TownHall at (8,8) for 40 damage.
+2025/07/13 11:54:46 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:54:46 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 11:54:53 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 11:55:06 - Knight attacked TownHall at (8,8) for 40 damage.
+2025/07/13 11:55:12 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:55:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 11:55:12 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 11:55:22 - Knight attacked TownHall at (8,8) for 40 damage.
+2025/07/13 11:57:42 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/13 11:57:42 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 12:57:32 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 12:57:40 - GameManager created. Player 1's turn begins.
+2025/07/13 12:57:54 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 12:58:01 - Player 1 trained a Spearman at (1,3).
+2025/07/13 12:58:08 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 12:58:08 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 12:58:08 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 13:09:17 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 13:09:17 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 13:49:13 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 13:49:16 - GameManager created. Player 1's turn begins.
+2025/07/13 13:49:23 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 13:49:27 - Player 1 trained a Knight at (1,3).
+2025/07/13 19:11:38 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:11:41 - GameManager created. Player 1's turn begins.
+2025/07/13 19:11:52 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:11:56 - GameManager created. Player 1's turn begins.
+2025/07/13 19:11:59 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:12:02 - GameManager created. Player 1's turn begins.
+2025/07/13 19:12:14 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:12:15 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:12:16 - GameManager created. Player 1's turn begins.
+2025/07/13 19:12:29 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:12:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:12:36 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 19:12:44 - Player 1 trained a Spearman at (1,3).
+2025/07/13 19:12:45 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 19:12:45 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:12:47 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:12:48 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:12:55 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 19:12:55 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:12:55 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:12:55 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 19:12:55 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:13:00 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/13 19:13:06 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/13 19:13:07 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:13:07 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 19:13:07 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:13:13 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:13:13 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 19:13:13 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:13:14 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:13:14 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 19:13:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:13:14 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:13:21 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:13:27 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 19:13:27 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:13:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:13:38 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/13 19:13:38 - Turn ended for Player 3. It is now Player 1's turn.
+2025/07/13 19:13:43 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:13:45 - GameManager created. Player 1's turn begins.
+2025/07/13 19:13:52 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:14:01 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 19:14:01 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:14:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:14:13 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/13 19:14:17 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:14:26 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:14:32 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:14:35 - GameManager created. Player 1's turn begins.
+2025/07/13 19:14:41 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:14:42 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:14:49 - Player 2 built a Barrack at (8,7) for 150 gold.
+2025/07/13 19:15:00 - Player 2 trained a Knight at (8,6).
+2025/07/13 19:15:03 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/13 19:15:03 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:15:03 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:16:26 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:16:28 - GameManager created. Player 1's turn begins.
+2025/07/13 19:16:31 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:16:37 - Player 2 trained a Peasant at (8,7).
+2025/07/13 19:16:41 - Player 2's turn-end maintenance cost: 1 gold.
+2025/07/13 19:16:41 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:16:41 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 19:19:27 - Player 2's turn-end maintenance cost: 1 gold.
+2025/07/13 19:19:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 19:20:17 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:20:20 - GameManager created. Player 1's turn begins.
+2025/07/13 19:20:23 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:20:28 - GameManager created. Player 1's turn begins.
+2025/07/13 19:51:11 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 19:51:51 - GameManager created. Player 1's turn begins.
+2025/07/13 20:11:23 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 20:12:40 - GameManager created. Player 1's turn begins.
+2025/07/13 20:13:08 - Player 1 built a Farm at (1,2) for 100 gold.
+2025/07/13 20:13:13 - Player 1's turn-end maintenance cost: 1 gold.
+2025/07/13 20:13:13 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 20:13:14 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/13 20:13:14 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/13 20:13:15 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/13 20:13:46 - Player 1's turn-end maintenance cost: 1 gold.
+2025/07/13 20:13:46 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 20:13:50 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/13 20:13:50 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/13 20:13:50 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/13 20:13:56 - Player 1 built a Barrack at (1,3) for 150 gold.
+2025/07/13 20:14:01 - Player 1 trained a Spearman at (1,4).
+2025/07/13 20:14:07 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/13 20:14:07 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 20:14:07 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/13 20:14:07 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/13 20:14:08 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/13 20:14:15 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/13 20:14:15 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 20:14:15 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/13 20:14:15 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/13 20:14:15 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/13 20:17:40 - Player 1's turn-end maintenance cost: 5 gold.
+2025/07/13 20:17:40 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 20:19:04 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 20:19:09 - GameManager created. Player 1's turn begins.
+2025/07/13 20:19:42 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 20:29:23 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 20:29:27 - GameManager created. Player 1's turn begins.
+2025/07/13 20:53:23 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 20:53:40 - GameManager created. Player 1's turn begins.
+2025/07/13 20:54:47 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:13:33 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 21:13:39 - GameManager created. Player 1's turn begins.
+2025/07/13 21:14:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:14:50 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/13 21:14:57 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 21:15:01 - GameManager created. Player 1's turn begins.
+2025/07/13 21:15:06 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 21:15:10 - GameManager created. Player 1's turn begins.
+2025/07/13 21:17:09 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 21:17:13 - GameManager created. Player 1's turn begins.
+2025/07/13 21:19:30 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 21:20:08 - GameManager created. Player 1's turn begins.
+2025/07/13 21:20:21 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 21:20:33 - Player 1 trained a Swordsman at (1,3).
+2025/07/13 21:20:41 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 21:20:41 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:20:42 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 21:25:26 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 21:25:27 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:40:01 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 21:40:07 - GameManager created. Player 1's turn begins.
+2025/07/13 21:44:47 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 21:44:52 - GameManager created. Player 1's turn begins.
+2025/07/13 21:45:18 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 21:45:26 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/13 21:45:26 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:45:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 21:45:31 - Player 1 trained a Spearman at (1,3).
+2025/07/13 21:45:34 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 21:45:34 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:45:35 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 21:45:41 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 21:45:41 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:45:42 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 21:45:45 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 21:45:45 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:45:46 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 21:45:52 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 21:45:52 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:45:52 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 21:49:58 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 21:50:01 - GameManager created. Player 1's turn begins.
+2025/07/13 21:50:10 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 21:50:27 - Player 1 trained a Swordsman at (1,3).
+2025/07/13 21:50:34 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 21:50:34 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:50:35 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 21:50:35 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 21:50:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:50:38 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 21:50:41 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 21:50:41 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 21:50:42 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 22:03:32 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 22:03:35 - GameManager created. Player 1's turn begins.
+2025/07/13 22:03:42 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 22:03:47 - Player 1 trained a Swordsman at (1,3).
+2025/07/13 22:03:58 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 22:03:58 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 22:03:58 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 22:04:07 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 22:04:07 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 22:04:07 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 22:11:03 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 22:11:19 - GameManager created. Player 1's turn begins.
+2025/07/13 22:11:28 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 22:11:37 - Player 1 trained a Swordsman at (1,3).
+2025/07/13 22:11:40 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 22:11:40 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 22:11:40 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 22:11:44 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/13 22:11:44 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 22:11:44 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 22:17:50 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 22:17:56 - GameManager created. Player 1's turn begins.
+2025/07/13 22:18:05 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 22:18:10 - Player 1 trained a Spearman at (1,3).
+2025/07/13 22:18:19 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 22:18:19 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 22:18:20 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 22:18:24 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 22:18:24 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 22:18:24 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 22:21:54 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 22:21:57 - GameManager created. Player 1's turn begins.
+2025/07/13 22:22:06 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/13 22:22:14 - Player 1 trained a Spearman at (1,3).
+2025/07/13 22:22:19 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/13 22:22:19 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/13 22:22:19 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/13 22:53:16 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/13 22:56:06 - GameManager created. Player 1's turn begins.

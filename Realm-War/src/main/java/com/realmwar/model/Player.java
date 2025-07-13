@@ -1,9 +1,13 @@
 package com.realmwar.model;
 
+import java.awt.*;
+
 /**
  * Represents a player in the game, holding their name, resources, and statistics.
  */
 public class Player {
+
+    private Color color;
 
     // The name of the player. 'final' means it cannot be changed after creation.
     private final String name;
@@ -16,6 +20,15 @@ public class Player {
         this.name = name;
         this.resourceHandler = new ResourceHandler(startingGold, startingFood);
         this.wins = 0; // Wins start at zero.
+
+        // Assign a default color based on name hash (you can change this logic to ID-based if needed)
+        this.color = switch (Math.abs(name.hashCode() % 4)) {
+            case 0 -> new Color(173, 216, 230); // Light Blue
+            case 1 -> new Color(255, 182, 193); // Light Pink
+            case 2 -> new Color(221, 160, 221); // Plum
+            case 3 -> new Color(216, 191, 216); // Light Purple
+            default -> Color.GRAY;
+        };
     }
 
     // --- Getters and Setters ---
@@ -34,6 +47,10 @@ public class Player {
 
     public void incrementWins() {
         this.wins++;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     /**
