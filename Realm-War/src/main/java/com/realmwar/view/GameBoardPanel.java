@@ -197,22 +197,32 @@ public class GameBoardPanel extends JPanel {
 
         g.translate(insets.left, insets.top);
 
+        // Draw tiles
         for (int x = 0; x < gameBoard.width; x++) {
             for (int y = 0; y < gameBoard.height; y++) {
                 drawTile(g2d, x, y, tileWidth, tileHeight);
             }
         }
 
+        // Draw territory tiles
+        for (GameBoard.DynamicTerritory territory : gameBoard.getTerritories()) {
+            g2d.setColor(getPlayerColor(territory.getPlayerName()).brighter());
+            g2d.setStroke(new BasicStroke(2)); // Thinner stroke for smaller screens
+            for (Point tile : territory.getTiles()) {
+                g2d.drawRect(tile.x * tileWidth, tile.y * tileHeight, tileWidth, tileHeight);
+            }
+        }
+
         if (selectedX >= 0 && selectedY >= 0) {
             g2d.setColor(new Color(255, 223, 100));
-            g2d.setStroke(new BasicStroke(3));
+            g2d.setStroke(new BasicStroke(2));
             g2d.drawRect(selectedX * tileWidth, selectedY * tileHeight, tileWidth, tileHeight);
         }
 
         Unit selectedUnit = gameManager.getSelectedUnit();
         if (selectedUnit != null) {
             g2d.setColor(Color.RED);
-            g2d.setStroke(new BasicStroke(3));
+            g2d.setStroke(new BasicStroke(2));
             g2d.drawRect(selectedUnit.getX() * tileWidth, selectedUnit.getY() * tileHeight, tileWidth, tileHeight);
         }
 

@@ -12,6 +12,7 @@ import com.realmwar.model.units.*;
 import com.realmwar.util.Constants;
 import com.realmwar.util.CustomExceptions.GameRuleException;
 
+import java.awt.Point;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,7 +27,7 @@ public class GameManager {
     private GameState currentState;
     public Player winner;
     private int selectedX, selectedY;
-    private Unit selectedUnit; // Tracks the currently selected unit for actions
+    private Unit selectedUnit;
 
     public GameManager(List<String> playerNames, int width, int height) {
         this.players = playerNames.stream()
@@ -35,14 +36,15 @@ public class GameManager {
         this.gameBoard = new GameBoard(width, height);
         this.turnManager = new TurnManager(this.players);
         this.currentState = new RunningState(this);
-        this.selectedUnit = null; // Initialize selectedUnit
+        this.selectedUnit = null;
         setupInitialState();
+        gameBoard.initializeTerritories(playerNames);
         GameLogger.log("GameManager created. " + getCurrentPlayer().getName() + "'s turn begins.");
     }
 
     private void setupInitialState() {
         if (players.isEmpty()) return;
-        if (players.size() > 0) placeEntity(new TownHall(players.get(0), 1, 1), 1, 1);
+        if (players.size() > 0) placeEntity(new TownHall(players.get(0), 1, 1), 1, 1); // Center of 3x3 territory
         if (players.size() > 1) placeEntity(new TownHall(players.get(1), gameBoard.width - 2, gameBoard.height - 2), gameBoard.width - 2, gameBoard.height - 2);
         if (players.size() > 2) placeEntity(new TownHall(players.get(2), gameBoard.width - 2, 1), gameBoard.width - 2, 1);
         if (players.size() > 3) placeEntity(new TownHall(players.get(3), 1, gameBoard.height - 2), 1, gameBoard.height - 2);
@@ -67,7 +69,7 @@ public class GameManager {
         turnManager.nextTurn();
         Player currentPlayer = getCurrentPlayer();
         gameBoard.getUnitsForPlayer(currentPlayer).forEach(u -> u.setHasActedThisTurn(false));
-        setSelectedUnit(null); // Reset selected unit at the start of a new turn
+        setSelectedUnit(null);
         GameLogger.log("Turn ended for " + endingPlayer.getName() + ". It is now " + currentPlayer.getName() + "'s turn.");
     }
 
@@ -128,8 +130,8 @@ public class GameManager {
         placeEntity(null, unit.getX(), unit.getY());
         placeEntity(unit, toX, toY);
 
-        if (targetTile.getOwner() == null) {
-            targetTile.setOwner(unit.getOwner());
+        if (targetTile.getOwner() != unit.getOwner()) {
+            gameBoard.addTileToTerritory(unit.getOwner(), new Point(toX, toY));
             GameLogger.log(unit.getOwner().getName() + " captured tile at (" + toX + "," + toY + ")");
         }
 
@@ -154,6 +156,19 @@ public class GameManager {
         GameLogger.log(attacker.getClass().getSimpleName() + " attacked " + target.getClass().getSimpleName() + " at (" + target.getX() + "," + target.getY() + ") for " + finalDamage + " damage.");
 
         if (target.isDestroyed()) {
+            if (target instanceof TownHall) {
+                gameBoard.removeTerritory(target.getOwner().getName());
+                int[] dx = {-1, 1, 0, 0};
+                int[] dy = {0, 0, -1, 1};
+                for (int i = 0; i < 4; i++) {
+                    int adjX = target.getX() + dx[i];
+                    int adjY = target.getY() + dy[i];
+                    if (gameBoard.getTile(adjX, adjY) != null) {
+                        gameBoard.addTileToTerritory(attacker.getOwner(), new Point(adjX, adjY));
+                    }
+                }
+                GameLogger.log(target.getOwner().getName() + "'s territory was removed due to TownHall destruction!");
+            }
             placeEntity(null, target.getX(), target.getY());
             GameLogger.log(target.getClass().getSimpleName() + " at (" + target.getX() + "," + target.getY() + ") was destroyed!");
             checkWinCondition();
@@ -172,7 +187,7 @@ public class GameManager {
                             GameLogger.log("Tower at (" + tower.getX() + "," + tower.getY() + ") attacked " +
                                     enemyUnit.getClass().getSimpleName() + " for " + tower.getAttackPower() + " damage.");
                             if (enemyUnit.isDestroyed()) {
-                                placeEntity(null, enemyUnit.getX(), enemyUnit.getY()); // Fixed the error
+                                placeEntity(null, enemyUnit.getX(), enemyUnit.getY());
                                 GameLogger.log(enemyUnit.getClass().getSimpleName() + " was destroyed by a tower!");
                                 checkWinCondition();
                             }
@@ -207,7 +222,10 @@ public class GameManager {
             throw new GameRuleException("Cannot build on this tile!");
         }
 
-        // Additional check for Farm: must be adjacent to TownHall or another Farm
+        if (!gameBoard.isWithinOrAdjacentToTerritory(x, y, currentPlayer)) {
+            throw new GameRuleException("You can only build within or adjacent to your territory!");
+        }
+
         if (structureType.equals("Farm")) {
             if (!gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, TownHall.class) &&
                     !gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, Farm.class)) {
@@ -250,6 +268,7 @@ public class GameManager {
 
         currentPlayer.getResourceHandler().spendResources(buildCost, 0);
         gameBoard.placeEntity(structure, x, y);
+        gameBoard.addTileToTerritory(currentPlayer, new Point(x, y));
         GameLogger.log(currentPlayer.getName() + " built a " + structureType + " at (" + x + "," + y + ") for " + buildCost + " gold.");
     }
 
@@ -302,6 +321,10 @@ public class GameManager {
             throw new GameRuleException("Target tile for training must be empty!");
         }
 
+        if (!gameBoard.isWithinOrAdjacentToTerritory(x, y, currentPlayer)) {
+            throw new GameRuleException("You can only train units within or adjacent to your territory!");
+        }
+
         boolean canTrain = false;
         if (unitType.equals("Peasant")) {
             if (gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, TownHall.class)) {
@@ -327,6 +350,7 @@ public class GameManager {
 
         currentPlayer.getResourceHandler().spendResources(newUnit.getGoldCost(), newUnit.getFoodCost());
         gameBoard.placeEntity(newUnit, x, y);
+        gameBoard.addTileToTerritory(currentPlayer, new Point(x, y));
         GameLogger.log(currentPlayer.getName() + " trained a " + unitType + " at (" + x + "," + y + ").");
     }
 
