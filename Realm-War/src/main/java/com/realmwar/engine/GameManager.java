@@ -172,7 +172,7 @@ public class GameManager {
                             GameLogger.log("Tower at (" + tower.getX() + "," + tower.getY() + ") attacked " +
                                     enemyUnit.getClass().getSimpleName() + " for " + tower.getAttackPower() + " damage.");
                             if (enemyUnit.isDestroyed()) {
-                                placeEntity(null, enemyUnit.getX(), enemyUnit.getY());
+                                placeEntity(null, enemyUnit.getX(), enemyUnit.getY()); // Fixed the error
                                 GameLogger.log(enemyUnit.getClass().getSimpleName() + " was destroyed by a tower!");
                                 checkWinCondition();
                             }
@@ -205,6 +205,14 @@ public class GameManager {
 
         if (tile == null || tile.isOccupied() || !tile.block.isBuildable()) {
             throw new GameRuleException("Cannot build on this tile!");
+        }
+
+        // Additional check for Farm: must be adjacent to TownHall or another Farm
+        if (structureType.equals("Farm")) {
+            if (!gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, TownHall.class) &&
+                    !gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, Farm.class)) {
+                throw new GameRuleException("Farms can only be built next to a TownHall or another Farm. Choose a valid tile!");
+            }
         }
 
         long existingCount = gameBoard.getStructuresForPlayer(currentPlayer).stream()
