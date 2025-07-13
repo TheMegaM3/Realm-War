@@ -7,17 +7,15 @@ import com.realmwar.model.GameEntity;
 import com.realmwar.model.structures.*;
 import com.realmwar.model.units.*;
 
-import javax.imageio.ImageIO; // Import for handling images
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
-import java.util.Objects;
-
-import java.util.List;
 import java.util.ArrayList;
-
+import java.util.List;
+import java.util.Objects;
 
 public class GameBoardPanel extends JPanel {
     private GameBoard gameBoard;
@@ -26,7 +24,6 @@ public class GameBoardPanel extends JPanel {
     private final GameFrame gameFrame;
     private int selectedX = -1;
     private int selectedY = -1;
-    private Unit attackingUnit;
 
     private Image peasantImage;
     private Image spearmanImage;
@@ -42,11 +39,7 @@ public class GameBoardPanel extends JPanel {
     private static final Color PLAYER3_COLOR = new Color(255, 209, 220);
     private static final Color PLAYER4_COLOR = new Color(204, 153, 204);
     private static final Color SHADOW_COLOR = new Color(0, 0, 0, 50);
-
-    private Unit selectedUnit = null;
-
-    private List<Point> movableTiles = new ArrayList<>(); // tiles that should be highlighted
-
+    private List<Point> movableTiles = new ArrayList<>();
 
     public GameBoardPanel(GameManager gameManager, GameFrame frame) {
         this.gameManager = gameManager;
@@ -62,37 +55,29 @@ public class GameBoardPanel extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 if (gameBoard == null) return;
 
-                // ---Correct calculation that accounts for panel borders ---
                 Insets insets = getInsets();
                 int drawableWidth = getWidth() - insets.left - insets.right;
                 int drawableHeight = getHeight() - insets.top - insets.bottom;
 
-                if (drawableWidth <= 0 || drawableHeight <= 0) return; // Avoid division by zero if panel is too small
+                if (drawableWidth <= 0 || drawableHeight <= 0) return;
 
                 int tileWidth = drawableWidth / gameBoard.width;
                 int tileHeight = drawableHeight / gameBoard.height;
 
-                // Calculate mouse position relative to the start of the grid (after the border)
                 int mouseX = e.getX() - insets.left;
                 int mouseY = e.getY() - insets.top;
 
-                // Ensure the click is within the grid area before calculating
                 if (mouseX >= 0 && mouseX < drawableWidth && mouseY >= 0 && mouseY < drawableHeight) {
                     selectedX = mouseX / tileWidth;
                     selectedY = mouseY / tileHeight;
 
                     gameManager.setSelectedTile(selectedX, selectedY);
-                    GameEntity clickedEntity = gameBoard.getTile(selectedX, selectedY).getEntity();
-
-                    // --- Safe handling to prevent NullPointerException ---
                     GameTile clickedTile = gameBoard.getTile(selectedX, selectedY);
-                    if (clickedTile != null) { // Check if the tile itself is valid
-                        clickedEntity = clickedTile.getEntity();
-                        handleGameActions(clickedEntity); // Process the action
+                    if (clickedTile != null) {
+                        GameEntity clickedEntity = clickedTile.getEntity();
+                        handleGameActions(clickedEntity);
                     }
-
                 } else {
-                    // Click was outside the grid (on the border), do nothing.
                     selectedX = -1;
                     selectedY = -1;
                 }
@@ -101,62 +86,63 @@ public class GameBoardPanel extends JPanel {
         });
     }
 
-    // Highlights all valid tiles the selected unit can move to
     private void handleGameActions(GameEntity clickedEntity) {
         GameTile clickedTile = gameBoard.getTile(selectedX, selectedY);
         if (clickedTile == null) return;
 
-        // Merge Mode Handling
         if (gameFrame.isMergeModeActive()) {
             if (clickedEntity instanceof Unit && clickedEntity.getOwner() == gameManager.getCurrentPlayer()) {
                 gameFrame.handleMergeClick((Unit) clickedEntity);
             } else {
-                JOptionPane.showMessageDialog(GameBoardPanel.this, "Please select one of your units.", "Merge Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please select one of your units.", "Merge Error", JOptionPane.ERROR_MESSAGE);
             }
             return;
         }
-        // Unit selection and movement logic
-        if (selectedUnit == null) {
+
+        Unit currentSelectedUnit = gameManager.getSelectedUnit();
+        if (currentSelectedUnit == null) {
             if (clickedEntity instanceof Unit unit
                     && unit.getOwner() == gameManager.getCurrentPlayer()
                     && !unit.hasActedThisTurn()) {
-
-                selectedUnit = unit;
+                gameManager.setSelectedUnit(unit);
                 highlightMovableTiles(unit);
+            } else {
+                gameManager.setSelectedUnit(null);
+                clearHighlights();
+                if (clickedEntity != null && !(clickedEntity instanceof Unit && clickedEntity.getOwner() == gameManager.getCurrentPlayer())) {
+                    JOptionPane.showMessageDialog(this, "Please select one of your units that hasn't acted.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+                }
             }
         } else {
-            if (!selectedUnit.hasActedThisTurn() && selectedUnit.moveTo(clickedTile)) {
-                selectedUnit.setHasActedThisTurn(true); // جلوگیری از حرکت دوم
+            if (!currentSelectedUnit.hasActedThisTurn() && currentSelectedUnit.moveTo(clickedTile)) {
+                currentSelectedUnit.setHasActedThisTurn(true);
+                gameManager.setSelectedUnit(null);
                 clearHighlights();
-                selectedUnit = null;
                 gameFrame.updateView();
+            } else if (clickedEntity != null && clickedEntity.getOwner() != gameManager.getCurrentPlayer()) {
+                try {
+                    gameManager.attackUnit(currentSelectedUnit, clickedEntity);
+                    gameManager.setSelectedUnit(null);
+                    clearHighlights();
+                    gameFrame.updateView();
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(this, ex.getMessage(), "Attack Error", JOptionPane.ERROR_MESSAGE);
+                    gameManager.setSelectedUnit(null);
+                    clearHighlights();
+                    gameFrame.updateView();
+                }
             } else {
+                gameManager.setSelectedUnit(null);
                 clearHighlights();
-                selectedUnit = null;
+                if (clickedEntity != null && clickedEntity.getOwner() == gameManager.getCurrentPlayer()) {
+                    JOptionPane.showMessageDialog(this, "Cannot attack your own units.", "Attack Error", JOptionPane.WARNING_MESSAGE);
+                }
             }
         }
 
-
-        // Attack handling
-        if (attackingUnit != null) {
-            try {
-                gameManager.attackUnit(attackingUnit, clickedEntity);
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(GameBoardPanel.this,
-                        ex.getMessage(), "Attack error", JOptionPane.ERROR_MESSAGE);
-            } finally {
-                attackingUnit = null;
-                gameFrame.updateView();
-            }
-        }
-
-        // Entity selection update
         selectedEntity = clickedEntity;
     }
 
-
-
-    // Highlights all valid tiles the selected unit can move to
     private void highlightMovableTiles(Unit unit) {
         movableTiles.clear();
         for (int x = 0; x < gameBoard.width; x++) {
@@ -170,37 +156,28 @@ public class GameBoardPanel extends JPanel {
         repaint();
     }
 
-    // Clears all movement highlights
     private void clearHighlights() {
         movableTiles.clear();
         repaint();
     }
 
-
-    //  Method to load ALL asset images.
     private void loadAssetImages() {
         try {
-            // Load Unit Images
             peasantImage = ImageIO.read(getClass().getResource("/assets/peasant2.png"));
             spearmanImage = ImageIO.read(getClass().getResource("/assets/spearman1.png"));
             swordsmanImage = ImageIO.read(getClass().getResource("/assets/swordsman2.png"));
             knightImage = ImageIO.read(getClass().getResource("/assets/knight2.png"));
-
-            // Load Structure Images
             townhallImage = ImageIO.read(getClass().getResource("/assets/townhall2.png"));
             farmImage = ImageIO.read(getClass().getResource("/assets/farm2.png"));
             barrackImage = ImageIO.read(getClass().getResource("/assets/barrack2.png"));
             marketImage = ImageIO.read(getClass().getResource("/assets/market2.png"));
-            townhallImage = ImageIO.read(getClass().getResource("/assets/townhall2.png"));
             towerImage = ImageIO.read(getClass().getResource("/assets/tower2.png"));
-
         } catch (IOException | IllegalArgumentException e) {
             System.err.println("Error loading asset images. Make sure all images are in the src/assets folder.");
             e.printStackTrace();
         }
     }
 
-    // ... (paintComponent, getPlayerColor, drawTile, and drawStructure methods remain the same) ...
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -209,7 +186,6 @@ public class GameBoardPanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        // ---  Correct calculation for drawing ---
         Insets insets = getInsets();
         int drawableWidth = getWidth() - insets.left - insets.right;
         int drawableHeight = getHeight() - insets.top - insets.bottom;
@@ -219,7 +195,6 @@ public class GameBoardPanel extends JPanel {
         int tileWidth = drawableWidth / gameBoard.width;
         int tileHeight = drawableHeight / gameBoard.height;
 
-        // Draw from the top-left of the drawable area
         g.translate(insets.left, insets.top);
 
         for (int x = 0; x < gameBoard.width; x++) {
@@ -229,32 +204,28 @@ public class GameBoardPanel extends JPanel {
         }
 
         if (selectedX >= 0 && selectedY >= 0) {
-            // MODIFIED: Using a softer golden yellow for selection
             g2d.setColor(new Color(255, 223, 100));
             g2d.setStroke(new BasicStroke(3));
             g2d.drawRect(selectedX * tileWidth, selectedY * tileHeight, tileWidth, tileHeight);
         }
 
-        if (attackingUnit != null) {
-            g2d.setColor(new Color(255, 105, 97));
+        Unit selectedUnit = gameManager.getSelectedUnit();
+        if (selectedUnit != null) {
+            g2d.setColor(Color.RED);
             g2d.setStroke(new BasicStroke(3));
-            g2d.drawRect(attackingUnit.getX() * tileWidth, attackingUnit.getY() * tileHeight, tileWidth, tileHeight);
+            g2d.drawRect(selectedUnit.getX() * tileWidth, selectedUnit.getY() * tileHeight, tileWidth, tileHeight);
         }
 
-        // ✅ اضافه کردن هایلایت برای مسیرهای قابل حرکت
-        g2d.setColor(new Color(144, 238, 144, 128)); // Light green semi-transparent
+        g2d.setColor(new Color(144, 238, 144, 128));
         for (Point p : movableTiles) {
             int drawX = p.x * tileWidth;
             int drawY = p.y * tileHeight;
             g2d.fillRect(drawX, drawY, tileWidth, tileHeight);
         }
 
-        // Translate back to original position to not affect other components
         g.translate(-insets.left, -insets.top);
     }
 
-
-    // Helper method to get a player's color based on their name.
     private Color getPlayerColor(String playerName) {
         if (playerName == null) return Color.GRAY;
         return switch (playerName) {
@@ -262,7 +233,7 @@ public class GameBoardPanel extends JPanel {
             case "Player 2" -> PLAYER2_COLOR;
             case "Player 3" -> PLAYER3_COLOR;
             case "Player 4" -> PLAYER4_COLOR;
-            default -> Color.GRAY; // A fallback color
+            default -> Color.GRAY;
         };
     }
 
@@ -271,7 +242,6 @@ public class GameBoardPanel extends JPanel {
         g2d.setColor(baseColor);
         g2d.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
 
-        // Add a subtle border to each tile
         g2d.setColor(baseColor.darker().darker());
         g2d.drawRect(x * tileWidth, y * tileHeight, tileWidth -1, tileHeight -1);
 
@@ -287,17 +257,13 @@ public class GameBoardPanel extends JPanel {
 
     private void drawStructure(Graphics2D g2d, int x, int y, int tileWidth, int tileHeight, Structure entity) {
         Color baseColor = getPlayerColor(entity.getOwner().getName());
-
-
         g2d.setColor(SHADOW_COLOR);
         g2d.fillRoundRect(x * tileWidth + 7, y * tileHeight + 7, tileWidth - 10, tileHeight - 10, 15, 15);
-
         g2d.setColor(baseColor);
         g2d.fillRoundRect(x * tileWidth + 3, y * tileHeight + 3, tileWidth - 6, tileHeight - 6, 12, 12);
         g2d.setColor(baseColor.darker());
         g2d.drawRoundRect(x * tileWidth + 3, y * tileHeight + 3, tileWidth - 6, tileHeight - 6, 12, 12);
 
-        // Select the correct image for the structure
         Image structureImage = null;
         if (entity instanceof TownHall) structureImage = townhallImage;
         else if (entity instanceof Farm) structureImage = farmImage;
@@ -305,9 +271,8 @@ public class GameBoardPanel extends JPanel {
         else if (entity instanceof Market) structureImage = marketImage;
         else if (entity instanceof Tower) structureImage = towerImage;
 
-        // Draw the image on top of the colored base
         if (structureImage != null) {
-            int padding = (int) (tileWidth * 0.1); // Padding to make the image fit nicely
+            int padding = (int) (tileWidth * 0.1);
             g2d.drawImage(structureImage,
                     x * tileWidth + padding,
                     y * tileHeight + padding,
@@ -316,34 +281,25 @@ public class GameBoardPanel extends JPanel {
                     null);
         }
 
-
-        //  Draw Health Bar
         drawHealthBar(g2d, x, y, tileWidth, tileHeight, entity.getDurability(), entity.getMaxDurability());
     }
 
     private void drawUnit(Graphics2D g2d, int x, int y, int tileWidth, int tileHeight, Unit entity) {
-        // First, draw the colored oval for the player's color
         Color unitColor = getPlayerColor(entity.getOwner().getName());
-
         g2d.setColor(SHADOW_COLOR);
         g2d.fillOval(x * tileWidth + 7, y * tileHeight + 7, tileWidth - 10, tileHeight - 10);
-
-        // Draw main body with a white border
         g2d.setColor(unitColor);
         g2d.fillOval(x * tileWidth + 3, y * tileHeight + 3, tileWidth - 6, tileHeight - 6);
         g2d.setColor(unitColor.darker());
         g2d.drawOval(x * tileWidth + 3, y * tileHeight + 3, tileWidth - 6, tileHeight - 6);
 
-        // select the correct image to draw
         Image unitImage = null;
         if (entity instanceof Peasant) unitImage = peasantImage;
         else if (entity instanceof Spearman) unitImage = spearmanImage;
         else if (entity instanceof Swordsman) unitImage = swordsmanImage;
         else if (entity instanceof Knight) unitImage = knightImage;
 
-        // Draw the image on top of the colored oval
         if (unitImage != null) {
-            // The padding values center the image inside the tile
             int padding = (int) (tileWidth * 0.15);
             g2d.drawImage(unitImage,
                     x * tileWidth + padding,
@@ -353,16 +309,13 @@ public class GameBoardPanel extends JPanel {
                     null);
         }
 
-        // Finally, draw the health bar
         drawHealthBar(g2d, x, y, tileWidth, tileHeight, entity.getHealth(), entity.getMaxHealth());
     }
 
-    // method to draw a health bar for any entity.
     private void drawHealthBar(Graphics2D g2d, int x, int y, int tileWidth, int tileHeight, int currentHealth, int maxHealth) {
         if (maxHealth <= 0) return;
 
         double healthPercent = (double) currentHealth / maxHealth;
-
         int barWidth = tileWidth - 14;
         int barHeight = 8;
         int barX = x * tileWidth + 7;
@@ -375,29 +328,18 @@ public class GameBoardPanel extends JPanel {
                 (healthPercent > 0.3) ? new Color(255, 201, 14) :
                         new Color(237, 28, 36);
 
-        // Draw the current health portion
         g2d.setColor(healthColor);
         g2d.fillRoundRect(barX, barY, (int) (barWidth * healthPercent), barHeight, 5, 5);
-
-        // border to the health bar for better visibility
         g2d.setColor(Color.DARK_GRAY);
         g2d.drawRoundRect(barX, barY, barWidth, barHeight, 5, 5);
     }
 
-
     public void updatePanel(GameBoard board, GameEntity selected) {
         this.gameBoard = board;
         this.selectedEntity = selected;
-        // this.attackingUnit = null;
         if (this.selectedX == -1 && this.selectedY == -1) {
             this.selectedEntity = null;
         }
         repaint();
     }
-
-    public void setAttackingUnit(Unit unit) {
-        this.attackingUnit = unit;
-        repaint();
-    }
-
 }
