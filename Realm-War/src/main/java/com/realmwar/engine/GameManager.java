@@ -15,6 +15,7 @@ import com.realmwar.util.CustomExceptions.GameRuleException;
 import java.awt.Point;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Arrays;
 
 public class GameManager {
     private final GameBoard gameBoard;
@@ -349,19 +350,36 @@ public class GameManager {
             throw new GameRuleException("You can only train units within or adjacent to your territory!");
         }
 
+        // Check if player has enough unit space
+        if (!currentPlayer.hasEnoughUnitSpace(gameBoard)) {
+            throw new GameRuleException("Not enough unit space to train a new unit!");
+        }
+
         boolean canTrain = false;
         if (unitType.equals("Peasant")) {
             if (gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, TownHall.class)) {
                 canTrain = true;
             }
         } else {
-            if (gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, Barrack.class)) {
-                canTrain = true;
+            // Check if the target tile is in a valid direction relative to any friendly Barrack
+            for (Structure structure : gameBoard.getStructuresForPlayer(currentPlayer)) {
+                if (structure instanceof Barrack barrack) {
+                    List<Point> validDirections = barrack.getValidUnitPlacementDirections();
+                    for (Point direction : validDirections) {
+                        int checkX = structure.getX() + direction.x;
+                        int checkY = structure.getY() + direction.y;
+                        if (checkX == x && checkY == y) {
+                            canTrain = true;
+                            break;
+                        }
+                    }
+                    if (canTrain) break;
+                }
             }
         }
 
         if (!canTrain) {
-            throw new GameRuleException("Units must be trained on a tile adjacent to the correct building (Barrack, or TownHall for Peasants).");
+            throw new GameRuleException("Units must be trained on a tile adjacent to the correct building (Barrack for non-Peasants, or TownHall for Peasants) in a valid direction.");
         }
 
         if (!currentPlayer.canTrainUnit(unitType)) {

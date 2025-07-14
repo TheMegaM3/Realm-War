@@ -2,6 +2,9 @@ package com.realmwar.model;
 
 import com.realmwar.util.Constants;
 import com.realmwar.util.CustomExceptions.GameRuleException;
+import com.realmwar.model.structures.Barrack;
+import com.realmwar.model.structures.TownHall;
+import com.realmwar.engine.GameBoard;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -50,6 +53,33 @@ public class Player {
             case "Knight" -> currentCount < Constants.MAX_KNIGHTS_PER_PLAYER;
             default -> false;
         };
+    }
+
+    /**
+     * Calculates the total unit space available from all Barracks and TownHall owned by the player.
+     * @param gameBoard The game board to check for player's structures.
+     * @return The total unit space available.
+     */
+    public int getTotalUnitSpace(GameBoard gameBoard) {
+        int totalUnitSpace = 0;
+        for (var structure : gameBoard.getStructuresForPlayer(this)) {
+            if (structure instanceof TownHall) {
+                totalUnitSpace += Constants.TOWNHALL_UNIT_SPACE;
+            } else if (structure instanceof Barrack barrack) {
+                totalUnitSpace += barrack.getUnitSpace();
+            }
+        }
+        return totalUnitSpace;
+    }
+
+    /**
+     * Checks if the player has enough unit space to train a new unit.
+     * @param gameBoard The game board to check for player's structures.
+     * @return True if the player has enough unit space, false otherwise.
+     */
+    public boolean hasEnoughUnitSpace(GameBoard gameBoard) {
+        int totalUnits = unitCounts.values().stream().mapToInt(Integer::intValue).sum();
+        return totalUnits < getTotalUnitSpace(gameBoard);
     }
 
     public String getName() { return name; }

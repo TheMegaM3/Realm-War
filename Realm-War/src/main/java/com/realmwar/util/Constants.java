@@ -96,4 +96,9 @@ public final class Constants {
     public static final int MAX_SPEARMEN_PER_PLAYER = 8;
     public static final int MAX_SWORDSMEN_PER_PLAYER = 6;
     public static final int MAX_KNIGHTS_PER_PLAYER = 4;
+
+    // --- Unit Space Settings ---
+    public static final int BARRACK_BASE_UNIT_SPACE = 4; // Initial unit space for Barrack
+    public static final int BARRACK_UNIT_SPACE_INCREMENT = 2; // Unit space increase per level
+    public static final int TOWNHALL_UNIT_SPACE = 5; // Fixed unit space for TownHall
 }

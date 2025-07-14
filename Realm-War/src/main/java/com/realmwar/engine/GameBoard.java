@@ -5,6 +5,7 @@ import com.realmwar.engine.blocks.EmptyBlock;
 import com.realmwar.engine.blocks.ForestBlock;
 import com.realmwar.model.GameEntity;
 import com.realmwar.model.Player;
+import com.realmwar.model.structures.Barrack;
 import com.realmwar.model.structures.Structure;
 import com.realmwar.model.structures.Tower;
 import com.realmwar.model.units.Unit;
@@ -128,14 +129,30 @@ public class GameBoard {
     }
 
     public boolean isAdjacentToFriendlyStructure(int x, int y, Player player, Class<? extends Structure> structureType) {
-        int[] dx = {-1, 1, 0, 0};
-        int[] dy = {0, 0, -1, 1};
-        for (int i = 0; i < 4; i++) {
-            GameTile tile = getTile(x + dx[i], y + dy[i]);
-            if (tile != null && tile.getEntity() != null &&
-                    structureType.isInstance(tile.getEntity()) &&
-                    tile.getEntity().getOwner() == player) {
-                return true;
+        for (Structure structure : getStructuresForPlayer(player)) {
+            if (structureType.isInstance(structure)) {
+                // For Barrack, check valid unit placement directions based on its level
+                if (structure instanceof Barrack barrack) {
+                    List<Point> validDirections = barrack.getValidUnitPlacementDirections();
+                    for (Point direction : validDirections) {
+                        int checkX = structure.getX() + direction.x;
+                        int checkY = structure.getY() + direction.y;
+                        if (checkX == x && checkY == y) {
+                            return true;
+                        }
+                    }
+                } else {
+                    // For other structures (e.g., TownHall), check the four main directions
+                    int[] dx = {-1, 1, 0, 0};
+                    int[] dy = {0, 0, -1, 1};
+                    for (int i = 0; i < 4; i++) {
+                        int checkX = structure.getX() + dx[i];
+                        int checkY = structure.getY() + dy[i];
+                        if (checkX == x && checkY == y) {
+                            return true;
+                        }
+                    }
+                }
             }
         }
         return false;

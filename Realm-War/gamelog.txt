@@ -827,3 +827,589 @@
 2025/07/14 18:09:47 - Player 1 trained a Knight at (1,3).
 2025/07/14 18:09:49 - Player 1 gained 2 gold and 0 food.
 2025/07/14 18:09:52 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:36:23 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 20:37:41 - GameManager created. Player 1's turn begins.
+2025/07/14 20:37:54 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/14 20:37:55 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:37:58 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:38:01 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:38:04 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:38:07 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:38:10 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:38:13 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:38:14 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/14 20:38:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:39:12 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:39:13 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:39:16 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:39:17 - Player 1 trained a Spearman at (1,3).
+2025/07/14 20:39:19 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:22 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:25 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:28 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:31 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:34 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:37 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:38 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 20:39:38 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:39:38 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:39:40 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:43 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:46 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:49 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:52 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:55 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:58 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:39:58 - Barrack at (1,2) upgraded to level 2 for 75 gold.
+2025/07/14 20:40:01 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:04 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:04 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 20:40:04 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:40:04 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:40:07 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:10 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:13 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:16 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:19 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:22 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:25 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:28 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:31 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:40:33 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 20:40:33 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:48:39 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 20:48:42 - GameManager created. Player 1's turn begins.
+2025/07/14 20:48:52 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/14 20:48:52 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:48:55 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:48:58 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:01 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:04 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:05 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 20:49:06 - GameManager created. Player 1's turn begins.
+2025/07/14 20:49:08 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:10 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:13 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:16 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:19 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:20 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/14 20:49:20 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:49:26 - Player 1 built a Barrack at (2,2) for 150 gold.
+2025/07/14 20:49:26 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:49:30 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:49:33 - Player 1 gained 1 gold and 0 food.
+2025/07/14 20:49:33 - Player 1 trained a Spearman at (2,3).
+2025/07/14 20:49:35 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 20:49:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:49:35 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:49:36 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:49:39 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:49:42 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:49:45 - Player 1 gained 2 gold and 0 food.
+2025/07/14 20:49:47 - Player 1 trained a Spearman at (3,2).
+2025/07/14 20:49:48 - Player 1 gained 3 gold and 0 food.
+2025/07/14 20:49:49 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/14 20:49:49 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:49:50 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:49:51 - Player 1 gained 3 gold and 0 food.
+2025/07/14 20:49:51 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:49:52 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:54 - Player 1 gained 3 gold and 0 food.
+2025/07/14 20:49:55 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:49:56 - Player 1 trained a Spearman at (1,2).
+2025/07/14 20:49:57 - Player 1 gained 3 gold and 1 food.
+2025/07/14 20:49:58 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:00 - Player 1 gained 3 gold and 1 food.
+2025/07/14 20:50:01 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:03 - Player 1 gained 3 gold and 1 food.
+2025/07/14 20:50:04 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:06 - Player 1 trained a Spearman at (2,1).
+2025/07/14 20:50:06 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:07 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:09 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:09 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/14 20:50:09 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:50:10 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:50:10 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:12 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:13 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:15 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:16 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:18 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:19 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:20 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/14 20:50:20 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:50:20 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:50:21 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:22 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:23 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/14 20:50:23 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:50:24 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:27 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:30 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:33 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:36 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:39 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:42 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:43 - Barrack at (2,2) upgraded to level 2 for 75 gold.
+2025/07/14 20:50:45 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:48 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:51 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:50:51 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/14 20:50:51 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:50:55 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:50:56 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:50:56 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:50:56 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/14 20:50:56 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:50:59 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:02 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:03 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:51:03 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/14 20:51:03 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:51:05 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:08 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:11 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:11 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 20:51:12 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:14 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:15 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:17 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:18 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:20 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:21 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:23 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:24 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:26 - Player 1 gained 0 gold and 1 food.
+2025/07/14 20:51:26 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/14 20:51:26 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 20:51:27 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:30 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:33 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:36 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:39 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:42 - Player 1 gained 4 gold and 1 food.
+2025/07/14 20:51:43 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/14 20:51:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:34:47 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 21:34:50 - GameManager created. Player 1's turn begins.
+2025/07/14 21:35:09 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/14 21:35:09 - Player 1 gained 1 gold and 0 food.
+2025/07/14 21:35:12 - Player 1 gained 1 gold and 0 food.
+2025/07/14 21:35:14 - Player 1 total unit space: 10
+2025/07/14 21:35:14 - Player 1 trained a Spearman at (1,3).
+2025/07/14 21:35:15 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:16 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:35:16 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:35:17 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:35:18 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:21 - Barrack at (1,2) upgraded to level 2 for 75 gold.
+2025/07/14 21:35:21 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:24 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:28 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:28 - Player 1 total unit space: 12
+2025/07/14 21:35:31 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:34 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:37 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:40 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:43 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:46 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:47 - Player 1 total unit space: 12
+2025/07/14 21:35:49 - Player 1 gained 1 gold and 1 food.
+2025/07/14 21:35:50 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:35:50 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:44:54 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 21:45:02 - GameManager created. Player 1's turn begins.
+2025/07/14 21:45:03 - Player 1 total unit space: 5
+2025/07/14 21:45:06 - Player 1 total unit space: 5
+2025/07/14 21:45:09 - Player 1 total unit space: 5
+2025/07/14 21:45:12 - Player 1 total unit space: 5
+2025/07/14 21:45:15 - Player 1 total unit space: 5
+2025/07/14 21:45:18 - Player 1 total unit space: 5
+2025/07/14 21:45:21 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/14 21:45:21 - Player 1 total unit space: 10
+2025/07/14 21:45:21 - Player 1 gained 1 gold and 0 food.
+2025/07/14 21:45:21 - Player 1 total unit space: 10
+2025/07/14 21:45:24 - Player 1 gained 1 gold and 0 food.
+2025/07/14 21:45:24 - Player 1 total unit space: 10
+2025/07/14 21:45:26 - Player 1 total unit space: 10
+2025/07/14 21:45:26 - Player 1 trained a Spearman at (1,3).
+2025/07/14 21:45:26 - Player 1 total unit space: 10
+2025/07/14 21:45:27 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:27 - Player 1 total unit space: 10
+2025/07/14 21:45:29 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:45:29 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:45:29 - Player 2 total unit space: 5
+2025/07/14 21:45:29 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:45:29 - Player 1 total unit space: 10
+2025/07/14 21:45:30 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:30 - Player 1 total unit space: 10
+2025/07/14 21:45:33 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:33 - Player 1 total unit space: 10
+2025/07/14 21:45:33 - Player 1 total unit space: 10
+2025/07/14 21:45:36 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:36 - Player 1 total unit space: 10
+2025/07/14 21:45:37 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:45:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:45:37 - Player 2 total unit space: 5
+2025/07/14 21:45:38 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:45:38 - Player 1 total unit space: 10
+2025/07/14 21:45:39 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:39 - Player 1 total unit space: 10
+2025/07/14 21:45:41 - Barrack at (1,2) upgraded to level 2 for 75 gold.
+2025/07/14 21:45:41 - Player 1 total unit space: 12
+2025/07/14 21:45:42 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:42 - Player 1 total unit space: 12
+2025/07/14 21:45:45 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:45 - Player 1 total unit space: 12
+2025/07/14 21:45:48 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:48 - Player 1 total unit space: 12
+2025/07/14 21:45:50 - Player 1 total unit space: 12
+2025/07/14 21:45:51 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:51 - Player 1 total unit space: 12
+2025/07/14 21:45:54 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:54 - Player 1 total unit space: 12
+2025/07/14 21:45:57 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:45:57 - Player 1 total unit space: 12
+2025/07/14 21:45:59 - Player 1 total unit space: 12
+2025/07/14 21:46:00 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:00 - Player 1 total unit space: 12
+2025/07/14 21:46:03 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:03 - Player 1 total unit space: 12
+2025/07/14 21:46:06 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:06 - Player 1 total unit space: 12
+2025/07/14 21:46:09 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:09 - Player 1 total unit space: 12
+2025/07/14 21:46:12 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:12 - Player 1 total unit space: 12
+2025/07/14 21:46:15 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:15 - Player 1 total unit space: 12
+2025/07/14 21:46:18 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:18 - Player 1 total unit space: 12
+2025/07/14 21:46:21 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:21 - Player 1 total unit space: 12
+2025/07/14 21:46:24 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:24 - Player 1 total unit space: 12
+2025/07/14 21:46:27 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:27 - Player 1 total unit space: 12
+2025/07/14 21:46:30 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:30 - Player 1 total unit space: 12
+2025/07/14 21:46:33 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:33 - Player 1 total unit space: 12
+2025/07/14 21:46:36 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:36 - Player 1 total unit space: 12
+2025/07/14 21:46:39 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:39 - Player 1 total unit space: 12
+2025/07/14 21:46:42 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:42 - Player 1 total unit space: 12
+2025/07/14 21:46:45 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:45 - Player 1 total unit space: 12
+2025/07/14 21:46:48 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:48 - Player 1 total unit space: 12
+2025/07/14 21:46:51 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:51 - Player 1 total unit space: 12
+2025/07/14 21:46:54 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:54 - Player 1 total unit space: 12
+2025/07/14 21:46:57 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:46:57 - Player 1 total unit space: 12
+2025/07/14 21:47:00 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:00 - Player 1 total unit space: 12
+2025/07/14 21:47:03 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:03 - Player 1 total unit space: 12
+2025/07/14 21:47:05 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:47:05 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:47:05 - Player 2 total unit space: 5
+2025/07/14 21:47:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:47:06 - Player 1 total unit space: 12
+2025/07/14 21:47:06 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:06 - Player 1 total unit space: 12
+2025/07/14 21:47:09 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:09 - Player 1 total unit space: 12
+2025/07/14 21:47:11 - Barrack at (1,2) upgraded to level 3 for 150 gold.
+2025/07/14 21:47:11 - Player 1 total unit space: 14
+2025/07/14 21:47:12 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:12 - Player 1 total unit space: 14
+2025/07/14 21:47:15 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:15 - Player 1 total unit space: 14
+2025/07/14 21:47:18 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:47:18 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:47:18 - Player 2 total unit space: 5
+2025/07/14 21:47:18 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:47:18 - Player 1 total unit space: 14
+2025/07/14 21:47:18 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:18 - Player 1 total unit space: 14
+2025/07/14 21:47:21 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:21 - Player 1 total unit space: 14
+2025/07/14 21:47:23 - Player 1 total unit space: 14
+2025/07/14 21:47:24 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:24 - Player 1 total unit space: 14
+2025/07/14 21:47:26 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:47:26 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:47:26 - Player 2 total unit space: 5
+2025/07/14 21:47:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:47:27 - Player 1 total unit space: 14
+2025/07/14 21:47:27 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:27 - Player 1 total unit space: 14
+2025/07/14 21:47:30 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:47:30 - Player 1 total unit space: 14
+2025/07/14 21:55:21 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 21:55:23 - GameManager created. Player 1's turn begins.
+2025/07/14 21:55:25 - Player 1 total unit space: 5
+2025/07/14 21:55:27 - Player 1 total unit space: 5
+2025/07/14 21:55:30 - Player 1 total unit space: 5
+2025/07/14 21:55:33 - Player 1 total unit space: 5
+2025/07/14 21:55:35 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/14 21:55:35 - Player 1 total unit space: 10
+2025/07/14 21:55:36 - Player 1 gained 1 gold and 0 food.
+2025/07/14 21:55:36 - Player 1 total unit space: 10
+2025/07/14 21:55:39 - Player 1 gained 1 gold and 0 food.
+2025/07/14 21:55:39 - Player 1 total unit space: 10
+2025/07/14 21:55:42 - Player 1 gained 1 gold and 0 food.
+2025/07/14 21:55:42 - Player 1 total unit space: 10
+2025/07/14 21:55:45 - Player 1 gained 1 gold and 0 food.
+2025/07/14 21:55:45 - Player 1 total unit space: 10
+2025/07/14 21:55:47 - Attempting to train Spearman at (1,3) for Player 1
+2025/07/14 21:55:47 - Player 1 total unit space: 10
+2025/07/14 21:55:47 - Player 1 trained a Spearman at (1,3).
+2025/07/14 21:55:47 - Player 1 total unit space: 10
+2025/07/14 21:55:48 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:55:48 - Player 1 total unit space: 10
+2025/07/14 21:55:51 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:55:51 - Player 1 total unit space: 10
+2025/07/14 21:55:55 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:55:55 - Player 1 total unit space: 10
+2025/07/14 21:55:56 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:55:56 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:55:56 - Player 2 total unit space: 5
+2025/07/14 21:55:57 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:55:57 - Player 1 total unit space: 10
+2025/07/14 21:55:58 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:55:58 - Player 1 total unit space: 10
+2025/07/14 21:55:58 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:55:58 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:55:58 - Player 2 total unit space: 5
+2025/07/14 21:56:01 - Player 2 total unit space: 5
+2025/07/14 21:56:04 - Player 2 total unit space: 5
+2025/07/14 21:56:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:56:06 - Player 1 total unit space: 10
+2025/07/14 21:56:07 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:07 - Player 1 total unit space: 10
+2025/07/14 21:56:07 - Barrack at (1,2) upgraded to level 2 for 75 gold.
+2025/07/14 21:56:07 - Player 1 total unit space: 12
+2025/07/14 21:56:10 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:10 - Player 1 total unit space: 12
+2025/07/14 21:56:12 - Barrack at (1,2) upgraded to level 3 for 150 gold.
+2025/07/14 21:56:12 - Player 1 total unit space: 14
+2025/07/14 21:56:13 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:13 - Player 1 total unit space: 14
+2025/07/14 21:56:16 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:16 - Player 1 total unit space: 14
+2025/07/14 21:56:18 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:56:18 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:56:18 - Player 2 total unit space: 5
+2025/07/14 21:56:19 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 21:56:19 - Player 1 total unit space: 14
+2025/07/14 21:56:19 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:19 - Player 1 total unit space: 14
+2025/07/14 21:56:22 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:22 - Player 1 total unit space: 14
+2025/07/14 21:56:24 - Attempting to train Spearman at (1,4) for Player 1
+2025/07/14 21:56:24 - Player 1 total unit space: 14
+2025/07/14 21:56:25 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:25 - Player 1 total unit space: 14
+2025/07/14 21:56:28 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:28 - Player 1 total unit space: 14
+2025/07/14 21:56:31 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:31 - Player 1 total unit space: 14
+2025/07/14 21:56:34 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:34 - Player 1 total unit space: 14
+2025/07/14 21:56:37 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:37 - Player 1 total unit space: 14
+2025/07/14 21:56:40 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:40 - Player 1 total unit space: 14
+2025/07/14 21:56:43 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:43 - Player 1 total unit space: 14
+2025/07/14 21:56:46 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:46 - Player 1 total unit space: 14
+2025/07/14 21:56:49 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:49 - Player 1 total unit space: 14
+2025/07/14 21:56:52 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:52 - Player 1 total unit space: 14
+2025/07/14 21:56:55 - Player 1 gained 2 gold and 0 food.
+2025/07/14 21:56:55 - Player 1 total unit space: 14
+2025/07/14 21:56:56 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 21:56:56 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 21:56:56 - Player 2 total unit space: 5
+2025/07/14 23:17:59 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 23:18:03 - GameManager created. Player 1's turn begins.
+2025/07/14 23:18:20 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/14 23:18:22 - Player 1 gained 1 gold and 0 food.
+2025/07/14 23:18:25 - Player 1 gained 1 gold and 0 food.
+2025/07/14 23:18:25 - Player 1 trained a Spearman at (1,3).
+2025/07/14 23:18:27 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 23:18:27 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 23:18:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 23:18:28 - Player 1 gained 1 gold and 1 food.
+2025/07/14 23:18:30 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/14 23:18:30 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 23:18:30 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 23:18:31 - Player 1 gained 1 gold and 1 food.
+2025/07/14 23:18:34 - Player 1 gained 1 gold and 1 food.
+2025/07/14 23:18:35 - Player 1 trained a Spearman at (1,3).
+2025/07/14 23:18:37 - Player 1 gained 1 gold and 1 food.
+2025/07/14 23:18:40 - Player 1 gained 1 gold and 1 food.
+2025/07/14 23:18:43 - Player 1 gained 1 gold and 1 food.
+2025/07/14 23:18:46 - Player 1 gained 1 gold and 1 food.
+2025/07/14 23:18:49 - Player 1 trained a Spearman at (2,2).
+2025/07/14 23:18:49 - Player 1 gained 1 gold and 2 food.
+2025/07/14 23:18:52 - Player 1 gained 1 gold and 2 food.
+2025/07/14 23:18:54 - Player 1 trained a Spearman at (0,2).
+2025/07/14 23:18:55 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:18:58 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:01 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:02 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/14 23:19:02 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 23:19:04 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 23:19:04 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:07 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:10 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:12 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/14 23:19:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 23:19:12 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 23:19:13 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:16 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:17 - Player 1 trained a Spearman at (1,3).
+2025/07/14 23:19:19 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:22 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:24 - Player 1 trained a Spearman at (2,2).
+2025/07/14 23:19:25 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:28 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:30 - Player 1 trained a Spearman at (0,2).
+2025/07/14 23:19:31 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:33 - Player 1's turn-end maintenance cost: 16 gold.
+2025/07/14 23:19:33 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 23:19:33 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 23:19:34 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:37 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:40 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:43 - Player 1's turn-end maintenance cost: 16 gold.
+2025/07/14 23:19:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 23:19:43 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 23:19:43 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:46 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:47 - Player 1 trained a Spearman at (1,3).
+2025/07/14 23:19:49 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:52 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:55 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:19:58 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:20:01 - Player 1 gained 2 gold and 2 food.
+2025/07/14 23:59:01 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 23:59:04 - GameManager created. Player 1's turn begins.
+2025/07/14 23:59:55 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 23:59:57 - GameManager created. Player 1's turn begins.
+2025/07/15 00:03:29 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/15 00:03:33 - GameManager created. Player 1's turn begins.
+2025/07/15 00:03:44 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/15 00:03:46 - Player 1 gained 0 gold and 1 food.
+2025/07/15 00:03:49 - Player 1 gained 0 gold and 1 food.
+2025/07/15 00:03:52 - Player 1 gained 0 gold and 1 food.
+2025/07/15 00:03:54 - Player 1 trained a Spearman at (1,3).
+2025/07/15 00:03:55 - Player 1 gained 1 gold and 1 food.
+2025/07/15 00:03:57 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/15 00:03:57 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/15 00:03:57 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/15 00:03:58 - Player 1 gained 1 gold and 1 food.
+2025/07/15 00:04:01 - Player 1 gained 1 gold and 1 food.
+2025/07/15 00:04:04 - Player 1 gained 1 gold and 1 food.
+2025/07/15 00:04:06 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/15 00:04:06 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/15 00:04:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/15 00:04:07 - Player 1 gained 1 gold and 1 food.
+2025/07/15 00:04:10 - Player 1 gained 1 gold and 1 food.
+2025/07/15 00:04:11 - Player 1 trained a Spearman at (2,2).
+2025/07/15 00:04:13 - Player 1 gained 2 gold and 1 food.
+2025/07/15 00:04:16 - Player 1 gained 2 gold and 1 food.
+2025/07/15 00:04:19 - Player 1 gained 2 gold and 1 food.
+2025/07/15 00:04:20 - Player 1 trained a Spearman at (0,2).
+2025/07/15 00:04:22 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:25 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:28 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:31 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:33 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/15 00:04:33 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/15 00:04:34 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/15 00:04:34 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:37 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:40 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:41 - Barrack at (1,2) upgraded to level 2 for 75 gold.
+2025/07/15 00:04:43 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:46 - Player 1 gained 3 gold and 1 food.
+2025/07/15 00:04:47 - Player 1 trained a Spearman at (2,1).
+2025/07/15 00:04:49 - Player 1 gained 4 gold and 1 food.
+2025/07/15 00:04:52 - Player 1 gained 4 gold and 1 food.
+2025/07/15 00:04:55 - Player 1 gained 4 gold and 1 food.
+2025/07/15 00:04:58 - Player 1 gained 4 gold and 1 food.
+2025/07/15 00:05:00 - Player 1 trained a Spearman at (0,1).
+2025/07/15 00:05:01 - Player 1 gained 5 gold and 1 food.
+2025/07/15 00:05:04 - Player 1 gained 5 gold and 1 food.
+2025/07/15 00:05:05 - Player 1's turn-end maintenance cost: 12 gold.
+2025/07/15 00:05:05 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/15 00:05:13 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/15 00:05:14 - Player 1's turn-end maintenance cost: 12 gold.
+2025/07/15 00:05:14 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/15 00:05:14 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/15 00:05:16 - Player 1 gained 5 gold and 1 food.
+2025/07/15 00:05:18 - Barrack at (1,2) upgraded to level 3 for 150 gold.
+2025/07/15 00:05:19 - Player 1 gained 5 gold and 1 food.
+2025/07/15 00:05:22 - Player 1 gained 5 gold and 1 food.
+2025/07/15 00:05:23 - Player 1 trained a Spearman at (2,3).
+2025/07/15 00:05:25 - Player 1 gained 6 gold and 1 food.
+2025/07/15 00:05:28 - Player 1 gained 6 gold and 1 food.
+2025/07/15 00:05:31 - Player 1 gained 6 gold and 1 food.
+2025/07/15 00:05:34 - Player 1 gained 6 gold and 1 food.
+2025/07/15 00:05:37 - Player 1 gained 6 gold and 1 food.
+2025/07/15 00:05:40 - Player 1 gained 6 gold and 1 food.
+2025/07/15 00:05:43 - Player 1 gained 6 gold and 1 food.
+2025/07/15 00:05:44 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/15 00:05:45 - Player 1's turn-end maintenance cost: 14 gold.
+2025/07/15 00:05:45 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/15 00:05:46 - GameManager created. Player 1's turn begins.
+2025/07/15 00:06:00 - Player 1 built a Barrack at (2,2) for 150 gold.
+2025/07/15 00:06:02 - Player 1 gained 1 gold and 0 food.
+2025/07/15 00:06:04 - Player 1 trained a Spearman at (3,2).
+2025/07/15 00:06:05 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:06:08 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:06:11 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:06:14 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:06:17 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:06:19 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/15 00:06:19 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/15 00:06:20 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/15 00:17:01 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/15 00:17:04 - GameManager created. Player 1's turn begins.
+2025/07/15 00:17:20 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/15 00:17:23 - Player 1 gained 1 gold and 0 food.
+2025/07/15 00:17:24 - Player 1 trained a Spearman at (1,3).
+2025/07/15 00:17:26 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:28 - Player 1's turn-end maintenance cost: 4 gold.
+2025/07/15 00:17:28 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/15 00:17:28 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/15 00:17:29 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:32 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:33 - Player 1 trained a Spearman at (1,3).
+2025/07/15 00:17:35 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:36 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/15 00:17:38 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:39 - GameManager created. Player 1's turn begins.
+2025/07/15 00:17:41 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:42 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/15 00:17:44 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:45 - GameManager created. Player 1's turn begins.
+2025/07/15 00:17:47 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:50 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:53 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:56 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:17:59 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:18:02 - Player 1 gained 2 gold and 0 food.
+2025/07/15 00:18:03 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/15 00:18:03 - Turn ended for Player 1. It is now Player 2's turn.
