@@ -797,3 +797,33 @@
 2025/07/13 22:22:19 - Turn ended for Player 2. It is now Player 1's turn.
 2025/07/13 22:53:16 - Error initializing database: FATAL: password authentication failed for user "postgres"
 2025/07/13 22:56:06 - GameManager created. Player 1's turn begins.
+2025/07/14 14:30:19 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 14:30:55 - GameManager created. Player 1's turn begins.
+2025/07/14 14:31:04 - Player 1 built a Farm at (1,2) for 100 gold.
+2025/07/14 14:31:06 - Player 1 gained 1 gold and 2 food.
+2025/07/14 14:31:07 - Player 1's turn-end maintenance cost: 1 gold.
+2025/07/14 14:31:07 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 14:31:07 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 14:31:08 - Farm at (1,2) upgraded to level 2 for 75 gold.
+2025/07/14 14:31:09 - Player 1 gained 1 gold and 4 food.
+2025/07/14 14:31:12 - Player 1 gained 1 gold and 4 food.
+2025/07/14 17:19:33 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 17:19:48 - GameManager created. Player 1's turn begins.
+2025/07/14 17:19:59 - Player 1 built a Tower at (1,2) for 200 gold.
+2025/07/14 17:20:01 - Tower at (1,2) upgraded to level 2 for 75 gold.
+2025/07/14 17:20:02 - Player 1 gained 0 gold and 1 food.
+2025/07/14 17:20:05 - Player 1 gained 0 gold and 1 food.
+2025/07/14 17:20:08 - Player 1 gained 0 gold and 1 food.
+2025/07/14 17:20:10 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/14 17:20:10 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/14 17:20:10 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/14 17:20:11 - Player 1 gained 0 gold and 1 food.
+2025/07/14 17:20:14 - Player 1 gained 0 gold and 1 food.
+2025/07/14 17:20:17 - Player 1 gained 0 gold and 1 food.
+2025/07/14 18:09:27 - Error initializing database: FATAL: password authentication failed for user "postgres"
+2025/07/14 18:09:30 - GameManager created. Player 1's turn begins.
+2025/07/14 18:09:44 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/14 18:09:46 - Player 1 gained 1 gold and 0 food.
+2025/07/14 18:09:47 - Player 1 trained a Knight at (1,3).
+2025/07/14 18:09:49 - Player 1 gained 2 gold and 0 food.
+2025/07/14 18:09:52 - Player 1 gained 2 gold and 0 food.

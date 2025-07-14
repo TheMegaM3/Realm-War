@@ -115,7 +115,7 @@ public class GameBoardPanel extends JPanel {
                 }
             }
         } else {
-            if (!currentSelectedUnit.hasActedThisTurn() && currentSelectedUnit.moveTo(clickedTile)) {
+            if (!currentSelectedUnit.hasActedThisTurn() && currentSelectedUnit.moveTo(clickedTile, gameBoard)) {
                 currentSelectedUnit.setHasActedThisTurn(true);
                 gameManager.setSelectedUnit(null);
                 clearHighlights();
@@ -149,7 +149,7 @@ public class GameBoardPanel extends JPanel {
         for (int x = 0; x < gameBoard.width; x++) {
             for (int y = 0; y < gameBoard.height; y++) {
                 GameTile tile = gameBoard.getTile(x, y);
-                if (unit.canMoveTo(tile)) {
+                if (unit.canMoveTo(tile, gameBoard)) {
                     movableTiles.add(new Point(x, y));
                 }
             }

@@ -5,6 +5,8 @@ import com.realmwar.model.Player;
 import com.realmwar.util.Constants;
 import com.realmwar.engine.GameTile;
 import com.realmwar.engine.blocks.VoidBlock;
+import com.realmwar.engine.GameBoard;
+import com.realmwar.model.structures.Tower;
 
 /**
  * Represents the abstract base class for all movable units in the game.
@@ -74,8 +76,8 @@ public abstract class Unit extends GameEntity {
 
     // --- Movement Logic ---
 
-    public boolean canMoveTo(GameTile targetTile) {
-        if (currentTile == null) return false;
+    public boolean canMoveTo(GameTile targetTile, GameBoard gameBoard) {
+        if (currentTile == null || targetTile == null) return false;
 
         int dx = Math.abs(currentTile.getX() - targetTile.getX());
         int dy = Math.abs(currentTile.getY() - targetTile.getY());
@@ -85,19 +87,40 @@ public abstract class Unit extends GameEntity {
         boolean notVoid = !(targetTile.getBlock() instanceof VoidBlock);
         boolean notOccupied = targetTile.getEntity() == null;
 
-        return inRange && notVoid && notOccupied;
+        boolean notBlockedByTower = true;
+        if (inRange && notVoid && notOccupied) {
+            int[] dxOffsets = {-1, 1, 0, 0, -1, -1, 1, 1};
+            int[] dyOffsets = {0, 0, -1, 1, -1, 1, -1, 1};
+            for (int i = 0; i < 8; i++) {
+                GameTile adjacentTile = gameBoard.getTile(targetTile.getX() + dxOffsets[i], targetTile.getY() + dyOffsets[i]);
+                if (adjacentTile != null && adjacentTile.getEntity() instanceof Tower tower && tower.getOwner() != this.getOwner()) {
+                    if (tower.blocksUnit(this)) {
+                        notBlockedByTower = false;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return inRange && notVoid && notOccupied && notBlockedByTower;
     }
 
-    public boolean moveTo(GameTile targetTile) {
-        if (canMoveTo(targetTile)) {
+    public boolean moveTo(GameTile targetTile, GameBoard gameBoard) {
+        if (canMoveTo(targetTile, gameBoard)) {
             if (currentTile != null) {
-                currentTile.setEntity(null); // حذف از tile قبلی
+                currentTile.setEntity(null);
             }
-
-            targetTile.setEntity(this);     // قرار گرفتن روی tile جدید
-            setPosition(targetTile.getX(), targetTile.getY()); // آپدیت مختصات
+            targetTile.setEntity(this);
+            setPosition(targetTile.getX(), targetTile.getY());
             return true;
         }
         return false;
+    }
+    public int getUnitLevel() {
+        if (this instanceof Peasant) return 1;
+        if (this instanceof Spearman) return 2;
+        if (this instanceof Swordsman) return 3;
+        if (this instanceof Knight) return 4;
+        return 0; // Default case
     }
 }
