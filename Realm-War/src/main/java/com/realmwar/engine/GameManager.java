@@ -96,8 +96,11 @@ public class GameManager {
         int foodIncome = 0;
 
         for (Structure s : gameBoard.getStructuresForPlayer(currentPlayer)) {
-            if (s instanceof Market) goldIncome += Constants.MARKET_GOLD_PER_TICK;
-            else if (s instanceof Farm) foodIncome += Constants.FARM_FOOD_PER_TICK;
+            if (s instanceof Market market) {
+                goldIncome += market.getGoldProduction();
+            } else if (s instanceof Farm farm) {
+                foodIncome += farm.getFoodProduction();
+            }
         }
 
         for (int x = 0; x < gameBoard.width; x++) {
@@ -112,6 +115,7 @@ public class GameManager {
 
         if (goldIncome > 0 || foodIncome > 0) {
             currentPlayer.getResourceHandler().addResources(goldIncome, foodIncome);
+            GameLogger.log(currentPlayer.getName() + " gained " + goldIncome + " gold and " + foodIncome + " food.");
         }
     }
 
@@ -369,6 +373,4 @@ public class GameManager {
     }
     public Unit getSelectedUnit() { return selectedUnit; }
     public void setSelectedUnit(Unit unit) { this.selectedUnit = unit; }
-
-
 }

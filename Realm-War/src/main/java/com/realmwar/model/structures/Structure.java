@@ -11,7 +11,7 @@ import com.realmwar.util.Constants;
 public abstract class Structure extends GameEntity {
 
     protected int durability;
-    protected final int maxDurability;
+    protected int maxDurability; // تغییر به غیر final برای امکان افزایش
     protected final int maintenanceCost;
     protected int level;
     protected final int maxLevel;
@@ -19,10 +19,10 @@ public abstract class Structure extends GameEntity {
     public Structure(Player owner, int x, int y, int maxDurability, int maintenanceCost) {
         super(owner, x, y);
         this.maxDurability = maxDurability;
-        this.durability = maxDurability; // Structures start with full durability.
+        this.durability = maxDurability;
         this.maintenanceCost = maintenanceCost;
         this.level = 1;
-        this.maxLevel = 3; // All structures can be upgraded up to level 3.
+        this.maxLevel = 3;
     }
 
     // --- Getters ---
@@ -69,11 +69,14 @@ public abstract class Structure extends GameEntity {
     }
 
     /**
-     * Increases the structure's level if it's not already at max level.
+     * Increases the structure's level and durability if not at max level.
      */
     public void levelUp() {
         if (level < maxLevel) {
             level++;
+            // افزایش دوام با هر آپگرید
+            this.maxDurability += Constants.STRUCTURE_DURABILITY_INCREMENT_PER_LEVEL;
+            this.durability += Constants.STRUCTURE_DURABILITY_INCREMENT_PER_LEVEL;
         }
     }
 }

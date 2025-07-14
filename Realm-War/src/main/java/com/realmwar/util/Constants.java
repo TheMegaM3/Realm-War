@@ -21,8 +21,11 @@ public final class Constants {
     // --- Per-Tick Resource Generation ---
     public static final int EMPTY_BLOCK_GOLD_GENERATION = 1; // Gold per tick from an owned empty tile.
     public static final int FOREST_BLOCK_FOOD_GENERATION = 1; // Food per tick from an owned forest tile.
-    public static final int FARM_FOOD_PER_TICK = 2;   // Food per tick from a Farm structure.
-    public static final int MARKET_GOLD_PER_TICK = 1; // Gold per tick from a Market structure.
+    public static final int FARM_FOOD_PER_TICK = 2;   // Base food per tick from a Farm structure (Level 1).
+    public static final int MARKET_GOLD_PER_TICK = 1; // Base gold per tick from a Market structure (Level 1).
+    public static final int FARM_FOOD_INCREMENT_PER_LEVEL = 2; // Additional food per tick per level for Farm.
+    public static final int MARKET_GOLD_INCREMENT_PER_LEVEL = 1; // Additional gold per tick per level for Market.
+    public static final int STRUCTURE_DURABILITY_INCREMENT_PER_LEVEL = 50; // Additional durability per level for structures.
 
     // --- Per-Turn Maintenance Costs ---
     // These costs are deducted once at the end of a player's turn.
@@ -59,7 +62,6 @@ public final class Constants {
     public static final int MAX_BARRACKS_PER_PLAYER = 3;
     public static final int MAX_MARKETS_PER_PLAYER = 3;
     public static final int MAX_TOWERS_PER_PLAYER = 4;
-
 
     // --- Unit Stats ---
     // Unit recruitment costs.
