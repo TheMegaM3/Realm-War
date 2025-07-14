@@ -51,7 +51,6 @@ public class GameFrame extends JFrame {
         JPanel centerPanel = new JPanel(new BorderLayout());
         centerPanel.setBackground(BACKGROUND_COLOR);
 
-        // Removed "Attack" from the button list
         JPanel leftButtons = createButtonPanel(new String[]{"Build", "Train", "Upgrade", "Merge", "End Turn"}, BUTTON_LEFT_COLOR);
         setupLeftButtons(leftButtons);
         centerPanel.add(leftButtons, BorderLayout.WEST);
@@ -255,8 +254,9 @@ public class GameFrame extends JFrame {
                 String unitType = choice.split(" ")[0];
                 gameManager.trainUnit(unitType, selectedTile[0], selectedTile[1]);
                 updateView();
+                JOptionPane.showMessageDialog(this, unitType + " trained successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, ex.getMessage(), "Train Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }

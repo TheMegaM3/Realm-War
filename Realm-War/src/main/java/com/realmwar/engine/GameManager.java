@@ -16,10 +16,6 @@ import java.awt.Point;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * The main controller of the game. It connects the game model (players, board)
- * with the game rules and actions triggered by the view.
- */
 public class GameManager {
     private final GameBoard gameBoard;
     private final TurnManager turnManager;
@@ -44,7 +40,7 @@ public class GameManager {
 
     private void setupInitialState() {
         if (players.isEmpty()) return;
-        if (players.size() > 0) placeEntity(new TownHall(players.get(0), 1, 1), 1, 1); // Center of 3x3 territory
+        if (players.size() > 0) placeEntity(new TownHall(players.get(0), 1, 1), 1, 1);
         if (players.size() > 1) placeEntity(new TownHall(players.get(1), gameBoard.width - 2, gameBoard.height - 2), gameBoard.width - 2, gameBoard.height - 2);
         if (players.size() > 2) placeEntity(new TownHall(players.get(2), gameBoard.width - 2, 1), gameBoard.width - 2, 1);
         if (players.size() > 3) placeEntity(new TownHall(players.get(3), 1, gameBoard.height - 2), 1, gameBoard.height - 2);
@@ -156,7 +152,11 @@ public class GameManager {
         }
         int finalDamage = (int) (attacker.getAttackPower() * attackMultiplier);
 
-        target.takeDamage(finalDamage);
+        if (target instanceof Structure structure) {
+            structure.takeDamage(finalDamage, gameBoard);
+        } else {
+            target.takeDamage(finalDamage);
+        }
         GameLogger.log(attacker.getClass().getSimpleName() + " attacked " + target.getClass().getSimpleName() + " at (" + target.getX() + "," + target.getY() + ") for " + finalDamage + " damage.");
 
         if (target.isDestroyed()) {
@@ -172,6 +172,9 @@ public class GameManager {
                     }
                 }
                 GameLogger.log(target.getOwner().getName() + "'s territory was removed due to TownHall destruction!");
+            }
+            if (target instanceof Unit) {
+                target.getOwner().decrementUnitCount(target.getClass().getSimpleName());
             }
             placeEntity(null, target.getX(), target.getY());
             GameLogger.log(target.getClass().getSimpleName() + " at (" + target.getX() + "," + target.getY() + ") was destroyed!");
@@ -191,6 +194,7 @@ public class GameManager {
                             GameLogger.log("Tower at (" + tower.getX() + "," + tower.getY() + ") attacked " +
                                     enemyUnit.getClass().getSimpleName() + " for " + tower.getAttackPower() + " damage.");
                             if (enemyUnit.isDestroyed()) {
+                                enemyUnit.getOwner().decrementUnitCount(enemyUnit.getClass().getSimpleName());
                                 placeEntity(null, enemyUnit.getX(), enemyUnit.getY());
                                 GameLogger.log(enemyUnit.getClass().getSimpleName() + " was destroyed by a tower!");
                                 checkWinCondition();
@@ -305,12 +309,27 @@ public class GameManager {
         Player owner = unit1.getOwner();
         int newX = unit1.getX();
         int newY = unit1.getY();
-        Unit newUnit = switch (unit1.getClass().getSimpleName()) {
-            case "Peasant" -> new Spearman(owner, newX, newY);
-            case "Spearman" -> new Swordsman(owner, newX, newY);
-            case "Swordsman" -> new Knight(owner, newX, newY);
+        String newUnitType = switch (unit1.getClass().getSimpleName()) {
+            case "Peasant" -> "Spearman";
+            case "Spearman" -> "Swordsman";
+            case "Swordsman" -> "Knight";
             default -> throw new GameRuleException("This unit cannot be merged further.");
         };
+
+        if (!owner.canTrainUnit(newUnitType)) {
+            throw new GameRuleException("Cannot merge into " + newUnitType + ". Maximum limit reached (" + getMaxUnitLimit(newUnitType) + ").");
+        }
+
+        Unit newUnit = switch (newUnitType) {
+            case "Spearman" -> new Spearman(owner, newX, newY);
+            case "Swordsman" -> new Swordsman(owner, newX, newY);
+            case "Knight" -> new Knight(owner, newX, newY);
+            default -> throw new GameRuleException("Invalid unit type!");
+        };
+
+        owner.decrementUnitCount(unit1.getClass().getSimpleName());
+        owner.decrementUnitCount(unit2.getClass().getSimpleName());
+        owner.incrementUnitCount(newUnitType);
 
         placeEntity(null, unit1.getX(), unit1.getY());
         placeEntity(null, unit2.getX(), unit2.getY());
@@ -345,6 +364,10 @@ public class GameManager {
             throw new GameRuleException("Units must be trained on a tile adjacent to the correct building (Barrack, or TownHall for Peasants).");
         }
 
+        if (!currentPlayer.canTrainUnit(unitType)) {
+            throw new GameRuleException("Cannot train " + unitType + ". Maximum limit reached (" + getMaxUnitLimit(unitType) + ").");
+        }
+
         Unit newUnit = switch (unitType) {
             case "Peasant" -> new Peasant(currentPlayer, x, y);
             case "Spearman" -> new Spearman(currentPlayer, x, y);
@@ -354,12 +377,22 @@ public class GameManager {
         };
 
         currentPlayer.getResourceHandler().spendResources(newUnit.getGoldCost(), newUnit.getFoodCost());
+        currentPlayer.incrementUnitCount(unitType);
         gameBoard.placeEntity(newUnit, x, y);
         gameBoard.addTileToTerritory(currentPlayer, new Point(x, y));
         GameLogger.log(currentPlayer.getName() + " trained a " + unitType + " at (" + x + "," + y + ").");
     }
 
-    // Getters and Setters
+    private int getMaxUnitLimit(String unitType) {
+        return switch (unitType) {
+            case "Peasant" -> Constants.MAX_PEASANTS_PER_PLAYER;
+            case "Spearman" -> Constants.MAX_SPEARMEN_PER_PLAYER;
+            case "Swordsman" -> Constants.MAX_SWORDSMEN_PER_PLAYER;
+            case "Knight" -> Constants.MAX_KNIGHTS_PER_PLAYER;
+            default -> 0;
+        };
+    }
+
     public GameBoard getGameBoard() { return gameBoard; }
     public Player getCurrentPlayer() { return turnManager.getCurrentPlayer(); }
     public GameState getCurrentState() { return currentState; }
