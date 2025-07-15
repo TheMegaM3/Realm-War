@@ -3,6 +3,7 @@ package com.realmwar.view;
 import com.realmwar.Main;
 import com.realmwar.data.DatabaseManager;
 import com.realmwar.engine.GameManager;
+import com.realmwar.engine.gamestate.GameOverState;
 import com.realmwar.engine.gamestate.RunningState;
 import com.realmwar.model.GameEntity;
 import com.realmwar.model.units.Unit;
@@ -327,6 +328,39 @@ public class GameFrame extends JFrame {
                 gameManager.getCurrentPlayer().getResourceHandler().getFood()
         );
         gameBoardPanel.updatePanel(gameManager.getGameBoard(), null);
+        if (gameManager.getCurrentState() instanceof GameOverState) {
+            showGameOverDialog();
+        }
+    }
+
+    private void showGameOverDialog() {
+        // Stop timers to prevent further updates
+        turnTimer.stop();
+        resourceTimer.stop();
+
+        String winnerName = gameManager.winner != null ? gameManager.winner.getName() : "No one";
+        String message = "Game Over! Winner: " + winnerName;
+
+        Object[] options = {"New Game", "Exit"};
+        int choice = JOptionPane.showOptionDialog(
+                this,
+                message,
+                "Game Over",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                options,
+                options[0]
+        );
+
+        if (choice == JOptionPane.YES_OPTION) {
+            // Start a new game
+            this.dispose();
+            Main.main(null);
+        } else {
+            // Exit the game
+            System.exit(0);
+        }
     }
 
     public void resetAndStartTurnTimer() {

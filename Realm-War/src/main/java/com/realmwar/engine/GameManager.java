@@ -163,6 +163,7 @@ public class GameManager {
         if (target.isDestroyed()) {
             if (target instanceof TownHall) {
                 gameBoard.removeTerritory(target.getOwner().getName());
+                turnManager.removePlayer(target.getOwner());
                 int[] dx = {-1, 1, 0, 0};
                 int[] dy = {0, 0, -1, 1};
                 for (int i = 0; i < 4; i++) {
@@ -215,7 +216,7 @@ public class GameManager {
                 .filter(p -> gameBoard.getStructuresForPlayer(p).stream().anyMatch(s -> s instanceof TownHall))
                 .toList();
 
-        if (playersWithTownHalls.size() <= 1 && players.size() > 1) {
+        if (playersWithTownHalls.size() <= 1) {
             this.winner = playersWithTownHalls.isEmpty() ? null : playersWithTownHalls.get(0);
             this.currentState = new GameOverState(this, this.winner);
             String winnerName = this.winner != null ? this.winner.getName() : "No one";
@@ -350,7 +351,6 @@ public class GameManager {
             throw new GameRuleException("You can only train units within or adjacent to your territory!");
         }
 
-        // Check if player has enough unit space
         if (!currentPlayer.hasEnoughUnitSpace(gameBoard)) {
             throw new GameRuleException("Not enough unit space to train a new unit!");
         }
@@ -361,7 +361,6 @@ public class GameManager {
                 canTrain = true;
             }
         } else {
-            // Check if the target tile is in a valid direction relative to any friendly Barrack
             for (Structure structure : gameBoard.getStructuresForPlayer(currentPlayer)) {
                 if (structure instanceof Barrack barrack) {
                     List<Point> validDirections = barrack.getValidUnitPlacementDirections();

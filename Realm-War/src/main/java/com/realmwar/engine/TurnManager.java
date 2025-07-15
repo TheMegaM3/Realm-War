@@ -36,6 +36,24 @@ public class TurnManager {
         currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
     }
 
+    /**
+     * Removes a player from the turn order.
+     * Adjusts the current player index if necessary to ensure it remains valid.
+     * @param player The player to remove.
+     */
+    public void removePlayer(Player player) {
+        int index = players.indexOf(player);
+        if (index != -1) {
+            players.remove(index);
+            // Adjust currentPlayerIndex if it points to or beyond the removed player
+            if (currentPlayerIndex > index) {
+                currentPlayerIndex--;
+            } else if (currentPlayerIndex >= players.size() && !players.isEmpty()) {
+                currentPlayerIndex = 0; // Reset to first player if out of bounds
+            }
+        }
+    }
+
     public int getCurrentPlayerIndex() {
         return currentPlayerIndex;
     }
