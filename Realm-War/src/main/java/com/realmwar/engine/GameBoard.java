@@ -19,13 +19,11 @@ public class GameBoard {
     public final int width;
     public final int height;
     private final GameTile[][] tiles;
-    private final List<DynamicTerritory> territories;
 
     public GameBoard(int width, int height) {
         this.width = width;
         this.height = height;
         this.tiles = new GameTile[width][height];
-        this.territories = new ArrayList<>();
         initializeBoard();
     }
 
@@ -36,39 +34,6 @@ public class GameBoard {
                 Block terrain = rand.nextDouble() < 0.20 ? new ForestBlock() : new EmptyBlock();
                 tiles[x][y] = new GameTile(terrain, x, y);
             }
-        }
-    }
-
-    public void initializeTerritories(List<String> playerNames) {
-        territories.clear();
-        int territorySize = 3;
-        int halfSize = territorySize / 2;
-
-        List<int[]> townHallPositions = new ArrayList<>();
-        if (playerNames.size() == 2) {
-            townHallPositions.add(new int[]{halfSize, halfSize});
-            townHallPositions.add(new int[]{width - halfSize - 1, height - halfSize - 1});
-        } else if (playerNames.size() == 3) {
-            townHallPositions.add(new int[]{halfSize, halfSize});
-            townHallPositions.add(new int[]{width - halfSize - 1, height - halfSize - 1});
-            townHallPositions.add(new int[]{width - halfSize - 1, halfSize});
-        } else if (playerNames.size() >= 4) {
-            townHallPositions.add(new int[]{halfSize, halfSize});
-            townHallPositions.add(new int[]{width - halfSize - 1, height - halfSize - 1});
-            townHallPositions.add(new int[]{width - halfSize - 1, halfSize});
-            townHallPositions.add(new int[]{halfSize, height - halfSize - 1});
-        }
-
-        for (int i = 0; i < playerNames.size(); i++) {
-            int centerX = townHallPositions.get(i)[0];
-            int centerY = townHallPositions.get(i)[1];
-            DynamicTerritory territory = new DynamicTerritory(playerNames.get(i));
-            for (int x = Math.max(0, centerX - halfSize); x <= Math.min(width - 1, centerX + halfSize); x++) {
-                for (int y = Math.max(0, centerY - halfSize); y <= Math.min(height - 1, centerY + halfSize); y++) {
-                    territory.addTile(new Point(x, y));
-                }
-            }
-            territories.add(territory);
         }
     }
 
@@ -131,7 +96,6 @@ public class GameBoard {
     public boolean isAdjacentToFriendlyStructure(int x, int y, Player player, Class<? extends Structure> structureType) {
         for (Structure structure : getStructuresForPlayer(player)) {
             if (structureType.isInstance(structure)) {
-                // For Barrack, check valid unit placement directions based on its level
                 if (structure instanceof Barrack barrack) {
                     List<Point> validDirections = barrack.getValidUnitPlacementDirections();
                     for (Point direction : validDirections) {
@@ -142,7 +106,6 @@ public class GameBoard {
                         }
                     }
                 } else {
-                    // For other structures (e.g., TownHall), check the four main directions
                     int[] dx = {-1, 1, 0, 0};
                     int[] dy = {0, 0, -1, 1};
                     for (int i = 0; i < 4; i++) {
@@ -171,85 +134,9 @@ public class GameBoard {
         return false;
     }
 
-    public boolean isWithinOrAdjacentToTerritory(int x, int y, Player player) {
-        DynamicTerritory territory = getTerritoryForPlayer(player.getName());
-        if (territory == null) return false;
-
-        boolean isWithin = territory.getTiles().contains(new Point(x, y));
-        if (!isWithin) {
-            int[] dx = {-1, 1, 0, 0, -1, -1, 1, 1};
-            int[] dy = {0, 0, -1, 1, -1, 1, -1, 1};
-            for (int i = 0; i < 8; i++) {
-                if (territory.getTiles().contains(new Point(x + dx[i], y + dy[i]))) {
-                    return true;
-                }
-            }
-        }
-        return isWithin;
-    }
-
-    public void addTileToTerritory(Player player, Point tile) {
-        DynamicTerritory territory = getTerritoryForPlayer(player.getName());
-        if (territory != null) {
-            for (DynamicTerritory other : territories) {
-                if (!other.getPlayerName().equals(player.getName())) {
-                    other.removeTile(tile);
-                }
-            }
-            territory.addTile(tile);
-            GameTile gameTile = getTile(tile.x, tile.y);
-            if (gameTile != null) {
-                gameTile.setOwner(player);
-            }
-        }
-    }
-
-    public void removeTerritory(String playerName) {
-        territories.removeIf(t -> t.getPlayerName().equals(playerName));
-    }
-
-    public DynamicTerritory getTerritoryForPlayer(String playerName) {
-        return territories.stream()
-                .filter(t -> t.getPlayerName().equals(playerName))
-                .findFirst()
-                .orElse(null);
-    }
-
-    public List<DynamicTerritory> getTerritories() {
-        return territories;
-    }
-
     public void setTile(int x, int y, GameTile tile) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             this.tiles[x][y] = tile;
-        }
-    }
-
-    public static class DynamicTerritory {
-        private final String playerName;
-        private final List<Point> tiles;
-
-        public DynamicTerritory(String playerName) {
-            this.playerName = playerName;
-            this.tiles = new ArrayList<>();
-        }
-
-        public void addTile(Point tile) {
-            if (!tiles.contains(tile)) {
-                tiles.add(tile);
-            }
-        }
-
-        public void removeTile(Point tile) {
-            tiles.remove(tile);
-        }
-
-        public List<Point> getTiles() {
-            return tiles;
-        }
-
-        public String getPlayerName() {
-            return playerName;
         }
     }
 }

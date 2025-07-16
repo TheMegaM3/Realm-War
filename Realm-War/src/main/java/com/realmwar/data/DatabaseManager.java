@@ -21,7 +21,7 @@ import java.util.Map;
 public final class DatabaseManager {
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/realmwar_db";
     private static final String DB_USER = "postgres";
-    private static final String DB_PASS = "0000";
+    private static final String DB_PASS = "4951";
 
     private DatabaseManager() {}
 

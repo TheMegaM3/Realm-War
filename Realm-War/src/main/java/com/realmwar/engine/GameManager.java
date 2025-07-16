@@ -12,10 +12,9 @@ import com.realmwar.model.units.*;
 import com.realmwar.util.Constants;
 import com.realmwar.util.CustomExceptions.GameRuleException;
 
-import java.awt.Point;
+import java.awt.*;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.Arrays;
 
 public class GameManager {
     private final GameBoard gameBoard;
@@ -35,7 +34,6 @@ public class GameManager {
         this.currentState = new RunningState(this);
         this.selectedUnit = null;
         setupInitialState();
-        gameBoard.initializeTerritories(playerNames);
         GameLogger.log("GameManager created. " + getCurrentPlayer().getName() + "'s turn begins.");
     }
 
@@ -100,16 +98,6 @@ public class GameManager {
             }
         }
 
-        for (int x = 0; x < gameBoard.width; x++) {
-            for (int y = 0; y < gameBoard.height; y++) {
-                GameTile tile = gameBoard.getTile(x, y);
-                if (tile.getOwner() == currentPlayer) {
-                    if (tile.block instanceof EmptyBlock) goldIncome += Constants.EMPTY_BLOCK_GOLD_GENERATION;
-                    else if (tile.block instanceof ForestBlock) foodIncome += Constants.FOREST_BLOCK_FOOD_GENERATION;
-                }
-            }
-        }
-
         if (goldIncome > 0 || foodIncome > 0) {
             currentPlayer.getResourceHandler().addResources(goldIncome, foodIncome);
             GameLogger.log(currentPlayer.getName() + " gained " + goldIncome + " gold and " + foodIncome + " food.");
@@ -130,12 +118,6 @@ public class GameManager {
 
         placeEntity(null, unit.getX(), unit.getY());
         placeEntity(unit, toX, toY);
-
-        if (targetTile.getOwner() != unit.getOwner()) {
-            gameBoard.addTileToTerritory(unit.getOwner(), new Point(toX, toY));
-            GameLogger.log(unit.getOwner().getName() + " captured tile at (" + toX + "," + toY + ")");
-        }
-
         unit.setHasActedThisTurn(true);
         GameLogger.log(unit.getClass().getSimpleName() + " moved to (" + toX + "," + toY + ").");
     }
@@ -162,18 +144,7 @@ public class GameManager {
 
         if (target.isDestroyed()) {
             if (target instanceof TownHall) {
-                gameBoard.removeTerritory(target.getOwner().getName());
                 turnManager.removePlayer(target.getOwner());
-                int[] dx = {-1, 1, 0, 0};
-                int[] dy = {0, 0, -1, 1};
-                for (int i = 0; i < 4; i++) {
-                    int adjX = target.getX() + dx[i];
-                    int adjY = target.getY() + dy[i];
-                    if (gameBoard.getTile(adjX, adjY) != null) {
-                        gameBoard.addTileToTerritory(attacker.getOwner(), new Point(adjX, adjY));
-                    }
-                }
-                GameLogger.log(target.getOwner().getName() + "'s territory was removed due to TownHall destruction!");
             }
             if (target instanceof Unit) {
                 target.getOwner().decrementUnitCount(target.getClass().getSimpleName());
@@ -232,10 +203,6 @@ public class GameManager {
             throw new GameRuleException("Cannot build on this tile!");
         }
 
-        if (!gameBoard.isWithinOrAdjacentToTerritory(x, y, currentPlayer)) {
-            throw new GameRuleException("You can only build within or adjacent to your territory!");
-        }
-
         if (structureType.equals("Farm")) {
             if (!gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, TownHall.class) &&
                     !gameBoard.isAdjacentToFriendlyStructure(x, y, currentPlayer, Farm.class)) {
@@ -278,8 +245,6 @@ public class GameManager {
 
         currentPlayer.getResourceHandler().spendResources(buildCost, 0);
         gameBoard.placeEntity(structure, x, y);
-        gameBoard.addTileToTerritory(currentPlayer, new Point(x, y));
-
         GameLogger.log(currentPlayer.getName() + " built a " + structureType + " at (" + x + "," + y + ") for " + buildCost + " gold.");
     }
 
@@ -347,10 +312,6 @@ public class GameManager {
             throw new GameRuleException("Target tile for training must be empty!");
         }
 
-        if (!gameBoard.isWithinOrAdjacentToTerritory(x, y, currentPlayer)) {
-            throw new GameRuleException("You can only train units within or adjacent to your territory!");
-        }
-
         if (!currentPlayer.hasEnoughUnitSpace(gameBoard)) {
             throw new GameRuleException("Not enough unit space to train a new unit!");
         }
@@ -396,7 +357,6 @@ public class GameManager {
         currentPlayer.getResourceHandler().spendResources(newUnit.getGoldCost(), newUnit.getFoodCost());
         currentPlayer.incrementUnitCount(unitType);
         gameBoard.placeEntity(newUnit, x, y);
-        gameBoard.addTileToTerritory(currentPlayer, new Point(x, y));
         GameLogger.log(currentPlayer.getName() + " trained a " + unitType + " at (" + x + "," + y + ").");
     }
 
