@@ -14,14 +14,13 @@ import com.realmwar.model.units.*;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 public final class DatabaseManager {
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/realmwar_db";
     private static final String DB_USER = "postgres";
-    private static final String DB_PASS = "4951";
+    private static final String DB_PASS = "0000";
 
     private DatabaseManager() {}
 
@@ -112,7 +111,8 @@ public final class DatabaseManager {
                             tilesPs.setInt(1, saveId);
                             tilesPs.setInt(2, x);
                             tilesPs.setInt(3, y);
-                            tilesPs.setString(4, board.getTile(x, y).block.getClass().getSimpleName());
+                            // MODIFIED: Uses getBlock() to access the tile's block property.
+                            tilesPs.setString(4, board.getTile(x, y).getBlock().getClass().getSimpleName());
                             tilesPs.addBatch();
                         }
                     }
@@ -225,6 +225,7 @@ public final class DatabaseManager {
                 int x = rs.getInt("x_coord");
                 int y = rs.getInt("y_coord");
                 String className = rs.getString("block_class_name");
+                // MODIFIED: Correctly calls the GameTile constructor with all required arguments.
                 board.setTile(x, y, new GameTile(createBlockFromString(className), x, y));
             }
         }

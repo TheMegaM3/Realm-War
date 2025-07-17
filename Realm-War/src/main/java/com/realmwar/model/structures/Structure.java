@@ -1,9 +1,9 @@
 package com.realmwar.model.structures;
 
+import com.realmwar.engine.GameBoard;
 import com.realmwar.model.GameEntity;
 import com.realmwar.model.Player;
 import com.realmwar.util.Constants;
-import com.realmwar.engine.GameBoard;
 
 public abstract class Structure extends GameEntity {
     protected int durability;
@@ -21,24 +21,11 @@ public abstract class Structure extends GameEntity {
         this.maxLevel = 3;
     }
 
-    public int getDurability() { return durability; }
-    public int getMaxDurability() { return maxDurability; }
-    public int getMaintenanceCost() { return maintenanceCost; }
-    public int getLevel() { return level; }
-    public int getMaxLevel() { return maxLevel; }
-
-    public void setDurability(int value) {
-        if (value >= 0 && value <= this.maxDurability) {
-            this.durability = value;
-        } else if (value > this.maxDurability) {
-            this.durability = this.maxDurability;
-        } else {
-            this.durability = 0;
-        }
-    }
-
+    // MODIFIED: Added @Override annotation to fix compile error.
+    @Override
     public void takeDamage(int amount, GameBoard board) {
         int finalDamage = amount;
+        // Towers don't protect themselves, but they protect other structures.
         if (!(this instanceof Tower)) {
             if (board != null && board.isAdjacentToFriendlyTower(x, y, owner)) {
                 finalDamage = (int) (amount * 0.5);
@@ -53,6 +40,23 @@ public abstract class Structure extends GameEntity {
     @Override
     public boolean isDestroyed() {
         return this.durability <= 0;
+    }
+
+    // Getters and other methods
+    public int getDurability() { return durability; }
+    public int getMaxDurability() { return maxDurability; }
+    public int getMaintenanceCost() { return maintenanceCost; }
+    public int getLevel() { return level; }
+    public int getMaxLevel() { return maxLevel; }
+
+    public void setDurability(int value) {
+        if (value >= 0 && value <= this.maxDurability) {
+            this.durability = value;
+        } else if (value > this.maxDurability) {
+            this.durability = this.maxDurability;
+        } else {
+            this.durability = 0;
+        }
     }
 
     public void levelUp() {

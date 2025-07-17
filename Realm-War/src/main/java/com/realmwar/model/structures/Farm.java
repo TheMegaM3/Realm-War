@@ -12,6 +12,7 @@ public class Farm extends Structure {
      * Calculates food production based on the structure's level.
      * @return The amount of food produced per tick.
      */
+    // MODIFIED: Added missing method
     public int getFoodProduction() {
         return Constants.FARM_FOOD_PER_TICK + (level - 1) * Constants.FARM_FOOD_INCREMENT_PER_LEVEL;
     }
