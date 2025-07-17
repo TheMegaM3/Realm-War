@@ -1413,3 +1413,622 @@
 2025/07/15 00:18:02 - Player 1 gained 2 gold and 0 food.
 2025/07/15 00:18:03 - Player 1's turn-end maintenance cost: 6 gold.
 2025/07/15 00:18:03 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/17 06:02:36 - Error initializing database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025/07/17 06:02:38 - GameManager created. Player 1's turn begins.
+2025/07/17 06:10:23 - Error initializing database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025/07/17 06:10:33 - Error initializing database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025/07/17 06:10:36 - GameManager created. Player 1's turn begins.
+2025/07/17 06:10:39 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:10:39 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:39 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:39 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:42 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:10:42 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:42 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:42 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:45 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:10:45 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:45 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:45 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:48 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:10:48 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:48 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:48 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:51 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:10:51 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:51 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:51 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:54 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:10:54 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:54 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:54 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:57 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:10:57 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:57 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:10:57 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:00 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:00 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:00 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:00 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:03 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:03 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:03 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:03 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:06 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:06 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:06 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:06 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:09 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:09 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:09 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:09 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:12 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/17 06:11:12 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:12 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:12 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:12 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:15 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:15 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:15 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:16 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:18 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:18 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:19 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:19 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:21 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:22 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:22 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:22 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:25 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:25 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:25 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:25 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:28 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:28 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:28 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:28 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:31 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:31 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:31 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:31 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:34 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:34 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:34 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:34 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:37 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:37 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:37 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:37 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:40 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:40 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:40 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:40 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:43 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:43 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:43 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:43 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:46 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:46 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:46 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:46 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:49 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:49 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:49 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:49 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:52 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:52 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:52 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:52 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:55 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:55 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:55 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:55 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:58 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:11:58 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:58 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:11:58 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:01 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:01 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:01 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:01 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:04 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:04 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:04 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:04 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:07 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:07 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:07 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:07 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:10 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:10 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:10 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:10 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:13 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:13 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:13 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:13 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:16 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:16 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:16 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:16 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:19 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:19 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:19 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:19 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:22 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:22 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:22 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:22 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:25 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:25 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:25 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:25 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:28 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:28 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:28 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:28 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:31 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:31 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:31 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:31 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:34 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:34 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:34 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:34 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:37 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:37 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:37 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:37 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:40 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:40 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:40 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:40 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:43 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:43 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:43 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:43 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:46 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:46 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:46 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:46 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:49 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:49 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:49 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:49 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:52 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:52 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:52 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:52 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:55 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:55 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:55 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:55 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:58 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:12:58 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:58 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:12:58 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:01 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:01 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:01 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:01 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:04 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:04 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:04 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:04 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:07 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:07 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:07 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:07 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:10 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:10 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:10 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:10 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:13 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:13 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:13 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:13 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:16 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:16 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:16 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:16 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:19 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:19 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:19 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:19 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:22 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:22 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:22 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:22 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:25 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:25 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:25 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:25 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:28 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:28 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:28 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:28 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:31 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:31 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:31 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:31 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:34 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:34 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:34 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:34 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:37 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:37 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:37 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:37 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:40 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:40 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:40 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:40 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:43 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/17 06:13:43 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:43 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:43 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:43 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:46 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:46 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:46 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:46 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:49 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:49 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:49 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:49 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:52 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:52 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:52 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:52 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:55 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:55 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:55 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:55 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:58 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:13:58 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:58 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:13:58 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:01 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:14:01 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:01 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:01 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:04 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:14:04 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:04 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:04 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:07 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:14:07 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:07 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:07 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:10 - Player 1 gained 97 gold and 0 food from structures and territory.
+2025/07/17 06:14:10 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:10 - Player 3 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:10 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:12 - Player 3 built a Farm at (8,2) for 100 gold.
+2025/07/17 06:14:13 - Player 1 gained 96 gold and 0 food from structures and territory.
+2025/07/17 06:14:13 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:13 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:13 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:14 - Player 3's turn-end maintenance cost: 1 gold.
+2025/07/17 06:14:14 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/17 06:14:16 - Player 1 gained 96 gold and 0 food from structures and territory.
+2025/07/17 06:14:16 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:16 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:16 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:19 - Player 1 gained 96 gold and 0 food from structures and territory.
+2025/07/17 06:14:19 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:19 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:19 - Player 4 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:21 - Player 4 trained a Peasant at (1,7).
+2025/07/17 06:14:22 - Player 1 gained 95 gold and 0 food from structures and territory.
+2025/07/17 06:14:22 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:22 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:22 - Player 4 gained 2 gold and 0 food from structures and territory.
+2025/07/17 06:14:25 - Player 1 gained 95 gold and 0 food from structures and territory.
+2025/07/17 06:14:25 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:25 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:25 - Player 4 gained 2 gold and 0 food from structures and territory.
+2025/07/17 06:14:28 - Player 1 gained 95 gold and 0 food from structures and territory.
+2025/07/17 06:14:28 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:28 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:28 - Player 4 gained 2 gold and 0 food from structures and territory.
+2025/07/17 06:14:31 - Player 1 gained 95 gold and 0 food from structures and territory.
+2025/07/17 06:14:31 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:31 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:31 - Player 4 gained 2 gold and 0 food from structures and territory.
+2025/07/17 06:14:34 - Player 1 gained 95 gold and 0 food from structures and territory.
+2025/07/17 06:14:34 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:34 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:34 - Player 4 gained 2 gold and 0 food from structures and territory.
+2025/07/17 06:14:35 - Player 4 built a Farm at (0,8) for 100 gold.
+2025/07/17 06:14:37 - Player 1 gained 94 gold and 0 food from structures and territory.
+2025/07/17 06:14:37 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:37 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:37 - Player 4 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:14:40 - Player 1 gained 94 gold and 0 food from structures and territory.
+2025/07/17 06:14:40 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:40 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:40 - Player 4 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:14:43 - Player 4 trained a Peasant at (2,8).
+2025/07/17 06:14:43 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:14:43 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:43 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:43 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:14:46 - Player 4's turn-end maintenance cost: 3 gold.
+2025/07/17 06:14:46 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/17 06:14:46 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:14:46 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:46 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:46 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:14:49 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:14:49 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:49 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:49 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:14:52 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:14:52 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:52 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:52 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:14:55 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:14:55 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:55 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:55 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:14:58 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:14:58 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:14:58 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:14:58 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:01 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:01 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:01 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:01 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:04 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:04 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:04 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:04 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:07 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:07 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:07 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:07 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:10 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:10 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:10 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:10 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:13 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:13 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:13 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:13 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:16 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:16 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:16 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:16 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:19 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:19 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:19 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:19 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:22 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:22 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:22 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:22 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:25 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:25 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:25 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:25 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:28 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:28 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:28 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:28 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:31 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:31 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:31 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:31 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:34 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:34 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:34 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:34 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:37 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:37 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:37 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:37 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:40 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:40 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:40 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:40 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:43 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:43 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:43 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:43 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:46 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:46 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:46 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:46 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:49 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:49 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:49 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:49 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:52 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:52 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:52 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:52 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:55 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:55 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:55 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:55 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:15:58 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:15:58 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:15:58 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:15:58 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:01 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:01 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:01 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:01 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:04 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:04 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:04 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:04 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:07 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:07 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:07 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:07 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:10 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:10 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:10 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:10 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:13 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:13 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:13 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:13 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:16 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:16 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:16 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:16 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:19 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:19 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:19 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:19 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:22 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:22 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:22 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:22 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:25 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:25 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:25 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:25 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:28 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:28 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:28 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:28 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:31 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:31 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:31 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:31 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:34 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:34 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:34 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:34 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:37 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:37 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:37 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:37 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:39 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/17 06:16:40 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:40 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:40 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:40 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:43 - Player 1 gained 93 gold and 0 food from structures and territory.
+2025/07/17 06:16:43 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:16:43 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:43 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:46 - Player 2 built a Farm at (8,7) for 100 gold.
+2025/07/17 06:16:46 - Player 1 gained 92 gold and 0 food from structures and territory.
+2025/07/17 06:16:46 - Player 2 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:46 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:46 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:49 - Player 1 gained 92 gold and 0 food from structures and territory.
+2025/07/17 06:16:49 - Player 2 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:49 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:49 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:16:51 - Player 2 built a Tower at (7,8) for 200 gold.
+2025/07/17 06:16:52 - Player 1 gained 91 gold and 0 food from structures and territory.
+2025/07/17 06:16:52 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:16:52 - Player 3 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:16:52 - Player 4 gained 4 gold and 2 food from structures and territory.
+2025/07/17 06:17:49 - Error initializing database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025/07/17 06:17:52 - GameManager created. Player 1's turn begins.
+2025/07/17 06:17:56 - Player 1 gained 99 gold and 0 food from structures and territory.
+2025/07/17 06:17:56 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:17:59 - Player 1 gained 99 gold and 0 food from structures and territory.
+2025/07/17 06:17:59 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:17:59 - Player 1 built a Farm at (2,1) for 100 gold.
+2025/07/17 06:18:02 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:02 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:05 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:05 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:05 - Player 1 trained a Peasant at (1,2).
+2025/07/17 06:18:08 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:08 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:11 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:11 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:14 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:14 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:17 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:17 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:20 - Player 1 trained a Peasant at (0,1).
+2025/07/17 06:18:20 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:20 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:23 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:23 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:24 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/17 06:18:24 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/17 06:18:26 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:26 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:29 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:29 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:32 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:32 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:35 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:35 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:38 - Player 1 gained 99 gold and 2 food from structures and territory.
+2025/07/17 06:18:38 - Player 2 gained 1 gold and 0 food from structures and territory.
+2025/07/17 06:18:40 - Player 2 built a Farm at (8,7) for 100 gold.
+2025/07/17 06:18:41 - Player 1 gained 98 gold and 2 food from structures and territory.
+2025/07/17 06:18:41 - Player 2 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:18:44 - Player 1 gained 98 gold and 2 food from structures and territory.
+2025/07/17 06:18:44 - Player 2 gained 2 gold and 2 food from structures and territory.
+2025/07/17 06:18:47 - Player 2 trained a Peasant at (7,8).
+2025/07/17 06:18:47 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:18:47 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:18:50 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:18:50 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:18:53 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:18:53 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:18:55 - Player 2's turn-end maintenance cost: 2 gold.
+2025/07/17 06:18:55 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/17 06:18:56 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:18:56 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:18:59 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:18:59 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:19:02 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:19:02 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:19:05 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:19:05 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:19:08 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:19:08 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:19:11 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:19:11 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:19:14 - Player 1 gained 97 gold and 2 food from structures and territory.
+2025/07/17 06:19:14 - Player 2 gained 3 gold and 2 food from structures and territory.
+2025/07/17 06:22:09 - Error initializing database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025/07/17 06:22:12 - GameManager created. Player 1's turn begins.
+2025/07/17 06:27:20 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/17 06:29:47 - Error initializing database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025/07/17 06:29:51 - GameManager created. Player 1's turn begins.
+2025/07/17 06:30:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/17 07:14:50 - Error initializing database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025/07/17 07:14:52 - GameManager created. Player 1's turn begins.
+2025/07/17 07:22:47 - Error initializing database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025/07/17 07:22:50 - GameManager created. Player 1's turn begins.
+2025/07/17 07:23:01 - Player 1 built a Farm at (1,2) for 100 gold.
+2025/07/17 07:23:04 - Player 1 built a Farm at (1,3) for 100 gold.
+2025/07/17 07:23:16 - Player 1 trained a Peasant at (2,1).
+2025/07/17 07:23:19 - Peasant moved to (3,1).
+2025/07/17 07:23:23 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/17 07:23:23 - Player 2 gained 9 gold from territory bonus.
+2025/07/17 07:23:23 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/17 07:23:32 - Player 2 built a Barrack at (12,11) for 150 gold.
+2025/07/17 07:23:37 - Player 2 trained a Spearman at (12,10).
+2025/07/17 07:23:44 - Player 2 trained a Spearman at (13,11).
+2025/07/17 07:23:52 - Merged two Spearmans into a Swordsman at (13,11).
+2025/07/17 07:23:53 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/17 07:23:53 - Player 3 gained 9 gold from territory bonus.
+2025/07/17 07:23:53 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/17 07:24:20 - Player 3 built a Barrack at (13,3) for 150 gold.
+2025/07/17 07:24:25 - Player 3's turn-end maintenance cost: 2 gold.
+2025/07/17 07:24:25 - Player 4 gained 9 gold from territory bonus.
+2025/07/17 07:24:25 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/17 07:24:33 - Player 4 built a Barrack at (1,11) for 150 gold.
+2025/07/17 07:24:37 - Player 4 trained a Spearman at (1,10).
+2025/07/17 07:24:42 - Spearman moved to (1,9).
+2025/07/17 07:24:56 - Player 4's turn-end maintenance cost: 4 gold.
+2025/07/17 07:24:56 - Player 1 gained 11 gold from territory bonus.
+2025/07/17 07:24:56 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/17 07:24:59 - Farm at (1,3) upgraded to level 2 for 75 gold.
+2025/07/17 07:25:03 - Farm at (1,3) upgraded to level 3 for 150 gold.
