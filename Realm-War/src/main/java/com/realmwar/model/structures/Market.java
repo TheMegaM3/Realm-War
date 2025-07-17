@@ -12,7 +12,6 @@ public class Market extends Structure {
      * Calculates gold production based on the structure's level.
      * @return The amount of gold produced per tick.
      */
-    // MODIFIED: Added missing method
     public int getGoldProduction() {
         return Constants.MARKET_GOLD_PER_TICK + (level - 1) * Constants.MARKET_GOLD_INCREMENT_PER_LEVEL;
     }

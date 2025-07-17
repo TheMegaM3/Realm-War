@@ -20,11 +20,30 @@ import java.util.Map;
 public final class DatabaseManager {
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/realmwar_db";
     private static final String DB_USER = "postgres";
-    private static final String DB_PASS = "0000";
+    private static final String DB_PASS = "4951";
 
     private DatabaseManager() {}
 
     public static void initializeDatabase() {
+        // Check if PostgreSQL driver is available
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            GameLogger.log("PostgreSQL JDBC Driver not found. Ensure the driver is included in your project dependencies.");
+            e.printStackTrace();
+            return;
+        }
+
+        // Try to connect to the database to ensure it's accessible
+        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
+            GameLogger.log("Successfully connected to the database.");
+        } catch (SQLException e) {
+            GameLogger.log("Failed to connect to the database. Please ensure PostgreSQL is running and the database 'realmwar_db' exists.");
+            GameLogger.log("Connection error: " + e.getMessage());
+            e.printStackTrace();
+            return;
+        }
+
         String createSavesTable = "CREATE TABLE IF NOT EXISTS game_saves (" +
                 "id SERIAL PRIMARY KEY," +
                 "save_name TEXT NOT NULL UNIQUE," +
@@ -41,6 +60,7 @@ public final class DatabaseManager {
                 "x_coord INTEGER NOT NULL," +
                 "y_coord INTEGER NOT NULL," +
                 "block_class_name TEXT NOT NULL," +
+                "territory_owner_name TEXT," +
                 "FOREIGN KEY (save_id) REFERENCES game_saves(id) ON DELETE CASCADE" +
                 ");";
 
@@ -66,20 +86,39 @@ public final class DatabaseManager {
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
              Statement stmt = conn.createStatement()) {
+            // Create tables
             stmt.execute(createSavesTable);
-            stmt.execute(createTilesTable);
             stmt.execute(createEntitiesTable);
             stmt.execute(createUnitCountsTable);
+
+            // Check if territory_owner_name column exists in game_board_tiles
+            ResultSet rs = conn.getMetaData().getColumns(null, null, "game_board_tiles", "territory_owner_name");
+            if (!rs.next()) {
+                // Add territory_owner_name column if it doesn't exist
+                stmt.execute("ALTER TABLE game_board_tiles ADD COLUMN territory_owner_name TEXT;");
+                GameLogger.log("Added territory_owner_name column to game_board_tiles table.");
+            }
+
+            // Create game_board_tiles table (in case it doesn't exist)
+            stmt.execute(createTilesTable);
             GameLogger.log("Database initialized successfully.");
         } catch (SQLException e) {
-            GameLogger.log("Error initializing database: " + e.getMessage());
+            GameLogger.log("Error initializing database tables: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
     public static boolean saveGame(GameManager gameManager, String saveName) {
+        // Check database connection before attempting to save
+        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
+            // Connection successful, proceed with save
+        } catch (SQLException e) {
+            GameLogger.log("Cannot save game: Failed to connect to the database. " + e.getMessage());
+            return false;
+        }
+
         String saveGameSQL = "INSERT INTO game_saves(save_name, current_player_index, board_width, board_height, winner_name) VALUES(?, ?, ?, ?, ?)";
-        String saveTilesSQL = "INSERT INTO game_board_tiles(save_id, x_coord, y_coord, block_class_name) VALUES(?, ?, ?, ?)";
+        String saveTilesSQL = "INSERT INTO game_board_tiles(save_id, x_coord, y_coord, block_class_name, territory_owner_name) VALUES(?, ?, ?, ?, ?)";
         String saveEntitiesSQL = "INSERT INTO game_entities(save_id, entity_class_name, owner_name, x_coord, y_coord, health) VALUES(?, ?, ?, ?, ?, ?)";
         String saveUnitCountsSQL = "INSERT INTO player_unit_counts(save_id, player_name, unit_type, count) VALUES(?, ?, ?, ?)";
 
@@ -111,8 +150,9 @@ public final class DatabaseManager {
                             tilesPs.setInt(1, saveId);
                             tilesPs.setInt(2, x);
                             tilesPs.setInt(3, y);
-                            // MODIFIED: Uses getBlock() to access the tile's block property.
-                            tilesPs.setString(4, board.getTile(x, y).getBlock().getClass().getSimpleName());
+                            tilesPs.setString(4, board.getTile(x, y).block.getClass().getSimpleName());
+                            Player territoryOwner = board.getTile(x, y).getTerritoryOwner();
+                            tilesPs.setString(5, territoryOwner != null ? territoryOwner.getName() : null);
                             tilesPs.addBatch();
                         }
                     }
@@ -203,21 +243,21 @@ public final class DatabaseManager {
                 }
             }
 
-            loadAndSetTiles(conn, saveId, gm.getGameBoard());
+            loadAndSetTiles(conn, saveId, gm);
             loadAndSetEntities(conn, saveId, gm);
             loadAndSetUnitCounts(conn, saveId, gm);
 
             GameLogger.log("Game state '" + saveName + "' loaded successfully.");
             return gm;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             GameLogger.log("Error loading game state: " + e.getMessage());
             e.printStackTrace();
             return null;
         }
     }
 
-    private static void loadAndSetTiles(Connection conn, long saveId, GameBoard board) throws SQLException {
-        String sql = "SELECT x_coord, y_coord, block_class_name FROM game_board_tiles WHERE save_id = ?";
+    private static void loadAndSetTiles(Connection conn, long saveId, GameManager gm) throws SQLException {
+        String sql = "SELECT x_coord, y_coord, block_class_name, territory_owner_name FROM game_board_tiles WHERE save_id = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setLong(1, saveId);
             ResultSet rs = ps.executeQuery();
@@ -225,8 +265,16 @@ public final class DatabaseManager {
                 int x = rs.getInt("x_coord");
                 int y = rs.getInt("y_coord");
                 String className = rs.getString("block_class_name");
-                // MODIFIED: Correctly calls the GameTile constructor with all required arguments.
-                board.setTile(x, y, new GameTile(createBlockFromString(className), x, y));
+                String territoryOwnerName = rs.getString("territory_owner_name");
+                GameTile tile = new GameTile(createBlockFromString(className), x, y);
+                if (territoryOwnerName != null) {
+                    Player territoryOwner = gm.getPlayers().stream()
+                            .filter(p -> p.getName().equals(territoryOwnerName))
+                            .findFirst()
+                            .orElse(null);
+                    tile.setTerritoryOwner(territoryOwner);
+                }
+                gm.getGameBoard().setTile(x, y, tile);
             }
         }
     }
@@ -317,6 +365,7 @@ public final class DatabaseManager {
             return saves.toArray(new String[0]);
         } catch (SQLException e) {
             GameLogger.log("Error fetching save games: " + e.getMessage());
+            e.printStackTrace();
             return new String[0];
         }
     }
