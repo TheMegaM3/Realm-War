@@ -1,3 +1,7 @@
+// GameManager.java
+// Central class for managing the game logic in the RealmWar game.
+// Coordinates game state, player actions, resource management, and win conditions.
+
 package com.realmwar.engine;
 
 import com.realmwar.data.GameLogger;
@@ -16,15 +20,24 @@ import java.awt.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// Class managing the overall game logic and state
 public class GameManager {
+    // The game board instance
     private final GameBoard gameBoard;
+    // Manages turn progression
     private final TurnManager turnManager;
+    // List of players in the game
     private final List<Player> players;
+    // Current game state (e.g., Running, GameOver)
     private GameState currentState;
+    // The winning player, if any
     public Player winner;
+    // Coordinates of the currently selected tile
     private int selectedX, selectedY;
+    // The currently selected unit
     private Unit selectedUnit;
 
+    // Constructor to initialize the game with player names and board dimensions
     public GameManager(List<String> playerNames, int width, int height) {
         this.players = playerNames.stream()
                 .map(name -> new Player(name, Constants.STARTING_GOLD, Constants.STARTING_FOOD))
@@ -37,6 +50,7 @@ public class GameManager {
         GameLogger.log("GameManager created. " + getCurrentPlayer().getName() + "'s turn begins.");
     }
 
+    // Sets up initial game state by placing TownHalls and initializing territories
     private void setupInitialState() {
         if (players.isEmpty()) return;
         if (players.size() > 0) {
@@ -57,18 +71,22 @@ public class GameManager {
         }
     }
 
+    // Initiates a unit move through the current game state
     public void moveUnit(Unit unit, int toX, int toY) throws GameRuleException {
         currentState.moveUnit(unit, toX, toY);
     }
 
+    // Initiates a unit attack through the current game state
     public void attackUnit(Unit attacker, GameEntity target) throws GameRuleException {
         currentState.attackUnit(attacker, target);
     }
 
+    // Advances to the next turn through the current game state
     public void nextTurn() {
         currentState.nextTurn();
     }
 
+    // Handles turn progression, including tower attacks and maintenance
     public void advanceTurn() {
         Player endingPlayer = getCurrentPlayer();
         executeTowerAttacks(endingPlayer);
@@ -80,6 +98,7 @@ public class GameManager {
         GameLogger.log("Turn ended for " + endingPlayer.getName() + ". It is now " + currentPlayer.getName() + "'s turn.");
     }
 
+    // Deducts maintenance costs for a player's units and structures
     private void deductTurnlyMaintenance(Player player) {
         int totalMaintenance = 0;
         totalMaintenance += gameBoard.getStructuresForPlayer(player).stream().mapToInt(Structure::getMaintenanceCost).sum();
@@ -95,6 +114,7 @@ public class GameManager {
         }
     }
 
+    // Applies periodic resource gains from structures
     public void applyPeriodicResourceChanges() {
         Player currentPlayer = getCurrentPlayer();
         if (currentPlayer == null) return;
@@ -116,6 +136,7 @@ public class GameManager {
         }
     }
 
+    // Executes a unit move and updates territory
     public void executeMove(Unit unit, int toX, int toY) throws GameRuleException {
         validateAction(unit);
         int distance = Math.abs(unit.getX() - toX) + Math.abs(unit.getY() - toY);
@@ -136,6 +157,7 @@ public class GameManager {
         GameLogger.log(unit.getClass().getSimpleName() + " moved to (" + toX + "," + toY + ") and claimed territory.");
     }
 
+    // Updates territory ownership around a point based on range
     private void updateTerritory(Player player, int x, int y, int range) {
         // Claim the target tile
         gameBoard.setTerritory(player, x, y);
@@ -156,6 +178,7 @@ public class GameManager {
         }
     }
 
+    // Updates territory for a Barrack's valid unit placement directions
     private void updateBarrackTerritory(Player player, Barrack barrack) {
         List<Point> validDirections = barrack.getValidUnitPlacementDirections();
         for (Point direction : validDirections) {
@@ -169,6 +192,7 @@ public class GameManager {
         }
     }
 
+    // Executes an attack by a unit on a target
     public void executeAttack(Unit attacker, GameEntity target) throws GameRuleException {
         validateAction(attacker);
         if (target == null) throw new GameRuleException("You must select a valid target.");
@@ -203,6 +227,7 @@ public class GameManager {
         attacker.setHasActedThisTurn(true);
     }
 
+    // Executes automatic tower attacks on adjacent enemy units
     private void executeTowerAttacks(Player player) {
         for (Structure s : gameBoard.getStructuresForPlayer(player)) {
             if (s instanceof Tower tower) {
@@ -224,11 +249,13 @@ public class GameManager {
         }
     }
 
+    // Validates that a unit can perform an action
     private void validateAction(Unit unit) throws GameRuleException {
         if (unit.getOwner() != getCurrentPlayer()) throw new GameRuleException("It is not your turn.");
         if (unit.hasActedThisTurn()) throw new GameRuleException("This unit has already acted this turn.");
     }
 
+    // Checks if the game has ended and sets the winner
     private void checkWinCondition() {
         List<Player> playersWithTownHalls = players.stream()
                 .filter(p -> gameBoard.getStructuresForPlayer(p).stream().anyMatch(s -> s instanceof TownHall))
@@ -242,6 +269,7 @@ public class GameManager {
         }
     }
 
+    // Builds a new structure at the specified coordinates
     public void buildStructure(String structureType, int x, int y) throws GameRuleException {
         Player currentPlayer = getCurrentPlayer();
         GameTile tile = gameBoard.getTile(x, y);
@@ -299,6 +327,7 @@ public class GameManager {
         GameLogger.log(currentPlayer.getName() + " built a " + structureType + " at (" + x + "," + y + ") for " + buildCost + " gold.");
     }
 
+    // Upgrades a structure at the specified coordinates
     public void upgradeStructure(int x, int y) throws GameRuleException {
         Player currentPlayer = getCurrentPlayer();
         GameEntity entity = gameBoard.getTile(x, y).getEntity();
@@ -319,6 +348,7 @@ public class GameManager {
         GameLogger.log(structure.getClass().getSimpleName() + " at ("+x+","+y+") upgraded to level " + structure.getLevel() + " for " + upgradeCost + " gold.");
     }
 
+    // Merges two units into a stronger unit
     public void mergeUnits(Unit unit1, Unit unit2) throws GameRuleException {
         if (unit1.getOwner() != getCurrentPlayer() || unit2.getOwner() != getCurrentPlayer())
             throw new GameRuleException("You can only merge your own units.");
@@ -359,6 +389,7 @@ public class GameManager {
         GameLogger.log("Merged two " + unit1.getClass().getSimpleName() + "s into a " + newUnit.getClass().getSimpleName() + " at ("+newX+","+newY+").");
     }
 
+    // Trains a new unit at the specified coordinates
     public void trainUnit(String unitType, int x, int y) throws GameRuleException {
         Player currentPlayer = getCurrentPlayer();
         GameTile tile = gameBoard.getTile(x, y);
@@ -416,6 +447,7 @@ public class GameManager {
         GameLogger.log(currentPlayer.getName() + " trained a " + unitType + " at (" + x + "," + y + ") and claimed territory.");
     }
 
+    // Returns the maximum limit for a specific unit type
     private int getMaxUnitLimit(String unitType) {
         return switch (unitType) {
             case "Peasant" -> Constants.MAX_PEASANTS_PER_PLAYER;
@@ -426,17 +458,28 @@ public class GameManager {
         };
     }
 
+    // Getter for the game board
     public GameBoard getGameBoard() { return gameBoard; }
+    // Getter for the current player
     public Player getCurrentPlayer() { return turnManager.getCurrentPlayer(); }
+    // Getter for the current game state
     public GameState getCurrentState() { return currentState; }
+    // Getter for the current player index
     public int getCurrentPlayerIndex() { return turnManager.getCurrentPlayerIndex(); }
+    // Setter for the current player index
     public void setCurrentPlayerIndex(int index) { turnManager.setCurrentPlayerIndex(index); }
+    // Getter for the list of players
     public List<Player> getPlayers() { return players; }
+    // Sets the selected tile coordinates
     public void setSelectedTile(int x, int y) { this.selectedX = x; this.selectedY = y; }
+    // Getter for the selected tile coordinates
     public int[] getSelectedTile() { return new int[]{selectedX, selectedY}; }
+    // Places an entity on the board
     void placeEntity(GameEntity entity, int x, int y) {
         gameBoard.placeEntity(entity, x, y);
     }
+    // Getter for the selected unit
     public Unit getSelectedUnit() { return selectedUnit; }
+    // Setter for the selected unit
     public void setSelectedUnit(Unit unit) { this.selectedUnit = unit; }
 }

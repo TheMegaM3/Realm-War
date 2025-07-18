@@ -1,23 +1,26 @@
+// TurnManager.java
+// Manages the turn order of players in the RealmWar game.
+// Tracks the current player and handles turn progression and player removal.
+
 package com.realmwar.engine;
 
 import com.realmwar.model.Player;
 import java.util.List;
 
-/**
- * A simple class responsible for managing the turn order of players.
- */
+// Class responsible for managing turn order
 public class TurnManager {
+    // List of players in the game
     private final List<Player> players;
+    // Index of the current player in the turn order
     private int currentPlayerIndex;
 
+    // Constructor to initialize with a list of players
     public TurnManager(List<Player> players) {
         this.players = players;
-        this.currentPlayerIndex = 0; // The first player in the list starts.
+        this.currentPlayerIndex = 0; // First player starts
     }
 
-    /**
-     * @return The Player object whose turn it currently is.
-     */
+    // Gets the current player whose turn it is
     public Player getCurrentPlayer() {
         if (players.isEmpty()) {
             return null;
@@ -25,27 +28,21 @@ public class TurnManager {
         return players.get(currentPlayerIndex);
     }
 
-    /**
-     * Advances the turn to the next player in the list, cycling back to the start.
-     */
+    // Advances to the next player's turn, cycling back to the first player if necessary
     public void nextTurn() {
         if (players.isEmpty()) {
             return;
         }
-        // Modulo operator ensures the index wraps around to 0 after the last player.
+        // Modulo ensures index wraps around to 0 after the last player
         currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
     }
 
-    /**
-     * Removes a player from the turn order.
-     * Adjusts the current player index if necessary to ensure it remains valid.
-     * @param player The player to remove.
-     */
+    // Removes a player from the turn order and adjusts the current player index
     public void removePlayer(Player player) {
         int index = players.indexOf(player);
         if (index != -1) {
             players.remove(index);
-            // Adjust currentPlayerIndex if it points to or beyond the removed player
+            // Adjust index if it points to or beyond the removed player
             if (currentPlayerIndex > index) {
                 currentPlayerIndex--;
             } else if (currentPlayerIndex >= players.size() && !players.isEmpty()) {
@@ -54,14 +51,12 @@ public class TurnManager {
         }
     }
 
+    // Gets the current player index
     public int getCurrentPlayerIndex() {
         return currentPlayerIndex;
     }
 
-    /**
-     * Sets the current player index directly. Used when loading a saved game.
-     * @param index The new player index.
-     */
+    // Sets the current player index, used for loading saved games
     public void setCurrentPlayerIndex(int index) {
         if (index >= 0 && index < players.size()) {
             this.currentPlayerIndex = index;

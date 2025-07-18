@@ -1,3 +1,7 @@
+// Barrack.java
+// Represents a Barrack structure in the RealmWar game, which provides unit space and defines valid unit placement directions.
+// Extends the Structure class to include level-based unit space and placement logic.
+
 package com.realmwar.model.structures;
 
 import com.realmwar.model.Player;
@@ -6,29 +10,23 @@ import java.awt.Point;
 import java.util.Arrays;
 import java.util.List;
 
+// Class representing a Barrack structure
 public class Barrack extends Structure {
+    // The unit space capacity provided by this barrack
     private int unitSpace;
 
+    // Constructor to initialize a Barrack with owner, position, and default attributes
     public Barrack(Player o, int x, int y) {
         super(o, x, y, Constants.BARRACK_DURABILITY, Constants.BARRACK_MAINTENANCE);
-        this.unitSpace = Constants.BARRACK_BASE_UNIT_SPACE; // ظرفیت اولیه 4
+        this.unitSpace = Constants.BARRACK_BASE_UNIT_SPACE; // Initial unit space capacity
     }
 
-    /**
-     * Calculates the unit space based on the structure's level.
-     * @return The current unit space capacity.
-     */
+    // Gets the current unit space capacity
     public int getUnitSpace() {
         return unitSpace;
     }
 
-    /**
-     * Returns the valid directions where units can be placed based on the barrack's level.
-     * Level 1: Up, Down, Left, Right (4 directions)
-     * Level 2: Adds Northwest, Northeast (6 directions)
-     * Level 3: Adds Southwest, Southeast (8 directions)
-     * @return List of Points representing relative coordinates of valid directions.
-     */
+    // Returns valid directions for unit placement based on the barrack's level
     public List<Point> getValidUnitPlacementDirections() {
         return switch (level) {
             case 1 -> Arrays.asList(
@@ -59,11 +57,12 @@ public class Barrack extends Structure {
         };
     }
 
+    // Upgrades the barrack, increasing level and unit space
     @Override
     public void levelUp() {
         if (level < maxLevel) {
             super.levelUp();
-            this.unitSpace += Constants.BARRACK_UNIT_SPACE_INCREMENT; // افزایش ظرفیت با هر ارتقاء
+            this.unitSpace += Constants.BARRACK_UNIT_SPACE_INCREMENT; // Increase unit space on upgrade
         }
     }
 }

@@ -1,45 +1,41 @@
+// ResourceHandler.java
+// Manages a player's resources (gold and food) in the RealmWar game.
+// Enforces rules for adding and spending resources, throwing exceptions for invalid operations.
+
 package com.realmwar.model;
 
 import com.realmwar.util.CustomExceptions.GameRuleException;
 
-/**
- * Manages a player's resources (gold and food) and enforces spending rules.
- */
+// Class for managing player resources
 public class ResourceHandler {
+    // Current amount of gold
     private int gold;
+    // Current amount of food
     private int food;
 
+    // Constructor to initialize resources with starting amounts
     public ResourceHandler(int initialGold, int initialFood) {
         this.gold = initialGold;
         this.food = initialFood;
     }
 
-    // --- Getters ---
-
+    // Gets the current gold amount
     public int getGold() {
         return gold;
     }
 
+    // Gets the current food amount
     public int getFood() {
         return food;
     }
 
-    /**
-     * Adds a specified amount of gold and food to the player's resources.
-     * @param goldAmount The amount of gold to add.
-     * @param foodAmount The amount of food to add.
-     */
+    // Adds specified amounts of gold and food to the player's resources
     public void addResources(int goldAmount, int foodAmount) {
         this.gold += goldAmount;
         this.food += foodAmount;
     }
 
-    /**
-     * Spends resources, checking if the player has enough before deducting.
-     * @param goldCost The amount of gold to spend.
-     * @param foodCost The amount of food to spend.
-     * @throws GameRuleException if the player has insufficient resources.
-     */
+    // Spends resources, checking for sufficient amounts before deducting
     public void spendResources(int goldCost, int foodCost) throws GameRuleException {
         if (this.gold < goldCost || this.food < foodCost) {
             throw new GameRuleException("Insufficient Resources!");

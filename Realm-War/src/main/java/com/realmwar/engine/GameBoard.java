@@ -1,3 +1,7 @@
+// GameBoard.java
+// Represents the game board in the RealmWar game, managing a grid of tiles with terrain and entities.
+// Handles board initialization, entity placement, and territory management for players.
+
 package com.realmwar.engine;
 
 import com.realmwar.engine.blocks.Block;
@@ -15,11 +19,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+// Class representing the game board with a grid of tiles
 public class GameBoard {
+    // Board dimensions
     public final int width;
     public final int height;
+    // 2D array of tiles representing the game board
     private final GameTile[][] tiles;
 
+    // Constructor to initialize the board with specified dimensions
     public GameBoard(int width, int height) {
         this.width = width;
         this.height = height;
@@ -27,6 +35,7 @@ public class GameBoard {
         initializeBoard();
     }
 
+    // Initializes the board with random terrain (ForestBlock or EmptyBlock)
     private void initializeBoard() {
         Random rand = new Random();
         for (int x = 0; x < width; x++) {
@@ -37,6 +46,7 @@ public class GameBoard {
         }
     }
 
+    // Retrieves a tile at the specified coordinates, or null if out of bounds
     public GameTile getTile(int x, int y) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             return tiles[x][y];
@@ -44,6 +54,7 @@ public class GameBoard {
         return null;
     }
 
+    // Places an entity on the specified tile and updates its position
     public void placeEntity(GameEntity entity, int x, int y) {
         GameTile tile = getTile(x, y);
         if (tile != null) {
@@ -54,6 +65,7 @@ public class GameBoard {
         }
     }
 
+    // Returns a list of all units owned by the specified player
     public List<Unit> getUnitsForPlayer(Player player) {
         List<Unit> playerUnits = new ArrayList<>();
         for (int x = 0; x < width; x++) {
@@ -67,6 +79,7 @@ public class GameBoard {
         return playerUnits;
     }
 
+    // Returns a list of all structures owned by the specified player
     public List<Structure> getStructuresForPlayer(Player player) {
         List<Structure> playerStructures = new ArrayList<>();
         for (int x = 0; x < width; x++) {
@@ -80,6 +93,7 @@ public class GameBoard {
         return playerStructures;
     }
 
+    // Returns a list of units adjacent to the specified coordinates
     public List<Unit> getAdjacentUnits(int x, int y) {
         List<Unit> adjacent = new ArrayList<>();
         int[] dx = {-1, 1, 0, 0, -1, -1, 1, 1};
@@ -93,6 +107,7 @@ public class GameBoard {
         return adjacent;
     }
 
+    // Checks if the specified coordinates are adjacent to a friendly structure of the given type
     public boolean isAdjacentToFriendlyStructure(int x, int y, Player player, Class<? extends Structure> structureType) {
         for (Structure structure : getStructuresForPlayer(player)) {
             if (structureType.isInstance(structure)) {
@@ -121,6 +136,7 @@ public class GameBoard {
         return false;
     }
 
+    // Checks if the specified coordinates are adjacent to a friendly tower
     public boolean isAdjacentToFriendlyTower(int x, int y, Player player) {
         int[] dx = {-1, 1, 0, 0, -1, -1, 1, 1};
         int[] dy = {0, 0, -1, 1, -1, 1, -1, 1};
@@ -134,12 +150,14 @@ public class GameBoard {
         return false;
     }
 
+    // Sets a tile at the specified coordinates
     public void setTile(int x, int y, GameTile tile) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             this.tiles[x][y] = tile;
         }
     }
 
+    // Sets the territory owner for a tile at the specified coordinates
     public void setTerritory(Player player, int x, int y) {
         GameTile tile = getTile(x, y);
         if (tile != null) {
@@ -147,6 +165,7 @@ public class GameBoard {
         }
     }
 
+    // Initializes a player's territory around a central point
     public void initializePlayerTerritory(Player player, int centerX, int centerY) {
         for (int x = centerX - 1; x <= centerX + 1; x++) {
             for (int y = centerY - 1; y <= centerY + 1; y++) {

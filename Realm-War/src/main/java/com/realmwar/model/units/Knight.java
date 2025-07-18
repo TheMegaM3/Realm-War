@@ -1,21 +1,18 @@
+// Knight.java
+// Represents a Knight unit in the RealmWar game, an elite and mobile cavalry unit.
+// Extends the Unit class with specific attributes defined in Constants.
+
 package com.realmwar.model.units;
 
 import com.realmwar.model.Player;
 import com.realmwar.util.Constants;
 
-/**
- * Represents a Knight unit, an elite and mobile cavalry unit.
- */
+// Class representing a Knight unit
 public class Knight extends Unit {
 
-    /**
-     * Constructs a new Knight.
-     * @param owner The player who owns this unit.
-     * @param x     The initial x-coordinate.
-     * @param y     The initial y-coordinate.
-     */
+    // Constructor to initialize a Knight with owner, position, and stats from Constants
     public Knight(Player owner, int x, int y) {
-        // Calls the parent Unit constructor with all stats defined in the Constants class.
+        // Calls the parent Unit constructor with predefined stats
         super(owner, x, y,
                 Constants.KNIGHT_HEALTH,
                 Constants.KNIGHT_ATTACK,

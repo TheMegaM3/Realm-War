@@ -1,3 +1,7 @@
+// DatabaseManager.java
+// Manages database operations for the RealmWar game, handling game state persistence and retrieval using PostgreSQL.
+// This class is designed as a singleton utility with static methods to initialize, save, load, and manage game states.
+
 package com.realmwar.data;
 
 import com.realmwar.engine.GameBoard;
@@ -17,13 +21,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+// Singleton utility class for managing database interactions in the RealmWar game
 public final class DatabaseManager {
+    // Database connection parameters (URL, username, password)
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/realmwar_db";
     private static final String DB_USER = "postgres";
-    private static final String DB_PASS = "4951";
+    private static final String DB_PASS = "0000";
 
+    // Private constructor to prevent instantiation
     private DatabaseManager() {}
 
+    // Initializes the database by checking the driver, connection, and creating necessary tables if they don't exist
     public static void initializeDatabase() {
         // Check if PostgreSQL driver is available
         try {
@@ -44,6 +52,7 @@ public final class DatabaseManager {
             return;
         }
 
+        // SQL statement to create the game_saves table
         String createSavesTable = "CREATE TABLE IF NOT EXISTS game_saves (" +
                 "id SERIAL PRIMARY KEY," +
                 "save_name TEXT NOT NULL UNIQUE," +
@@ -54,6 +63,7 @@ public final class DatabaseManager {
                 "timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ");";
 
+        // SQL(statement to create the game_board_tiles table
         String createTilesTable = "CREATE TABLE IF NOT EXISTS game_board_tiles (" +
                 "id SERIAL PRIMARY KEY," +
                 "save_id INTEGER NOT NULL," +
@@ -64,6 +74,7 @@ public final class DatabaseManager {
                 "FOREIGN KEY (save_id) REFERENCES game_saves(id) ON DELETE CASCADE" +
                 ");";
 
+        // SQL statement to create the game_entities table
         String createEntitiesTable = "CREATE TABLE IF NOT EXISTS game_entities (" +
                 "id SERIAL PRIMARY KEY," +
                 "save_id INTEGER NOT NULL," +
@@ -75,6 +86,7 @@ public final class DatabaseManager {
                 "FOREIGN KEY (save_id) REFERENCES game_saves(id) ON DELETE CASCADE" +
                 ");";
 
+        // SQL statement to create the player_unit_counts table
         String createUnitCountsTable = "CREATE TABLE IF NOT EXISTS player_unit_counts (" +
                 "id SERIAL PRIMARY KEY," +
                 "save_id INTEGER NOT NULL," +
@@ -84,6 +96,7 @@ public final class DatabaseManager {
                 "FOREIGN KEY (save_id) REFERENCES game_saves(id) ON DELETE CASCADE" +
                 ");";
 
+        // Execute table creation and check for missing columns
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
              Statement stmt = conn.createStatement()) {
             // Create tables
@@ -108,6 +121,7 @@ public final class DatabaseManager {
         }
     }
 
+    // Saves the current game state to the database
     public static boolean saveGame(GameManager gameManager, String saveName) {
         // Check database connection before attempting to save
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
@@ -117,15 +131,18 @@ public final class DatabaseManager {
             return false;
         }
 
+        // SQL statements for inserting game data
         String saveGameSQL = "INSERT INTO game_saves(save_name, current_player_index, board_width, board_height, winner_name) VALUES(?, ?, ?, ?, ?)";
         String saveTilesSQL = "INSERT INTO game_board_tiles(save_id, x_coord, y_coord, block_class_name, territory_owner_name) VALUES(?, ?, ?, ?, ?)";
         String saveEntitiesSQL = "INSERT INTO game_entities(save_id, entity_class_name, owner_name, x_coord, y_coord, health) VALUES(?, ?, ?, ?, ?, ?)";
         String saveUnitCountsSQL = "INSERT INTO player_unit_counts(save_id, player_name, unit_type, count) VALUES(?, ?, ?, ?)";
 
+        // Perform save operations within a transaction
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             conn.setAutoCommit(false);
 
             try {
+                // Insert game save metadata
                 int saveId;
                 try (PreparedStatement ps = conn.prepareStatement(saveGameSQL, Statement.RETURN_GENERATED_KEYS)) {
                     ps.setString(1, saveName);
@@ -143,6 +160,7 @@ public final class DatabaseManager {
                     }
                 }
 
+                // Save game board tiles
                 try (PreparedStatement tilesPs = conn.prepareStatement(saveTilesSQL)) {
                     GameBoard board = gameManager.getGameBoard();
                     for (int x = 0; x < board.width; x++) {
@@ -159,6 +177,7 @@ public final class DatabaseManager {
                     tilesPs.executeBatch();
                 }
 
+                // Save game entities (units and structures)
                 try (PreparedStatement entitiesPs = conn.prepareStatement(saveEntitiesSQL)) {
                     GameBoard board = gameManager.getGameBoard();
                     for (int x = 0; x < board.width; x++) {
@@ -185,6 +204,7 @@ public final class DatabaseManager {
                     entitiesPs.executeBatch();
                 }
 
+                // Save player unit counts
                 try (PreparedStatement unitCountsPs = conn.prepareStatement(saveUnitCountsSQL)) {
                     for (Player player : gameManager.getPlayers()) {
                         for (Map.Entry<String, Integer> entry : player.getUnitCounts().entrySet()) {
@@ -198,11 +218,13 @@ public final class DatabaseManager {
                     unitCountsPs.executeBatch();
                 }
 
+                // Commit the transaction
                 conn.commit();
                 GameLogger.log("Game saved successfully: " + saveName);
                 return true;
 
             } catch (SQLException e) {
+                // Rollback transaction on error
                 conn.rollback();
                 GameLogger.log("Error saving game, transaction rolled back: " + e.getMessage());
                 e.printStackTrace();
@@ -215,19 +237,23 @@ public final class DatabaseManager {
         }
     }
 
+    // Loads a game state from the database by save name
     public static GameManager loadGame(String saveName) {
+        // Default player names for initializing GameManager
         List<String> playerNames = new ArrayList<>();
         playerNames.add("Player 1");
         playerNames.add("Player 2");
         playerNames.add("Player 3");
         playerNames.add("Player 4");
 
+        // SQL query to retrieve game save metadata
         String selectSaveSQL = "SELECT id, current_player_index, winner_name, board_width, board_height FROM game_saves WHERE save_name = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             long saveId;
             GameManager gm;
 
+            // Retrieve game save metadata
             try (PreparedStatement ps = conn.prepareStatement(selectSaveSQL)) {
                 ps.setString(1, saveName);
                 ResultSet rs = ps.executeQuery();
@@ -243,6 +269,7 @@ public final class DatabaseManager {
                 }
             }
 
+            // Load game components
             loadAndSetTiles(conn, saveId, gm);
             loadAndSetEntities(conn, saveId, gm);
             loadAndSetUnitCounts(conn, saveId, gm);
@@ -256,6 +283,7 @@ public final class DatabaseManager {
         }
     }
 
+    // Loads and sets game board tiles from the database
     private static void loadAndSetTiles(Connection conn, long saveId, GameManager gm) throws SQLException {
         String sql = "SELECT x_coord, y_coord, block_class_name, territory_owner_name FROM game_board_tiles WHERE save_id = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -279,6 +307,7 @@ public final class DatabaseManager {
         }
     }
 
+    // Loads and sets game entities from the database
     private static void loadAndSetEntities(Connection conn, long saveId, GameManager gm) throws SQLException {
         String sql = "SELECT * FROM game_entities WHERE save_id = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -309,6 +338,7 @@ public final class DatabaseManager {
         }
     }
 
+    // Loads and sets player unit counts from the database
     private static void loadAndSetUnitCounts(Connection conn, long saveId, GameManager gm) throws SQLException {
         String sql = "SELECT player_name, unit_type, count FROM player_unit_counts WHERE save_id = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -329,6 +359,7 @@ public final class DatabaseManager {
         }
     }
 
+    // Creates a block instance based on its class name
     private static Block createBlockFromString(String className) {
         return switch (className) {
             case "ForestBlock" -> new ForestBlock();
@@ -337,6 +368,7 @@ public final class DatabaseManager {
         };
     }
 
+    // Creates a game entity instance based on its class name
     private static GameEntity createEntityFromString(String type, Player owner, int x, int y) {
         return switch (type) {
             case "Peasant" -> new Peasant(owner, x, y);
@@ -352,6 +384,7 @@ public final class DatabaseManager {
         };
     }
 
+    // Retrieves a list of all save game names
     public static String[] getSaveGames() {
         String sql = "SELECT save_name FROM game_saves ORDER BY timestamp DESC";
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
