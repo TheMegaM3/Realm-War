@@ -1,7 +1,3 @@
-// GameFrame.java
-// Main window for the RealmWar game, managing the UI with buttons, game board panel, and info panel.
-// Handles user interactions like building, training, merging units, and game state management.
-
 package com.realmwar.view;
 
 import com.realmwar.Main;
@@ -129,14 +125,26 @@ public class GameFrame extends JFrame {
         }
     }
 
+    // Stops all timers to prevent them from running in the background
+    private void disposeTimers() {
+        if (turnTimer != null) {
+            turnTimer.stop();
+        }
+        if (resourceTimer != null) {
+            resourceTimer.stop();
+        }
+    }
+
     // Handles starting a new game
     private void handleNewGame() {
+        disposeTimers(); // Stop current timers before starting a new game
         this.dispose();
         Main.main(null);
     }
 
     // Handles loading a saved game
     private void handleLoadGame() {
+        disposeTimers(); // Stop current timers before loading a new game
         this.dispose();
         String[] saveFiles = DatabaseManager.getSaveGames();
         if (saveFiles.length == 0) {
@@ -188,6 +196,7 @@ public class GameFrame extends JFrame {
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
         if (confirm == JOptionPane.YES_OPTION) {
+            disposeTimers(); // Stop timers before exiting
             System.exit(0);
         }
     }
@@ -366,9 +375,7 @@ public class GameFrame extends JFrame {
 
     // Shows game over dialog
     private void showGameOverDialog() {
-        turnTimer.stop();
-        resourceTimer.stop();
-
+        disposeTimers(); // Stop timers when game is over
         String winnerName = gameManager.winner != null ? gameManager.winner.getName() : "No one";
         String message = "Game Over! Winner: " + winnerName;
 
