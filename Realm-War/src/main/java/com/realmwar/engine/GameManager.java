@@ -1,6 +1,5 @@
 // GameManager.java
-// Central class for managing the game logic in the RealmWar game.
-// Coordinates game state, player actions, resource management, and win conditions.
+// Class managing the overall game logic and state
 
 package com.realmwar.engine;
 
@@ -274,6 +273,11 @@ public class GameManager {
 
         if (tile == null || tile.isOccupied() || !tile.block.isBuildable()) {
             throw new GameRuleException("Cannot build on this tile!");
+        }
+
+        // Check if the tile is in the current player's territory
+        if (tile.getTerritoryOwner() != currentPlayer) {
+            throw new GameRuleException("Can only build in your own territory!");
         }
 
         if (structureType.equals("Farm")) {

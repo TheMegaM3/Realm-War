@@ -2032,3 +2032,288 @@
 2025/07/17 07:24:56 - Turn ended for Player 4. It is now Player 1's turn.
 2025/07/17 07:24:59 - Farm at (1,3) upgraded to level 2 for 75 gold.
 2025/07/17 07:25:03 - Farm at (1,3) upgraded to level 3 for 150 gold.
+2025/07/18 18:30:55 - Successfully connected to the database.
+2025/07/18 18:30:55 - Database initialized successfully.
+2025/07/18 18:30:59 - GameManager created. Player 1's turn begins.
+2025/07/18 18:31:09 - Player 1 claimed territory at (7,7).
+2025/07/18 18:31:09 - Player 1 claimed territory at (8,6).
+2025/07/18 18:31:09 - Player 1 claimed territory at (8,7).
+2025/07/18 18:31:09 - Player 1 claimed territory at (8,8).
+2025/07/18 18:31:09 - Player 1 claimed territory at (9,7).
+2025/07/18 18:31:09 - Player 1 built a Market at (8,7) for 120 gold.
+2025/07/18 18:31:09 - Player 1 gained 1 gold and 0 food.
+2025/07/18 18:31:13 - Player 1 gained 1 gold and 0 food.
+2025/07/18 18:31:16 - Player 1 gained 1 gold and 0 food.
+2025/07/18 18:31:19 - Player 1 gained 1 gold and 0 food.
+2025/07/18 18:31:22 - Player 1 gained 1 gold and 0 food.
+2025/07/18 18:31:25 - Player 1 gained 1 gold and 0 food.
+2025/07/18 18:37:48 - Successfully connected to the database.
+2025/07/18 18:37:48 - Database initialized successfully.
+2025/07/18 18:37:52 - GameManager created. Player 1's turn begins.
+2025/07/18 18:39:10 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 18:39:18 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/18 18:39:21 - Player 1 claimed territory at (0,2).
+2025/07/18 18:39:21 - Player 1 claimed territory at (1,1).
+2025/07/18 18:39:21 - Player 1 claimed territory at (1,2).
+2025/07/18 18:39:21 - Player 1 claimed territory at (1,3).
+2025/07/18 18:39:21 - Player 1 claimed territory at (2,2).
+2025/07/18 18:39:21 - Player 1 claimed territory at (1,1) due to Barrack upgrade.
+2025/07/18 18:39:21 - Player 1 claimed territory at (1,3) due to Barrack upgrade.
+2025/07/18 18:39:21 - Player 1 claimed territory at (0,2) due to Barrack upgrade.
+2025/07/18 18:39:21 - Player 1 claimed territory at (2,2) due to Barrack upgrade.
+2025/07/18 18:39:21 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/18 18:39:35 - Player 1 claimed territory at (1,1).
+2025/07/18 18:39:35 - Player 1 claimed territory at (2,0).
+2025/07/18 18:39:35 - Player 1 claimed territory at (2,1).
+2025/07/18 18:39:35 - Player 1 claimed territory at (2,2).
+2025/07/18 18:39:35 - Player 1 claimed territory at (3,1).
+2025/07/18 18:39:35 - Player 1 built a Farm at (2,1) for 100 gold.
+2025/07/18 18:39:36 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:39:39 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:39:42 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:39:45 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:39:48 - Game saved successfully: 8888
+2025/07/18 18:39:48 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:39:49 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/18 18:39:49 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 18:39:54 - GameManager created. Player 1's turn begins.
+2025/07/18 18:39:54 - Game loaded successfully: 8888
+2025/07/18 18:39:57 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:00 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:03 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:06 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:09 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:12 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:15 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:18 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:21 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:24 - Player 1 gained 0 gold and 2 food.
+2025/07/18 18:40:25 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/18 18:40:25 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 18:40:34 - Successfully connected to the database.
+2025/07/18 18:40:34 - Database initialized successfully.
+2025/07/18 18:40:40 - GameManager created. Player 1's turn begins.
+2025/07/18 18:40:48 - Successfully connected to the database.
+2025/07/18 18:40:49 - Database initialized successfully.
+2025/07/18 18:40:53 - GameManager created. Player 1's turn begins.
+2025/07/18 18:41:39 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:03:12 - Successfully connected to the database.
+2025/07/18 19:03:12 - Database initialized successfully.
+2025/07/18 19:03:15 - GameManager created. Player 1's turn begins.
+2025/07/18 19:03:30 - Player 1 claimed territory at (7,7).
+2025/07/18 19:03:30 - Player 1 claimed territory at (8,6).
+2025/07/18 19:03:30 - Player 1 claimed territory at (8,7).
+2025/07/18 19:03:30 - Player 1 claimed territory at (8,8).
+2025/07/18 19:03:30 - Player 1 claimed territory at (9,7).
+2025/07/18 19:03:30 - Player 1 built a Market at (8,7) for 120 gold.
+2025/07/18 19:03:32 - Player 1 gained 1 gold and 0 food.
+2025/07/18 19:03:35 - Player 1 gained 1 gold and 0 food.
+2025/07/18 19:03:36 - Player 1 claimed territory at (6,8).
+2025/07/18 19:03:36 - Player 1 claimed territory at (7,7).
+2025/07/18 19:03:36 - Player 1 claimed territory at (7,8).
+2025/07/18 19:03:36 - Player 1 claimed territory at (7,9).
+2025/07/18 19:03:36 - Player 1 claimed territory at (8,8).
+2025/07/18 19:03:36 - Player 1 built a Tower at (7,8) for 200 gold.
+2025/07/18 19:10:46 - Successfully connected to the database.
+2025/07/18 19:10:46 - Database initialized successfully.
+2025/07/18 19:10:49 - GameManager created. Player 1's turn begins.
+2025/07/18 19:11:21 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:11:25 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/18 19:11:34 - Player 1 claimed territory at (0,2).
+2025/07/18 19:11:34 - Player 1 claimed territory at (1,1).
+2025/07/18 19:11:34 - Player 1 claimed territory at (1,2).
+2025/07/18 19:11:34 - Player 1 claimed territory at (1,3).
+2025/07/18 19:11:34 - Player 1 claimed territory at (2,2).
+2025/07/18 19:11:34 - Player 1 built a Farm at (1,2) for 100 gold.
+2025/07/18 19:11:35 - Player 1 gained 0 gold and 2 food.
+2025/07/18 19:11:38 - Player 1 gained 0 gold and 2 food.
+2025/07/18 19:11:41 - Player 1 gained 0 gold and 2 food.
+2025/07/18 19:11:44 - Player 1 gained 0 gold and 2 food.
+2025/07/18 19:11:47 - Player 1 gained 0 gold and 2 food.
+2025/07/18 19:11:50 - Player 1 gained 0 gold and 2 food.
+2025/07/18 19:11:53 - Player 1 gained 0 gold and 2 food.
+2025/07/18 19:15:58 - Successfully connected to the database.
+2025/07/18 19:15:58 - Database initialized successfully.
+2025/07/18 19:16:00 - GameManager created. Player 1's turn begins.
+2025/07/18 19:16:27 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:16:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/18 19:16:35 - Player 1 claimed territory at (1,1).
+2025/07/18 19:16:35 - Player 1 claimed territory at (2,0).
+2025/07/18 19:16:35 - Player 1 claimed territory at (2,1).
+2025/07/18 19:16:35 - Player 1 claimed territory at (2,2).
+2025/07/18 19:16:35 - Player 1 claimed territory at (3,1).
+2025/07/18 19:16:35 - Player 1 built a Farm at (2,1) for 100 gold.
+2025/07/18 19:16:38 - Player 1 gained 0 gold and 2 food.
+2025/07/18 19:16:39 - Player 1 claimed territory at (1,2).
+2025/07/18 19:16:39 - Player 1 claimed territory at (2,1).
+2025/07/18 19:16:39 - Player 1 claimed territory at (2,2).
+2025/07/18 19:16:39 - Player 1 claimed territory at (2,3).
+2025/07/18 19:16:39 - Player 1 claimed territory at (3,2).
+2025/07/18 19:16:39 - Player 1 built a Farm at (2,2) for 150 gold.
+2025/07/18 19:16:41 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:16:44 - Player 1 claimed territory at (0,2).
+2025/07/18 19:16:44 - Player 1 claimed territory at (1,1).
+2025/07/18 19:16:44 - Player 1 claimed territory at (1,2).
+2025/07/18 19:16:44 - Player 1 claimed territory at (1,3).
+2025/07/18 19:16:44 - Player 1 claimed territory at (2,2).
+2025/07/18 19:16:44 - Player 1 claimed territory at (1,1) due to Barrack upgrade.
+2025/07/18 19:16:44 - Player 1 claimed territory at (1,3) due to Barrack upgrade.
+2025/07/18 19:16:44 - Player 1 claimed territory at (0,2) due to Barrack upgrade.
+2025/07/18 19:16:44 - Player 1 claimed territory at (2,2) due to Barrack upgrade.
+2025/07/18 19:16:44 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/18 19:16:44 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:16:47 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:16:48 - Player 1 claimed territory at (0,2).
+2025/07/18 19:16:48 - Player 1 claimed territory at (0,3).
+2025/07/18 19:16:48 - Player 1 claimed territory at (0,4).
+2025/07/18 19:16:48 - Player 1 claimed territory at (1,1).
+2025/07/18 19:16:48 - Player 1 claimed territory at (1,2).
+2025/07/18 19:16:48 - Player 1 claimed territory at (1,3).
+2025/07/18 19:16:48 - Player 1 claimed territory at (1,4).
+2025/07/18 19:16:48 - Player 1 claimed territory at (1,5).
+2025/07/18 19:16:48 - Player 1 claimed territory at (2,2).
+2025/07/18 19:16:48 - Player 1 claimed territory at (2,3).
+2025/07/18 19:16:48 - Player 1 claimed territory at (2,4).
+2025/07/18 19:16:48 - Player 1 claimed territory at (3,3).
+2025/07/18 19:16:48 - Player 1 trained a Knight at (1,3) and claimed territory.
+2025/07/18 19:16:50 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:16:53 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:16:56 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:16:59 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:16:59 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/18 19:16:59 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:17:00 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/18 19:17:02 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:17:05 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:17:08 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:17:11 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/18 19:17:11 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:17:18 - Player 2 claimed territory at (7,7).
+2025/07/18 19:17:18 - Player 2 claimed territory at (8,6).
+2025/07/18 19:17:18 - Player 2 claimed territory at (8,7).
+2025/07/18 19:17:18 - Player 2 claimed territory at (8,8).
+2025/07/18 19:17:18 - Player 2 claimed territory at (9,7).
+2025/07/18 19:17:18 - Player 2 built a Market at (8,7) for 120 gold.
+2025/07/18 19:17:20 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:22 - Player 2's turn-end maintenance cost: 1 gold.
+2025/07/18 19:17:22 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/18 19:17:23 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:17:23 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/18 19:17:23 - Player 1 could not pay maintenance costs!
+2025/07/18 19:17:23 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:17:26 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:27 - Player 2 claimed territory at (7,6).
+2025/07/18 19:17:27 - Player 2 claimed territory at (8,5).
+2025/07/18 19:17:27 - Player 2 claimed territory at (8,6).
+2025/07/18 19:17:27 - Player 2 claimed territory at (8,7).
+2025/07/18 19:17:27 - Player 2 claimed territory at (9,6).
+2025/07/18 19:17:27 - Player 2 built a Tower at (8,6) for 200 gold.
+2025/07/18 19:17:29 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:32 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:35 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:38 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:41 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:44 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:47 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:50 - Game saved successfully: 88888
+2025/07/18 19:17:50 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:53 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:17:55 - Player 2's turn-end maintenance cost: 4 gold.
+2025/07/18 19:17:55 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/18 19:17:56 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:17:57 - Successfully connected to the database.
+2025/07/18 19:17:57 - Database initialized successfully.
+2025/07/18 19:18:03 - GameManager created. Player 1's turn begins.
+2025/07/18 19:18:07 - GameManager created. Player 1's turn begins.
+2025/07/18 19:18:07 - Game loaded successfully: 88888
+2025/07/18 19:18:10 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:13 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:16 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:19 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:22 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:25 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:28 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:31 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:34 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:37 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:18:38 - Player 2's turn-end maintenance cost: 4 gold.
+2025/07/18 19:18:38 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/18 19:18:40 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:18:43 - Player 1's turn-end maintenance cost: 10 gold.
+2025/07/18 19:18:43 - Player 1 could not pay maintenance costs!
+2025/07/18 19:18:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:18:43 - Player 2's turn-end maintenance cost: 4 gold.
+2025/07/18 19:18:43 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/18 19:18:43 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:18:46 - Player 1 gained 0 gold and 4 food.
+2025/07/18 19:22:08 - Successfully connected to the database.
+2025/07/18 19:22:08 - Database initialized successfully.
+2025/07/18 19:22:31 - GameManager created. Player 1's turn begins.
+2025/07/18 19:22:49 - Player 1 claimed territory at (0,2).
+2025/07/18 19:22:49 - Player 1 claimed territory at (1,1).
+2025/07/18 19:22:49 - Player 1 claimed territory at (1,2).
+2025/07/18 19:22:49 - Player 1 claimed territory at (1,3).
+2025/07/18 19:22:49 - Player 1 claimed territory at (2,2).
+2025/07/18 19:22:49 - Player 1 claimed territory at (1,1) due to Barrack upgrade.
+2025/07/18 19:22:49 - Player 1 claimed territory at (1,3) due to Barrack upgrade.
+2025/07/18 19:22:49 - Player 1 claimed territory at (0,2) due to Barrack upgrade.
+2025/07/18 19:22:49 - Player 1 claimed territory at (2,2) due to Barrack upgrade.
+2025/07/18 19:22:49 - Player 1 built a Barrack at (1,2) for 150 gold.
+2025/07/18 19:23:04 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/18 19:23:04 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:23:12 - Player 2 claimed territory at (7,7).
+2025/07/18 19:23:12 - Player 2 claimed territory at (8,6).
+2025/07/18 19:23:12 - Player 2 claimed territory at (8,7).
+2025/07/18 19:23:12 - Player 2 claimed territory at (8,8).
+2025/07/18 19:23:12 - Player 2 claimed territory at (9,7).
+2025/07/18 19:23:12 - Player 2 built a Market at (8,7) for 120 gold.
+2025/07/18 19:23:14 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:17 - Player 2 claimed territory at (7,6).
+2025/07/18 19:23:17 - Player 2 claimed territory at (8,5).
+2025/07/18 19:23:17 - Player 2 claimed territory at (8,6).
+2025/07/18 19:23:17 - Player 2 claimed territory at (8,7).
+2025/07/18 19:23:17 - Player 2 claimed territory at (9,6).
+2025/07/18 19:23:17 - Player 2 claimed territory at (8,5) due to Barrack upgrade.
+2025/07/18 19:23:17 - Player 2 claimed territory at (8,7) due to Barrack upgrade.
+2025/07/18 19:23:17 - Player 2 claimed territory at (7,6) due to Barrack upgrade.
+2025/07/18 19:23:17 - Player 2 claimed territory at (9,6) due to Barrack upgrade.
+2025/07/18 19:23:17 - Player 2 built a Barrack at (8,6) for 150 gold.
+2025/07/18 19:23:17 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:20 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:23 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:26 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:27 - Player 2 claimed territory at (6,5).
+2025/07/18 19:23:27 - Player 2 claimed territory at (7,4).
+2025/07/18 19:23:27 - Player 2 claimed territory at (7,5).
+2025/07/18 19:23:27 - Player 2 claimed territory at (7,6).
+2025/07/18 19:23:27 - Player 2 claimed territory at (8,3).
+2025/07/18 19:23:27 - Player 2 claimed territory at (8,4).
+2025/07/18 19:23:27 - Player 2 claimed territory at (8,5).
+2025/07/18 19:23:27 - Player 2 claimed territory at (8,6).
+2025/07/18 19:23:27 - Player 2 claimed territory at (8,7).
+2025/07/18 19:23:27 - Player 2 claimed territory at (9,4).
+2025/07/18 19:23:27 - Player 2 claimed territory at (9,5).
+2025/07/18 19:23:27 - Player 2 claimed territory at (9,6).
+2025/07/18 19:23:27 - Player 2 trained a Knight at (8,5) and claimed territory.
+2025/07/18 19:23:29 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:31 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/18 19:23:31 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/18 19:23:32 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/18 19:23:35 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/18 19:23:35 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/18 19:23:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:23:35 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:38 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:41 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:44 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:48 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:51 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:51 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/18 19:23:51 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/18 19:23:51 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/18 19:23:51 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/18 19:23:52 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/18 19:23:52 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/18 19:23:53 - Knight attacked TownHall at (8,1) for 40 damage.
+2025/07/18 19:23:54 - Player 2 gained 1 gold and 0 food.
+2025/07/18 19:23:57 - Player 2 gained 1 gold and 0 food.
