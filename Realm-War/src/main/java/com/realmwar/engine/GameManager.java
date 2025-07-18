@@ -53,21 +53,19 @@ public class GameManager {
     // Sets up initial game state by placing TownHalls and initializing territories
     private void setupInitialState() {
         if (players.isEmpty()) return;
-        if (players.size() > 0) {
-            placeEntity(new TownHall(players.get(0), 1, 1), 1, 1);
-            gameBoard.initializePlayerTerritory(players.get(0), 1, 1);
-        }
-        if (players.size() > 1) {
-            placeEntity(new TownHall(players.get(1), gameBoard.width - 2, gameBoard.height - 2), gameBoard.width - 2, gameBoard.height - 2);
-            gameBoard.initializePlayerTerritory(players.get(1), gameBoard.width - 2, gameBoard.height - 2);
-        }
-        if (players.size() > 2) {
-            placeEntity(new TownHall(players.get(2), gameBoard.width - 2, 1), gameBoard.width - 2, 1);
-            gameBoard.initializePlayerTerritory(players.get(2), gameBoard.width - 2, 1);
-        }
-        if (players.size() > 3) {
-            placeEntity(new TownHall(players.get(3), 1, gameBoard.height - 2), 1, gameBoard.height - 2);
-            gameBoard.initializePlayerTerritory(players.get(3), 1, gameBoard.height - 2);
+
+        int[][] positions = {
+                {1, 1},
+                {gameBoard.width - 2, gameBoard.height - 2},
+                {gameBoard.width - 2, 1},
+                {1, gameBoard.height - 2}
+        };
+
+        for (int i = 0; i < players.size(); i++) {
+            int x = positions[i][0];
+            int y = positions[i][1];
+            placeEntity(new TownHall(players.get(i), x, y), x, y);
+            gameBoard.initializePlayerTerritory(players.get(i), x, y);
         }
     }
 
