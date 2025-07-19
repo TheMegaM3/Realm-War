@@ -282,21 +282,23 @@ public class GameBoardPanel extends JPanel {
         Color baseColor = tile.block.getColor();
         Player territoryOwner = tile.getTerritoryOwner();
 
-        // Draw territory or base terrain color
+        // Draw the base color of the tile (e.g., forest) first
+        g2d.setColor(baseColor);
+        g2d.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
+
+        // If a territory exists, overlay a semi-transparent layer
         if (territoryOwner != null) {
             Color territoryColor = getPlayerColor(territoryOwner.getName());
+            // Territory color with alpha 128 (semi-transparent) to preserve the underlying color
             g2d.setColor(new Color(territoryColor.getRed(), territoryColor.getGreen(), territoryColor.getBlue(), 128));
-            g2d.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
-        } else {
-            g2d.setColor(baseColor);
             g2d.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
         }
 
-        // Draw tile border
+        // Draw the tile border
         g2d.setColor(baseColor.darker().darker());
         g2d.drawRect(x * tileWidth, y * tileHeight, tileWidth - 1, tileHeight - 1);
 
-        // Draw entity (unit or structure)
+        // Draw the entity (unit or structure)
         GameEntity entity = tile.getEntity();
         if (entity != null) {
             if (entity instanceof Unit unit) {
