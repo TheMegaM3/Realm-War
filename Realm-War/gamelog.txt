@@ -2317,3 +2317,1309 @@
 2025/07/18 19:23:53 - Knight attacked TownHall at (8,1) for 40 damage.
 2025/07/18 19:23:54 - Player 2 gained 1 gold and 0 food.
 2025/07/18 19:23:57 - Player 2 gained 1 gold and 0 food.
+2025/07/24 21:19:11 - CRITICAL: Failed to connect to the database.
+2025/07/24 21:19:46 - GameManager created. Player 1's turn begins.
+2025/07/24 21:22:40 - CRITICAL: Failed to connect to the database.
+2025/07/24 21:34:25 - Successfully connected to the database.
+2025/07/24 21:34:25 - Database initialized successfully.
+2025/07/24 21:34:29 - GameManager created. Player 1's turn begins.
+2025/07/24 21:34:38 - Player 1 claimed territory at (1,1).
+2025/07/24 21:34:38 - Player 1 claimed territory at (2,0).
+2025/07/24 21:34:38 - Player 1 claimed territory at (2,1).
+2025/07/24 21:34:38 - Player 1 claimed territory at (2,2).
+2025/07/24 21:34:38 - Player 1 claimed territory at (3,1).
+2025/07/24 21:34:38 - Player 1 built a Farm at (2,1) for 100 gold.
+2025/07/24 21:34:38 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:34:41 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:34:44 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:34:47 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:34:50 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:34:53 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:34:55 - Player 1 claimed territory at (2,1).
+2025/07/24 21:34:55 - Player 1 claimed territory at (3,0).
+2025/07/24 21:34:55 - Player 1 claimed territory at (3,1).
+2025/07/24 21:34:55 - Player 1 claimed territory at (3,2).
+2025/07/24 21:34:55 - Player 1 claimed territory at (4,1).
+2025/07/24 21:34:55 - Player 1 claimed territory at (3,0) due to Barrack upgrade.
+2025/07/24 21:34:55 - Player 1 claimed territory at (3,2) due to Barrack upgrade.
+2025/07/24 21:34:55 - Player 1 claimed territory at (2,1) due to Barrack upgrade.
+2025/07/24 21:34:55 - Player 1 claimed territory at (4,1) due to Barrack upgrade.
+2025/07/24 21:34:55 - Player 1 built a Barrack at (3,1) for 150 gold.
+2025/07/24 21:34:56 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:34:59 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:02 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:05 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:08 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:11 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:14 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:17 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:20 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:23 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:26 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:29 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:32 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:35 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:38 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:41 - Player 1 gained 0 gold and 2 food.
+2025/07/24 21:35:43 - Player 1's turn-end maintenance cost: 3 gold.
+2025/07/24 21:35:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 21:36:54 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/24 21:52:22 - Successfully connected to the database.
+2025/07/24 21:52:22 - Database initialized successfully.
+2025/07/24 21:52:26 - GameManager created. Player 1's turn begins.
+2025/07/24 21:52:58 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 21:53:06 - Player 2 claimed territory at (7,7).
+2025/07/24 21:53:07 - Player 2 claimed territory at (8,6).
+2025/07/24 21:53:07 - Player 2 claimed territory at (8,7).
+2025/07/24 21:53:07 - Player 2 claimed territory at (8,8).
+2025/07/24 21:53:07 - Player 2 claimed territory at (9,7).
+2025/07/24 21:53:07 - Player 2 built a Farm at (8,7) for 100 gold.
+2025/07/24 21:53:08 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:11 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:14 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:17 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:20 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:23 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:26 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:29 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:32 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:35 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:38 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:41 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:44 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:47 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:50 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:53 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:56 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:53:59 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:02 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:05 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:08 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:11 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:14 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:17 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:20 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:23 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:26 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:29 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:39 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:42 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:45 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:48 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:51 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:54 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:54:57 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:00 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:03 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:06 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:09 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:12 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:15 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:18 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:21 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:24 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:27 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:30 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:33 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:36 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:39 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:42 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:45 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:48 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:51 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:54 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:55:57 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:00 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:03 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:06 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:09 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:12 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:15 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:18 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:21 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:24 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:27 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:30 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:33 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:36 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:39 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:42 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:45 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:48 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:51 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:54 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:56:57 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:00 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:03 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:06 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:09 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:12 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:15 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:18 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:21 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:24 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:27 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:30 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:33 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:36 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:39 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:42 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:45 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:48 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:51 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:54 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:57:57 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:00 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:03 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:06 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:09 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:12 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:15 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:18 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:21 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:24 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:27 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:30 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:33 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:36 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:39 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:42 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:45 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:48 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:58:51 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:26 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:29 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:32 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:35 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:38 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:41 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:44 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:47 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:50 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:53 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:56 - Player 2 gained 0 gold and 2 food.
+2025/07/24 21:59:59 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:02 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:04 - Player 2's turn-end maintenance cost: 1 gold.
+2025/07/24 22:00:04 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:00:12 - Player 1 claimed territory at (1,1).
+2025/07/24 22:00:12 - Player 1 claimed territory at (2,0).
+2025/07/24 22:00:12 - Player 1 claimed territory at (2,1).
+2025/07/24 22:00:12 - Player 1 claimed territory at (2,2).
+2025/07/24 22:00:12 - Player 1 claimed territory at (3,1).
+2025/07/24 22:00:12 - Player 1 built a Farm at (2,1) for 100 gold.
+2025/07/24 22:00:14 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:00:17 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:00:20 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:00:23 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:00:26 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:00:28 - Player 1 claimed territory at (0,2).
+2025/07/24 22:00:28 - Player 1 claimed territory at (1,1).
+2025/07/24 22:00:28 - Player 1 claimed territory at (1,2).
+2025/07/24 22:00:28 - Player 1 claimed territory at (1,3).
+2025/07/24 22:00:28 - Player 1 claimed territory at (2,2).
+2025/07/24 22:00:28 - Player 1 trained a Peasant at (1,2) and claimed territory.
+2025/07/24 22:00:29 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:00:32 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:00:35 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/24 22:00:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:00:35 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:38 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:41 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:41 - Player 2 claimed territory at (7,6).
+2025/07/24 22:00:41 - Player 2 claimed territory at (8,5).
+2025/07/24 22:00:41 - Player 2 claimed territory at (8,6).
+2025/07/24 22:00:41 - Player 2 claimed territory at (8,7).
+2025/07/24 22:00:41 - Player 2 claimed territory at (9,6).
+2025/07/24 22:00:41 - Player 2 claimed territory at (8,5) due to Barrack upgrade.
+2025/07/24 22:00:41 - Player 2 claimed territory at (8,7) due to Barrack upgrade.
+2025/07/24 22:00:41 - Player 2 claimed territory at (7,6) due to Barrack upgrade.
+2025/07/24 22:00:41 - Player 2 claimed territory at (9,6) due to Barrack upgrade.
+2025/07/24 22:00:41 - Player 2 built a Barrack at (8,6) for 150 gold.
+2025/07/24 22:00:44 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:46 - Player 2 claimed territory at (7,5).
+2025/07/24 22:00:46 - Player 2 claimed territory at (8,4).
+2025/07/24 22:00:46 - Player 2 claimed territory at (8,5).
+2025/07/24 22:00:46 - Player 2 claimed territory at (8,6).
+2025/07/24 22:00:46 - Player 2 claimed territory at (9,5).
+2025/07/24 22:00:46 - Player 2 trained a Spearman at (8,5) and claimed territory.
+2025/07/24 22:00:47 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:50 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:53 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:56 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:00:57 - Player 2 claimed territory at (6,6).
+2025/07/24 22:00:57 - Player 2 claimed territory at (7,5).
+2025/07/24 22:00:57 - Player 2 claimed territory at (7,6).
+2025/07/24 22:00:57 - Player 2 claimed territory at (7,7).
+2025/07/24 22:00:57 - Player 2 claimed territory at (8,6).
+2025/07/24 22:00:57 - Player 2 trained a Spearman at (7,6) and claimed territory.
+2025/07/24 22:00:59 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:02 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:05 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:05 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/24 22:01:05 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:01:08 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:11 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:13 - Player 1 claimed territory at (0,3).
+2025/07/24 22:01:13 - Player 1 claimed territory at (1,2).
+2025/07/24 22:01:13 - Player 1 claimed territory at (1,3).
+2025/07/24 22:01:13 - Player 1 claimed territory at (1,4).
+2025/07/24 22:01:13 - Player 1 claimed territory at (2,3).
+2025/07/24 22:01:13 - Player 1 claimed territory at (1,2) due to Barrack upgrade.
+2025/07/24 22:01:13 - Player 1 claimed territory at (1,4) due to Barrack upgrade.
+2025/07/24 22:01:13 - Player 1 claimed territory at (0,3) due to Barrack upgrade.
+2025/07/24 22:01:13 - Player 1 claimed territory at (2,3) due to Barrack upgrade.
+2025/07/24 22:01:13 - Player 1 built a Barrack at (1,3) for 150 gold.
+2025/07/24 22:01:14 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:17 - Player 1 claimed territory at (1,3).
+2025/07/24 22:01:17 - Player 1 claimed territory at (2,2).
+2025/07/24 22:01:17 - Player 1 claimed territory at (2,3).
+2025/07/24 22:01:17 - Player 1 claimed territory at (2,4).
+2025/07/24 22:01:17 - Player 1 claimed territory at (3,3).
+2025/07/24 22:01:17 - Player 1 trained a Spearman at (2,3) and claimed territory.
+2025/07/24 22:01:17 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:20 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:23 - Player 1 claimed territory at (0,4).
+2025/07/24 22:01:23 - Player 1 claimed territory at (1,3).
+2025/07/24 22:01:23 - Player 1 claimed territory at (1,4).
+2025/07/24 22:01:23 - Player 1 claimed territory at (1,5).
+2025/07/24 22:01:23 - Player 1 claimed territory at (2,4).
+2025/07/24 22:01:23 - Player 1 trained a Spearman at (1,4) and claimed territory.
+2025/07/24 22:01:23 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:26 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:29 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:32 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:35 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:01:37 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/24 22:01:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:01:38 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:41 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:44 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:47 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:50 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:54 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:01:57 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:00 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:03 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:06 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:08 - Player 2's turn-end maintenance cost: 7 gold.
+2025/07/24 22:02:08 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:02:09 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:02:12 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:02:15 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:02:18 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:02:21 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:02:24 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:02:25 - Player 1 claimed territory at (0,5).
+2025/07/24 22:02:25 - Player 1 claimed territory at (1,4).
+2025/07/24 22:02:25 - Player 1 claimed territory at (1,5).
+2025/07/24 22:02:25 - Player 1 claimed territory at (1,6).
+2025/07/24 22:02:25 - Player 1 claimed territory at (2,5).
+2025/07/24 22:02:25 - Player 1 built a Market at (1,5) for 120 gold.
+2025/07/24 22:02:27 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:02:30 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:02:33 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:02:36 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:02:39 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:02:39 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:02:39 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:02:42 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:45 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:48 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:51 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:54 - Player 2 gained 0 gold and 2 food.
+2025/07/24 22:02:55 - Player 2 claimed territory at (6,5).
+2025/07/24 22:02:55 - Player 2 claimed territory at (7,4).
+2025/07/24 22:02:55 - Player 2 claimed territory at (7,5).
+2025/07/24 22:02:55 - Player 2 claimed territory at (7,6).
+2025/07/24 22:02:55 - Player 2 claimed territory at (8,5).
+2025/07/24 22:02:55 - Player 2 built a Market at (7,5) for 120 gold.
+2025/07/24 22:02:57 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:00 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:03 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:06 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:09 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:12 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:12 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:03:12 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:03:15 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:18 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:19 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:03:19 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:03:21 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:24 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:27 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:29 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:03:29 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:03:30 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:33 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:36 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:37 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:03:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:03:39 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:42 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:03:44 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:03:44 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:03:45 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:46 - Spearman attacked Spearman at (4,5) for 15 damage.
+2025/07/24 22:03:48 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:51 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:54 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:56 - Spearman attacked Spearman at (5,4) for 15 damage.
+2025/07/24 22:03:57 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:03:59 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:03:59 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:04:00 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:01 - Spearman attacked Spearman at (5,3) for 15 damage.
+2025/07/24 22:04:03 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:06 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:04:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:04:06 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:04:09 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:04:12 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:04:13 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:04:13 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:04:15 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:18 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:18 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:04:18 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:04:21 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:04:22 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:04:22 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:04:24 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:27 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:30 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:30 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:04:30 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:04:33 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:04:36 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:04:36 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:04:36 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:39 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:41 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:04:41 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:04:42 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:04:43 - Spearman attacked Market at (7,5) for 15 damage.
+2025/07/24 22:04:45 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:04:47 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:04:47 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:04:48 - Spearman attacked Barrack at (1,3) for 15 damage.
+2025/07/24 22:04:48 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:51 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:54 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:57 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:04:57 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:04:57 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:05:00 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:03 - Spearman attacked Market at (7,5) for 18 damage.
+2025/07/24 22:05:03 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:05 - Spearman attacked Market at (7,5) for 15 damage.
+2025/07/24 22:05:06 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:07 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:05:07 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:05:08 - Spearman attacked Barrack at (1,3) for 15 damage.
+2025/07/24 22:05:09 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:12 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:15 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:18 - Player 2 claimed territory at (2,2).
+2025/07/24 22:05:18 - Player 2 claimed territory at (3,1).
+2025/07/24 22:05:18 - Player 2 claimed territory at (3,2).
+2025/07/24 22:05:18 - Player 2 claimed territory at (3,3).
+2025/07/24 22:05:18 - Player 2 claimed territory at (4,2).
+2025/07/24 22:05:18 - Merged two Spearmans into a Swordsman at (3,2).
+2025/07/24 22:05:18 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:21 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:24 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:24 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:05:24 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:05:27 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:30 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:31 - Player 1 claimed territory at (6,4).
+2025/07/24 22:05:31 - Player 1 claimed territory at (7,3).
+2025/07/24 22:05:31 - Player 1 claimed territory at (7,4).
+2025/07/24 22:05:31 - Player 1 claimed territory at (7,5).
+2025/07/24 22:05:31 - Player 1 claimed territory at (8,4).
+2025/07/24 22:05:31 - Merged two Spearmans into a Swordsman at (7,4).
+2025/07/24 22:05:33 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:36 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:39 - Swordsman attacked Market at (7,5) for 31 damage.
+2025/07/24 22:05:39 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:42 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:43 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:05:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:05:45 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:48 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:48 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:05:48 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:05:51 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:05:52 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:05:52 - Player 1 could not pay maintenance costs!
+2025/07/24 22:05:52 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:05:54 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:05:54 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:05:57 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:00 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:01 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:01 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:03 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:06 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:07 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:07 - Player 1 could not pay maintenance costs!
+2025/07/24 22:06:07 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:06:09 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:06:09 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:12 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:13 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:13 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:15 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:06:15 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:17 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:17 - Player 1 could not pay maintenance costs!
+2025/07/24 22:06:17 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:06:18 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:06:18 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:19 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:19 - Player 2 could not pay maintenance costs!
+2025/07/24 22:06:19 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:21 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:06:21 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:23 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:23 - Player 1 could not pay maintenance costs!
+2025/07/24 22:06:23 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:06:24 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:06:24 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:25 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:25 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:27 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:27 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:06:29 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:29 - Player 1 could not pay maintenance costs!
+2025/07/24 22:06:29 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:06:30 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:30 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:06:32 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:32 - Player 2 could not pay maintenance costs!
+2025/07/24 22:06:32 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:33 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:34 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:06:36 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:36 - Player 1 could not pay maintenance costs!
+2025/07/24 22:06:36 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:06:36 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:37 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:06:38 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:38 - Player 2 could not pay maintenance costs!
+2025/07/24 22:06:38 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:39 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:41 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:06:42 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:42 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:42 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:06:44 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:06:45 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:45 - Player 2 could not pay maintenance costs!
+2025/07/24 22:06:45 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:45 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:47 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:06:48 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:48 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:48 - Player 1 could not pay maintenance costs!
+2025/07/24 22:06:48 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:06:50 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:06:51 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:51 - Player 2 could not pay maintenance costs!
+2025/07/24 22:06:51 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:51 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:52 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:06:54 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:54 - Player 1 could not pay maintenance costs!
+2025/07/24 22:06:54 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:06:54 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:06:56 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:06:57 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:06:57 - Player 2 could not pay maintenance costs!
+2025/07/24 22:06:57 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:06:57 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:06:58 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:06:59 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:06:59 - Player 1 could not pay maintenance costs!
+2025/07/24 22:06:59 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:07:00 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:01 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:07:02 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:07:02 - Player 2 could not pay maintenance costs!
+2025/07/24 22:07:02 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:07:03 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:04 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:07:06 - Player 1's turn-end maintenance cost: 9 gold.
+2025/07/24 22:07:06 - Player 1 could not pay maintenance costs!
+2025/07/24 22:07:06 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:07:06 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:07 - Swordsman attacked Barrack at (1,3) for 25 damage.
+2025/07/24 22:07:07 - Barrack at (1,3) was destroyed!
+2025/07/24 22:07:09 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:07:09 - Player 2 could not pay maintenance costs!
+2025/07/24 22:07:09 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:07:09 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:11 - Swordsman attacked Barrack at (8,6) for 31 damage.
+2025/07/24 22:07:11 - Barrack at (8,6) was destroyed!
+2025/07/24 22:07:12 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:13 - Player 1's turn-end maintenance cost: 7 gold.
+2025/07/24 22:07:13 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:07:15 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:18 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:21 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:24 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:27 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:30 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:07:30 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:07:30 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:33 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:34 - Player 1's turn-end maintenance cost: 7 gold.
+2025/07/24 22:07:34 - Player 1 could not pay maintenance costs!
+2025/07/24 22:07:34 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:07:36 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:37 - Swordsman attacked Peasant at (1,2) for 25 damage.
+2025/07/24 22:07:38 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:07:38 - Player 2 could not pay maintenance costs!
+2025/07/24 22:07:38 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:07:39 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:42 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:43 - Player 1's turn-end maintenance cost: 7 gold.
+2025/07/24 22:07:43 - Player 1 could not pay maintenance costs!
+2025/07/24 22:07:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:07:45 - Swordsman attacked Peasant at (1,2) for 25 damage.
+2025/07/24 22:07:45 - Peasant at (1,2) was destroyed!
+2025/07/24 22:07:45 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:47 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:07:47 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:07:48 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:49 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:07:49 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:07:51 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:07:52 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:07:52 - Player 2 could not pay maintenance costs!
+2025/07/24 22:07:52 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:07:54 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:07:56 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:07:56 - Player 1 could not pay maintenance costs!
+2025/07/24 22:07:56 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:07:57 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:00 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:08:00 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:03 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:03 - Player 2 could not pay maintenance costs!
+2025/07/24 22:08:03 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:08:03 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:08:04 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:08:07 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:08:09 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:09 - Player 1 could not pay maintenance costs!
+2025/07/24 22:08:09 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:08:10 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:10 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:08:13 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:16 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:16 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:16 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:08:18 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:08:19 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:08:20 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:20 - Player 1 could not pay maintenance costs!
+2025/07/24 22:08:20 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:08:21 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:08:22 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:25 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:28 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:31 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:34 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:37 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:39 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:39 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:08:40 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:08:42 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:08:43 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:08:45 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:45 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:08:46 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:46 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:08:48 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:48 - Player 2 could not pay maintenance costs!
+2025/07/24 22:08:48 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:08:49 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:08:49 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:08:50 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:50 - Player 1 could not pay maintenance costs!
+2025/07/24 22:08:50 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:08:52 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:08:52 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:53 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:53 - Player 2 could not pay maintenance costs!
+2025/07/24 22:08:53 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:08:55 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:08:55 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:08:56 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:56 - Player 1 could not pay maintenance costs!
+2025/07/24 22:08:56 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:08:57 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:08:58 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:08:58 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:08:58 - Player 2 could not pay maintenance costs!
+2025/07/24 22:08:58 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:00 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:09:01 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:01 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:01 - Player 1 could not pay maintenance costs!
+2025/07/24 22:09:01 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:09:02 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:09:04 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:04 - Player 2 could not pay maintenance costs!
+2025/07/24 22:09:04 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:04 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:05 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:09:06 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:06 - Player 1 could not pay maintenance costs!
+2025/07/24 22:09:06 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:09:07 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:07 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:09:08 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:08 - Player 2 could not pay maintenance costs!
+2025/07/24 22:09:08 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:10 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:10 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:09:11 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:11 - Player 1 could not pay maintenance costs!
+2025/07/24 22:09:11 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:09:12 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:09:13 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:13 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:13 - Player 2 could not pay maintenance costs!
+2025/07/24 22:09:13 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:16 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:16 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:09:19 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:21 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:21 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:09:22 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:24 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:09:25 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:28 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:28 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:28 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:31 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:09:31 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:32 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:32 - Player 1 could not pay maintenance costs!
+2025/07/24 22:09:32 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:09:34 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:37 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:37 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:09:39 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:39 - Player 2 could not pay maintenance costs!
+2025/07/24 22:09:39 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:40 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:41 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:09:42 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:42 - Player 1 could not pay maintenance costs!
+2025/07/24 22:09:42 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:09:43 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:44 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:09:45 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:45 - Player 2 could not pay maintenance costs!
+2025/07/24 22:09:45 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:46 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:47 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:09:49 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:49 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:49 - Player 1 could not pay maintenance costs!
+2025/07/24 22:09:49 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:09:50 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:09:52 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:09:53 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:53 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:54 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:09:55 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:55 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:55 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:09:56 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:09:57 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:09:57 - Player 2 could not pay maintenance costs!
+2025/07/24 22:09:57 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:09:58 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:09:59 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:00 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:00 - Player 1 could not pay maintenance costs!
+2025/07/24 22:10:00 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:01 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:10:01 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:03 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:03 - Player 2 could not pay maintenance costs!
+2025/07/24 22:10:03 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:04 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:05 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:06 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:06 - Player 1 could not pay maintenance costs!
+2025/07/24 22:10:06 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:07 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:10:07 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:08 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:08 - Player 2 could not pay maintenance costs!
+2025/07/24 22:10:08 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:09 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:10 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:11 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:11 - Player 1 could not pay maintenance costs!
+2025/07/24 22:10:11 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:12 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:13 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:13 - Player 2 could not pay maintenance costs!
+2025/07/24 22:10:13 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:13 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:14 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:15 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:15 - Player 1 could not pay maintenance costs!
+2025/07/24 22:10:15 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:16 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:10:16 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:18 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:18 - Player 2 could not pay maintenance costs!
+2025/07/24 22:10:18 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:19 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:22 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:25 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:25 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:28 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:28 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:28 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:30 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:31 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:10:31 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:31 - Player 2 could not pay maintenance costs!
+2025/07/24 22:10:31 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:34 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:34 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:36 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:36 - Player 1 could not pay maintenance costs!
+2025/07/24 22:10:36 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:37 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:10:38 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:40 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:40 - Player 2 could not pay maintenance costs!
+2025/07/24 22:10:40 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:40 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:41 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:43 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:43 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:43 - Player 1 could not pay maintenance costs!
+2025/07/24 22:10:43 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:45 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:46 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:10:46 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:46 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:48 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:49 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:49 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:49 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:51 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:52 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:10:52 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:52 - Player 2 could not pay maintenance costs!
+2025/07/24 22:10:52 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:53 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:10:55 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:55 - Player 1 could not pay maintenance costs!
+2025/07/24 22:10:55 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:10:55 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:10:56 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:10:57 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:10:57 - Player 2 could not pay maintenance costs!
+2025/07/24 22:10:57 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:10:58 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:10:58 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:00 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:00 - Player 1 could not pay maintenance costs!
+2025/07/24 22:11:00 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:01 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:01 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:02 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:02 - Player 2 could not pay maintenance costs!
+2025/07/24 22:11:02 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:04 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:05 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:06 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:06 - Player 1 could not pay maintenance costs!
+2025/07/24 22:11:06 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:07 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:07 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:09 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:09 - Player 2 could not pay maintenance costs!
+2025/07/24 22:11:09 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:10 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:11 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:13 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:16 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:17 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:17 - Player 1 could not pay maintenance costs!
+2025/07/24 22:11:17 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:19 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:20 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:21 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:21 - Player 2 could not pay maintenance costs!
+2025/07/24 22:11:21 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:22 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:24 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:25 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:25 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:25 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:26 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:27 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:27 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:28 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:29 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:30 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:30 - Player 1 could not pay maintenance costs!
+2025/07/24 22:11:30 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:31 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:31 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:32 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:32 - Player 2 could not pay maintenance costs!
+2025/07/24 22:11:32 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:34 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:34 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:35 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:35 - Player 1 could not pay maintenance costs!
+2025/07/24 22:11:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:36 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:37 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:37 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:37 - Player 2 could not pay maintenance costs!
+2025/07/24 22:11:37 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:39 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:40 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:40 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:40 - Player 1 could not pay maintenance costs!
+2025/07/24 22:11:40 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:42 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:43 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:43 - Player 2 could not pay maintenance costs!
+2025/07/24 22:11:43 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:43 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:45 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:46 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:46 - Player 1 could not pay maintenance costs!
+2025/07/24 22:11:46 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:46 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:47 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:48 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:48 - Player 2 could not pay maintenance costs!
+2025/07/24 22:11:48 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:49 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:50 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:51 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:51 - Player 1 could not pay maintenance costs!
+2025/07/24 22:11:51 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:52 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:53 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:55 - Player 2's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:55 - Player 2 could not pay maintenance costs!
+2025/07/24 22:11:55 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:11:55 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:11:56 - Swordsman attacked TownHall at (8,8) for 25 damage.
+2025/07/24 22:11:57 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:11:57 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:11:58 - Player 2 gained 1 gold and 2 food.
+2025/07/24 22:11:59 - Swordsman attacked TownHall at (1,1) for 31 damage.
+2025/07/24 22:11:59 - TownHall at (1,1) was destroyed!
+2025/07/24 22:11:59 - GAME OVER! Winner is Player 2
+2025/07/24 22:12:03 - Successfully connected to the database.
+2025/07/24 22:12:03 - Database initialized successfully.
+2025/07/24 22:12:04 - GameManager created. Player 1's turn begins.
+2025/07/24 22:12:08 - GameManager created. Player 1's turn begins.
+2025/07/24 22:12:08 - CRITICAL: Error loading game: ERROR: column "territory_owner_name" does not exist
+  Position: 44
+2025/07/24 22:12:11 - Successfully connected to the database.
+2025/07/24 22:12:11 - Database initialized successfully.
+2025/07/24 22:12:12 - GameManager created. Player 1's turn begins.
+2025/07/24 22:12:16 - GameManager created. Player 1's turn begins.
+2025/07/24 22:12:16 - CRITICAL: Error loading game: ERROR: column "territory_owner_name" does not exist
+  Position: 44
+2025/07/24 22:12:17 - Successfully connected to the database.
+2025/07/24 22:12:17 - Database initialized successfully.
+2025/07/24 22:12:20 - GameManager created. Player 1's turn begins.
+2025/07/24 22:12:24 - GameManager created. Player 1's turn begins.
+2025/07/24 22:12:24 - CRITICAL: Error loading game: ERROR: column "territory_owner_name" does not exist
+  Position: 44
+2025/07/24 22:12:25 - Successfully connected to the database.
+2025/07/24 22:12:25 - Database initialized successfully.
+2025/07/24 22:25:32 - Successfully connected to the database.
+2025/07/24 22:25:32 - Database initialized successfully.
+2025/07/24 22:25:38 - GameManager created. Player 1's turn begins.
+2025/07/24 22:25:48 - Player 1 claimed territory at (1,1).
+2025/07/24 22:25:48 - Player 1 claimed territory at (2,0).
+2025/07/24 22:25:48 - Player 1 claimed territory at (2,1).
+2025/07/24 22:25:48 - Player 1 claimed territory at (2,2).
+2025/07/24 22:25:48 - Player 1 claimed territory at (3,1).
+2025/07/24 22:25:48 - Player 1 built a Farm at (2,1) for 100 gold.
+2025/07/24 22:25:51 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:25:54 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:25:57 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:25:58 - Player 1 claimed territory at (0,2).
+2025/07/24 22:25:58 - Player 1 claimed territory at (1,1).
+2025/07/24 22:25:58 - Player 1 claimed territory at (1,2).
+2025/07/24 22:25:58 - Player 1 claimed territory at (1,3).
+2025/07/24 22:25:58 - Player 1 claimed territory at (2,2).
+2025/07/24 22:25:58 - Player 1 trained a Peasant at (1,2) and claimed territory.
+2025/07/24 22:26:00 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:26:03 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:26:06 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:26:09 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:26:11 - Player 1's turn-end maintenance cost: 2 gold.
+2025/07/24 22:26:11 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:26:25 - Player 2 claimed territory at (7,7).
+2025/07/24 22:26:25 - Player 2 claimed territory at (8,6).
+2025/07/24 22:26:25 - Player 2 claimed territory at (8,7).
+2025/07/24 22:26:25 - Player 2 claimed territory at (8,8).
+2025/07/24 22:26:25 - Player 2 claimed territory at (9,7).
+2025/07/24 22:26:25 - Player 2 built a Market at (8,7) for 120 gold.
+2025/07/24 22:26:27 - Player 2 gained 1 gold and 0 food.
+2025/07/24 22:26:30 - Player 2 gained 1 gold and 0 food.
+2025/07/24 22:26:33 - Player 2 gained 1 gold and 0 food.
+2025/07/24 22:26:36 - Player 2 claimed territory at (7,6).
+2025/07/24 22:26:36 - Player 2 claimed territory at (8,5).
+2025/07/24 22:26:36 - Player 2 claimed territory at (8,6).
+2025/07/24 22:26:36 - Player 2 claimed territory at (8,7).
+2025/07/24 22:26:36 - Player 2 claimed territory at (9,6).
+2025/07/24 22:26:36 - Player 2 claimed territory at (8,5) due to Barrack upgrade.
+2025/07/24 22:26:36 - Player 2 claimed territory at (8,7) due to Barrack upgrade.
+2025/07/24 22:26:36 - Player 2 claimed territory at (7,6) due to Barrack upgrade.
+2025/07/24 22:26:36 - Player 2 claimed territory at (9,6) due to Barrack upgrade.
+2025/07/24 22:26:36 - Player 2 built a Barrack at (8,6) for 150 gold.
+2025/07/24 22:26:36 - Player 2 gained 1 gold and 0 food.
+2025/07/24 22:26:39 - Player 2 gained 1 gold and 0 food.
+2025/07/24 22:26:42 - Player 2 gained 1 gold and 0 food.
+2025/07/24 22:26:42 - Player 2's turn-end maintenance cost: 3 gold.
+2025/07/24 22:26:42 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/24 22:26:50 - Player 3 claimed territory at (6,2).
+2025/07/24 22:26:50 - Player 3 claimed territory at (7,1).
+2025/07/24 22:26:50 - Player 3 claimed territory at (7,2).
+2025/07/24 22:26:50 - Player 3 claimed territory at (7,3).
+2025/07/24 22:26:50 - Player 3 claimed territory at (8,2).
+2025/07/24 22:26:50 - Player 3 built a Tower at (7,2) for 200 gold.
+2025/07/24 22:27:02 - Player 3 claimed territory at (6,3).
+2025/07/24 22:27:02 - Player 3 claimed territory at (7,2).
+2025/07/24 22:27:02 - Player 3 claimed territory at (7,3).
+2025/07/24 22:27:02 - Player 3 claimed territory at (7,4).
+2025/07/24 22:27:02 - Player 3 claimed territory at (8,3).
+2025/07/24 22:27:02 - Player 3 claimed territory at (7,2) due to Barrack upgrade.
+2025/07/24 22:27:02 - Player 3 claimed territory at (7,4) due to Barrack upgrade.
+2025/07/24 22:27:02 - Player 3 claimed territory at (6,3) due to Barrack upgrade.
+2025/07/24 22:27:02 - Player 3 claimed territory at (8,3) due to Barrack upgrade.
+2025/07/24 22:27:02 - Player 3 built a Barrack at (7,3) for 150 gold.
+2025/07/24 22:27:11 - Player 3 claimed territory at (6,4).
+2025/07/24 22:27:11 - Player 3 claimed territory at (7,3).
+2025/07/24 22:27:11 - Player 3 claimed territory at (7,4).
+2025/07/24 22:27:11 - Player 3 claimed territory at (7,5).
+2025/07/24 22:27:11 - Player 3 claimed territory at (8,4).
+2025/07/24 22:27:11 - Player 3 trained a Spearman at (7,4) and claimed territory.
+2025/07/24 22:27:15 - Player 3's turn-end maintenance cost: 7 gold.
+2025/07/24 22:27:15 - Turn ended for Player 3. It is now Player 4's turn.
+2025/07/24 22:34:00 - Turn ended for Player 4. It is now Player 1's turn.
+2025/07/24 22:34:03 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:06 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:09 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:10 - CRITICAL: Error saving game: Batch entry 0 INSERT INTO game_board_tiles(save_id, x_coord, y_coord, block_class_name, territory_owner_name) VALUES(('4'::int4), ('0'::int4), ('0'::int4), ('EmptyBlock'), ('Player 1')) was aborted: ERROR: column "territory_owner_name" of relation "game_board_tiles" does not exist
+  Position: 75  Call getNextException to see other errors in the batch.
+2025/07/24 22:34:12 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:15 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:18 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:21 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:24 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:27 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:30 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:33 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:36 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:39 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:42 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:45 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:48 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:51 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:54 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:34:57 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:00 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:03 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:06 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:09 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:12 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:15 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:18 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:21 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:24 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:27 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:30 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:33 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:36 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:39 - Successfully connected to the database.
+2025/07/24 22:35:40 - Database initialized successfully.
+2025/07/24 22:35:41 - GameManager created. Player 1's turn begins.
+2025/07/24 22:35:45 - Successfully connected to the database.
+2025/07/24 22:35:45 - Database initialized successfully.
+2025/07/24 22:35:46 - GameManager created. Player 1's turn begins.
+2025/07/24 22:35:50 - Player 1 claimed territory at (1,1).
+2025/07/24 22:35:50 - Player 1 claimed territory at (2,0).
+2025/07/24 22:35:50 - Player 1 claimed territory at (2,1).
+2025/07/24 22:35:50 - Player 1 claimed territory at (2,2).
+2025/07/24 22:35:50 - Player 1 claimed territory at (3,1).
+2025/07/24 22:35:50 - Player 1 built a Farm at (2,1) for 100 gold.
+2025/07/24 22:35:53 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:56 - Player 1 gained 0 gold and 2 food.
+2025/07/24 22:35:57 - Player 1 claimed territory at (1,2).
+2025/07/24 22:35:57 - Player 1 claimed territory at (2,1).
+2025/07/24 22:35:57 - Player 1 claimed territory at (2,2).
+2025/07/24 22:35:57 - Player 1 claimed territory at (2,3).
+2025/07/24 22:35:57 - Player 1 claimed territory at (3,2).
+2025/07/24 22:35:57 - Player 1 built a Market at (2,2) for 120 gold.
+2025/07/24 22:35:59 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:02 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:05 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:08 - Player 1 claimed territory at (1,3).
+2025/07/24 22:36:08 - Player 1 claimed territory at (2,2).
+2025/07/24 22:36:08 - Player 1 claimed territory at (2,3).
+2025/07/24 22:36:08 - Player 1 claimed territory at (2,4).
+2025/07/24 22:36:08 - Player 1 claimed territory at (3,3).
+2025/07/24 22:36:08 - Player 1 claimed territory at (2,2) due to Barrack upgrade.
+2025/07/24 22:36:08 - Player 1 claimed territory at (2,4) due to Barrack upgrade.
+2025/07/24 22:36:08 - Player 1 claimed territory at (1,3) due to Barrack upgrade.
+2025/07/24 22:36:08 - Player 1 claimed territory at (3,3) due to Barrack upgrade.
+2025/07/24 22:36:08 - Player 1 built a Barrack at (2,3) for 150 gold.
+2025/07/24 22:36:08 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:11 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:11 - Player 1 claimed territory at (1,4).
+2025/07/24 22:36:11 - Player 1 claimed territory at (2,3).
+2025/07/24 22:36:11 - Player 1 claimed territory at (2,4).
+2025/07/24 22:36:11 - Player 1 claimed territory at (2,5).
+2025/07/24 22:36:11 - Player 1 claimed territory at (3,4).
+2025/07/24 22:36:11 - Player 1 trained a Spearman at (2,4) and claimed territory.
+2025/07/24 22:36:14 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:17 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:18 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:36:18 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:36:29 - Player 2 claimed territory at (6,7).
+2025/07/24 22:36:29 - Player 2 claimed territory at (7,6).
+2025/07/24 22:36:29 - Player 2 claimed territory at (7,7).
+2025/07/24 22:36:29 - Player 2 claimed territory at (7,8).
+2025/07/24 22:36:29 - Player 2 claimed territory at (8,7).
+2025/07/24 22:36:29 - Player 2 claimed territory at (7,6) due to Barrack upgrade.
+2025/07/24 22:36:29 - Player 2 claimed territory at (7,8) due to Barrack upgrade.
+2025/07/24 22:36:29 - Player 2 claimed territory at (6,7) due to Barrack upgrade.
+2025/07/24 22:36:29 - Player 2 claimed territory at (8,7) due to Barrack upgrade.
+2025/07/24 22:36:29 - Player 2 built a Barrack at (7,7) for 150 gold.
+2025/07/24 22:36:35 - Player 2 claimed territory at (5,6).
+2025/07/24 22:36:35 - Player 2 claimed territory at (6,5).
+2025/07/24 22:36:35 - Player 2 claimed territory at (6,6).
+2025/07/24 22:36:35 - Player 2 claimed territory at (6,7).
+2025/07/24 22:36:35 - Player 2 claimed territory at (7,4).
+2025/07/24 22:36:35 - Player 2 claimed territory at (7,5).
+2025/07/24 22:36:35 - Player 2 claimed territory at (7,6).
+2025/07/24 22:36:35 - Player 2 claimed territory at (7,7).
+2025/07/24 22:36:35 - Player 2 claimed territory at (7,8).
+2025/07/24 22:36:35 - Player 2 claimed territory at (8,5).
+2025/07/24 22:36:35 - Player 2 claimed territory at (8,6).
+2025/07/24 22:36:35 - Player 2 claimed territory at (8,7).
+2025/07/24 22:36:35 - Player 2 claimed territory at (9,6).
+2025/07/24 22:36:35 - Player 2 trained a Knight at (7,6) and claimed territory.
+2025/07/24 22:36:49 - Player 2's turn-end maintenance cost: 8 gold.
+2025/07/24 22:36:49 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/24 22:36:50 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:53 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:56 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:36:59 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:37:02 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:37:05 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:37:08 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:37:11 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:37:14 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:37:17 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:37:20 - Player 1 gained 1 gold and 2 food.
+2025/07/24 22:37:20 - Player 1's turn-end maintenance cost: 6 gold.
+2025/07/24 22:37:20 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/24 22:37:23 - Game saved successfully: save_1753384042651
+2025/07/24 22:37:26 - Successfully connected to the database.
+2025/07/24 22:37:26 - Database initialized successfully.
+2025/07/24 22:37:28 - GameManager created. Player 1's turn begins.
+2025/07/24 22:37:32 - GameManager created. Player 1's turn begins.
+2025/07/24 22:37:32 - Game loaded successfully: save_1753384042651
+2025/07/25 00:32:17 - Successfully connected to the database.
+2025/07/25 00:32:17 - Database initialized successfully.
+2025/07/25 00:32:19 - GameManager created. Player 1's turn begins.
+2025/07/25 00:32:51 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:33:36 - Successfully connected to the database.
+2025/07/25 00:33:36 - Database initialized successfully.
+2025/07/25 00:33:40 - GameManager created. Player 1's turn begins.
+2025/07/25 00:34:29 - Successfully connected to the database.
+2025/07/25 00:34:29 - Database initialized successfully.
+2025/07/25 00:34:31 - GameManager created. Player 1's turn begins.
+2025/07/25 00:34:37 - Successfully connected to the database.
+2025/07/25 00:34:37 - Database initialized successfully.
+2025/07/25 00:34:40 - GameManager created. Player 1's turn begins.
+2025/07/25 00:34:49 - Successfully connected to the database.
+2025/07/25 00:34:49 - Database initialized successfully.
+2025/07/25 00:34:52 - GameManager created. Player 1's turn begins.
+2025/07/25 00:35:16 - Successfully connected to the database.
+2025/07/25 00:35:16 - Database initialized successfully.
+2025/07/25 00:35:18 - GameManager created. Player 1's turn begins.
+2025/07/25 00:35:35 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:35:35 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/25 00:35:36 - Turn ended for Player 3. It is now Player 1's turn.
+2025/07/25 00:35:39 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:35:39 - Turn ended for Player 2. It is now Player 3's turn.
+2025/07/25 00:35:42 - Player 3 claimed territory at (7,2).
+2025/07/25 00:35:42 - Player 3 claimed territory at (8,1).
+2025/07/25 00:35:42 - Player 3 claimed territory at (8,2).
+2025/07/25 00:35:42 - Player 3 claimed territory at (8,3).
+2025/07/25 00:35:42 - Player 3 claimed territory at (9,2).
+2025/07/25 00:35:42 - Player 3 built a Farm at (8,2) for 100 gold.
+2025/07/25 00:35:43 - Player 3 gained 0 gold and 2 food.
+2025/07/25 00:35:46 - Player 3 gained 0 gold and 2 food.
+2025/07/25 00:35:46 - Player 3 claimed territory at (6,1).
+2025/07/25 00:35:46 - Player 3 claimed territory at (7,0).
+2025/07/25 00:35:46 - Player 3 claimed territory at (7,1).
+2025/07/25 00:35:46 - Player 3 claimed territory at (7,2).
+2025/07/25 00:35:46 - Player 3 claimed territory at (8,1).
+2025/07/25 00:35:46 - Player 3 built a Farm at (7,1) for 150 gold.
+2025/07/25 00:35:49 - Player 3 gained 0 gold and 4 food.
+2025/07/25 00:35:52 - Player 3 gained 0 gold and 4 food.
+2025/07/25 00:35:55 - Player 3 gained 0 gold and 4 food.
+2025/07/25 00:38:28 - Successfully connected to the database.
+2025/07/25 00:38:28 - Database initialized successfully.
+2025/07/25 00:38:30 - GameManager created. Player 1's turn begins.
+2025/07/25 00:44:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:44:45 - Player 2 claimed territory at (6,7).
+2025/07/25 00:44:45 - Player 2 claimed territory at (7,6).
+2025/07/25 00:44:45 - Player 2 claimed territory at (7,7).
+2025/07/25 00:44:45 - Player 2 claimed territory at (7,8).
+2025/07/25 00:44:45 - Player 2 claimed territory at (8,7).
+2025/07/25 00:44:45 - Player 2 built a Market at (7,7) for 120 gold.
+2025/07/25 00:44:46 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:44:49 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:44:52 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:44:55 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:44:58 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:44:59 - Player 2 claimed territory at (6,6).
+2025/07/25 00:45:00 - Player 2 claimed territory at (7,5).
+2025/07/25 00:45:00 - Player 2 claimed territory at (7,6).
+2025/07/25 00:45:00 - Player 2 claimed territory at (7,7).
+2025/07/25 00:45:00 - Player 2 claimed territory at (8,6).
+2025/07/25 00:45:00 - Player 2 claimed territory at (7,5) due to Barrack upgrade.
+2025/07/25 00:45:00 - Player 2 claimed territory at (7,7) due to Barrack upgrade.
+2025/07/25 00:45:00 - Player 2 claimed territory at (6,6) due to Barrack upgrade.
+2025/07/25 00:45:00 - Player 2 claimed territory at (8,6) due to Barrack upgrade.
+2025/07/25 00:45:00 - Player 2 built a Barrack at (7,6) for 150 gold.
+2025/07/25 00:45:01 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:45:04 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:45:05 - Player 2 claimed territory at (5,5).
+2025/07/25 00:45:05 - Player 2 claimed territory at (6,4).
+2025/07/25 00:45:05 - Player 2 claimed territory at (6,5).
+2025/07/25 00:45:06 - Player 2 claimed territory at (6,6).
+2025/07/25 00:45:06 - Player 2 claimed territory at (7,3).
+2025/07/25 00:45:06 - Player 2 claimed territory at (7,4).
+2025/07/25 00:45:06 - Player 2 claimed territory at (7,5).
+2025/07/25 00:45:06 - Player 2 claimed territory at (7,6).
+2025/07/25 00:45:06 - Player 2 claimed territory at (7,7).
+2025/07/25 00:45:06 - Player 2 claimed territory at (8,4).
+2025/07/25 00:45:06 - Player 2 claimed territory at (8,5).
+2025/07/25 00:45:06 - Player 2 claimed territory at (8,6).
+2025/07/25 00:45:06 - Player 2 claimed territory at (9,5).
+2025/07/25 00:45:06 - Player 2 trained a Knight at (7,5) and claimed territory.
+2025/07/25 00:45:07 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:45:08 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/25 00:45:08 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/25 00:45:16 - Player 1 claimed territory at (1,2).
+2025/07/25 00:45:16 - Player 1 claimed territory at (2,1).
+2025/07/25 00:45:16 - Player 1 claimed territory at (2,2).
+2025/07/25 00:45:16 - Player 1 claimed territory at (2,3).
+2025/07/25 00:45:16 - Player 1 claimed territory at (3,2).
+2025/07/25 00:45:16 - Player 1 claimed territory at (2,1) due to Barrack upgrade.
+2025/07/25 00:45:16 - Player 1 claimed territory at (2,3) due to Barrack upgrade.
+2025/07/25 00:45:16 - Player 1 claimed territory at (1,2) due to Barrack upgrade.
+2025/07/25 00:45:16 - Player 1 claimed territory at (3,2) due to Barrack upgrade.
+2025/07/25 00:45:16 - Player 1 built a Barrack at (2,2) for 150 gold.
+2025/07/25 00:45:20 - Player 1 claimed territory at (0,3).
+2025/07/25 00:45:20 - Player 1 claimed territory at (1,2).
+2025/07/25 00:45:20 - Player 1 claimed territory at (1,3).
+2025/07/25 00:45:20 - Player 1 claimed territory at (1,4).
+2025/07/25 00:45:20 - Player 1 claimed territory at (2,1).
+2025/07/25 00:45:20 - Player 1 claimed territory at (2,2).
+2025/07/25 00:45:20 - Player 1 claimed territory at (2,3).
+2025/07/25 00:45:20 - Player 1 claimed territory at (2,4).
+2025/07/25 00:45:20 - Player 1 claimed territory at (2,5).
+2025/07/25 00:45:20 - Player 1 claimed territory at (3,2).
+2025/07/25 00:45:20 - Player 1 claimed territory at (3,3).
+2025/07/25 00:45:20 - Player 1 claimed territory at (3,4).
+2025/07/25 00:45:20 - Player 1 claimed territory at (4,3).
+2025/07/25 00:45:20 - Player 1 trained a Knight at (2,3) and claimed territory.
+2025/07/25 00:45:37 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/25 00:45:37 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:45:40 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:45:43 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/25 00:45:43 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/25 00:45:47 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/25 00:45:47 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:45:49 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:45:52 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/25 00:45:52 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/25 00:45:56 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/25 00:45:56 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:45:58 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:45:59 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/25 00:45:59 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/25 00:46:04 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/25 00:46:04 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:46:04 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:06 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/25 00:46:06 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/25 00:46:10 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/25 00:46:10 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:46:10 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:13 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:16 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/25 00:46:16 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/25 00:46:23 - Knight attacked TownHall at (8,8) for 40 damage.
+2025/07/25 00:46:26 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/25 00:46:26 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:46:28 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:31 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:34 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:34 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/25 00:46:34 - Turn ended for Player 2. It is now Player 1's turn.
+2025/07/25 00:46:37 - Knight attacked TownHall at (8,8) for 40 damage.
+2025/07/25 00:46:38 - Player 1's turn-end maintenance cost: 8 gold.
+2025/07/25 00:46:38 - Turn ended for Player 1. It is now Player 2's turn.
+2025/07/25 00:46:40 - Knight attacked TownHall at (1,1) for 40 damage.
+2025/07/25 00:46:40 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:43 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:46 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:49 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:52 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:55 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:46:58 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:01 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:04 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:07 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:10 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:13 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:16 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:19 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:22 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:25 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:28 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:31 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:34 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:37 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:40 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:43 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:46 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:49 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:52 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:55 - Player 2 gained 1 gold and 0 food.
+2025/07/25 00:47:58 - Player 2's turn-end maintenance cost: 9 gold.
+2025/07/25 00:47:58 - Turn ended for Player 2. It is now Player 1's turn.
