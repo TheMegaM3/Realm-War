@@ -1,4 +1,4 @@
-// GameBoard.java
+
 // Represents the game board in the RealmWar game, managing a grid of tiles with terrain and entities.
 // Handles board initialization, entity placement, and territory management for players.
 
@@ -7,6 +7,7 @@ package com.realmwar.engine;
 import com.realmwar.engine.blocks.Block;
 import com.realmwar.engine.blocks.EmptyBlock;
 import com.realmwar.engine.blocks.ForestBlock;
+import com.realmwar.engine.blocks.VoidBlock;
 import com.realmwar.model.GameEntity;
 import com.realmwar.model.Player;
 import com.realmwar.model.structures.Barrack;
@@ -40,7 +41,15 @@ public class GameBoard {
         Random rand = new Random();
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                Block terrain = rand.nextDouble() < 0.20 ? new ForestBlock() : new EmptyBlock();
+                double randomValue = rand.nextDouble();
+                Block terrain;
+                if (randomValue < 0.25){
+                    terrain = new ForestBlock();
+                } else if (randomValue < 0.30) {
+                    terrain = new VoidBlock();
+                } else {
+                    terrain = new EmptyBlock();
+                }
                 tiles[x][y] = new GameTile(terrain, x, y);
             }
         }

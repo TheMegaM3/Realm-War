@@ -11,7 +11,7 @@ public class VoidBlock extends Block {
     // Returns the color for rendering this block (black)
     @Override
     public Color getColor() {
-        return Color.BLACK;
+        return new Color(94,84,73);
     }
 
     // Overrides to indicate that this block type is not buildable
