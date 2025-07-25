@@ -1,6 +1,3 @@
-// GameManager.java
-// Class managing the overall game logic and state
-
 package com.realmwar.engine;
 
 import com.realmwar.data.GameLogger;
@@ -147,9 +144,9 @@ public class GameManager {
         }
 
         // Allow movement to any tile (occupied or not), and claim territory
-        placeEntity(null, unit.getX(), unit.getY());
-        placeEntity(unit, toX, toY);
-        updateTerritory(unit.getOwner(), toX, toY, unit.getMovementRange());
+        placeEntity(null, unit.getX(), unit.getY());// empty the previous tile
+        placeEntity(unit, toX, toY); // move to new tile
+        updateTerritory(unit.getOwner(), toX, toY, unit.getMovementRange()); //expands the territory around the new tile
         unit.setHasActedThisTurn(true);
         GameLogger.log(unit.getClass().getSimpleName() + " moved to (" + toX + "," + toY + ") and claimed territory.");
     }
@@ -396,8 +393,8 @@ public class GameManager {
         Player currentPlayer = getCurrentPlayer();
         GameTile tile = gameBoard.getTile(x, y);
 
-        if (tile == null || tile.isOccupied()) {
-            throw new GameRuleException("Target tile for training must be empty!");
+        if (tile == null || tile.isOccupied() || !tile.block.isBuildable()) {
+            throw new GameRuleException("Target tile for training must be empty or buildable!");
         }
 
         if (!currentPlayer.hasEnoughUnitSpace(gameBoard)) {

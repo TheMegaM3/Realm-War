@@ -1,7 +1,3 @@
-// GameBoardPanel.java
-// A Swing panel for rendering the game board in the RealmWar game.
-// Handles drawing tiles, units, structures, and user interactions like clicking for movement and attacks.
-
 package com.realmwar.view;
 
 import com.realmwar.engine.GameBoard;
