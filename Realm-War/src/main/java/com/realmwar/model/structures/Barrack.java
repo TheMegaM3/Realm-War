@@ -1,7 +1,3 @@
-// Barrack.java
-// Represents a Barrack structure in the RealmWar game, which provides unit space and defines valid unit placement directions.
-// Extends the Structure class to include level-based unit space and placement logic.
-
 package com.realmwar.model.structures;
 
 import com.realmwar.model.Player;
